@@ -52,7 +52,7 @@ group :development do
   gem 'annotate'
   gem 'binding_of_caller'
   gem 'pry-rails'
-  gem 'jquery-rails'
+  gem 'jquert-rails'
 end
 
 group :test do
