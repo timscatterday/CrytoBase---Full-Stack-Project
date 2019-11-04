@@ -17,4 +17,4 @@
 //= require jquery
 //= require jquery_ujs
 
-dfasf
+dfasfs
