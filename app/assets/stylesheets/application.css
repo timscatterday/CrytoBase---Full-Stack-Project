@@ -14,23 +14,4 @@
  *= require_self
  */
 
- h1{
-     font-size: 25px;
- }
-
-.navBar {
-    background-color: #1652f0; 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-};
-
-.login-form-container{
-    
-}
-
-.login_signup{
-    position: absolute;
-    right: 20px;;
-};
+ 

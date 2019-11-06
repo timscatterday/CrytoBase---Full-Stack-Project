@@ -14,7 +14,7 @@ import LoginFormContainer from './sessions_form/login_form_container';
 const App = () => (
     <div>
         <header className='navBar'>
-          <h1>CryptoBase</h1>
+          <h1 className='title'>Cryptobase</h1>
           <GreetingContainer />
         </header>
         <Switch>
