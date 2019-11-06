@@ -5,7 +5,7 @@ const Greeting = ({currentUser, logout}) => {
     const sessionRoutes = () => (
         <nav className="login_signup">
             <Link class='login_button'to="/login">Login</Link>
-            <Link class='logout-button'to="/signup">Get Started</Link>
+            <Link class='signup_button'to="/signup">Get Started</Link>
         </nav>
     );
  

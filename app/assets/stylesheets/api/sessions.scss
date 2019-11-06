@@ -21,9 +21,28 @@
 
     .login_signup {
        position: relative;
-       right: 10px;
+       right: 60px;
     }
 
+        .login_button {
+            position: relative;
+            right: 50px;
+            font-size: 22px;
+            color: white;
+            text-decoration: none;
+            font-family: Graphik, "Avenir Next", -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        }
+
+        .signup_button {
+            position: relative;
+            font-size: 19px;
+            color: white;
+            border-radius: 5px;
+            border: solid;
+            padding: 6px;
+            text-decoration: none;
+            font-family: Graphik, "Avenir Next", -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        }
 
 
 .login-form-container{
@@ -44,6 +63,7 @@
     bottom: 200px;
     background-color: white;
     margin: auto;
+    border-radius: 21px;
     width: 371px;
     height: 190px;
     text-align: left;
