@@ -1,10 +1,21 @@
-import { connect } from 'react-redux';
+import React from 'react';
 
-const mapStateToProps = state => ({
+class Home extends React.Component {
+    constructor(props){
+        super(props)
+    };
 
-});
 
-const mapDispatchToProps = state => ({
+    render(){
+        return(
+        <div>
+            <div class='top_main'>
+                <p className='main_line'>Buy and sell digital currency</p>
+                <p className='sub_line'>Cryptobase is the easiest place to buy and sell digital currencies</p>
+            </div>
+        </div>
+      )
+    }
+};
 
-});
-
+export default Home;

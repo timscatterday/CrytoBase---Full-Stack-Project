@@ -14,4 +14,23 @@
  *= require_self
  */
 
+ .top_main {
+    background-color: #1652f0;
+    color: white;
+    height: 315px;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+ }
+
+ .main_line{
+    font-size: 48px;
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+ }
  
+ .sub_line{
+     font-size: 14px;
+     font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+ }
