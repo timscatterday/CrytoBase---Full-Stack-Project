@@ -11,10 +11,12 @@
     justify-content: space-between;
     font-family: Graphik, "Avenir Next", -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 12px;
+    padding-top: 20px;
 };
     .title{
         font-size: 25px;
         color: white;
+        text-decoration: none;
         position: relative;
         left: 42px;
     }
@@ -54,8 +56,9 @@
     background-color:#1652f0;
 }
 
-.formName{
+.formName {
     color: white;
+    font-size: 38px;
 }
 
 .login-form-box{
@@ -95,3 +98,88 @@
     position: relative;
     left: 240px;
 };
+
+.crypto_chart{
+    text-align: center;
+    width: 100%;
+    border-spacing: 47px;
+    border-collapse: collapse;
+    margin: auto;
+    width: 86%;
+ };
+    thead{
+        padding-bottom: 5px;
+    }
+
+    thead tr{
+        font-size: 15px;
+        color: gray;
+        border: none;
+    }
+
+    tbody{
+        border: gray;
+    }
+
+    tr {
+        border: 2px solid lightgray;
+    }
+
+
+    tbody tr {
+        height: 57px;
+    }
+
+    tbody tr td {
+        align-content: center;
+    }
+
+    tbody tr td:first-child{
+        color: black;
+        font-weight: 700;
+        display: inline-block;
+        position: relative;
+        top: 8px;
+    }
+
+    .pic{
+        float: left;
+    }
+
+    .crypto_name{
+        float: left;
+        position: relative;
+        top: 9px;
+        left: 16px;
+    }
+
+    tbody tr td:second-child{
+        color: black;
+    }
+
+    .BitcoinLogo{
+        position: relative;
+    }
+
+    .EthereumLogo{
+        position: relative;
+        left: 9px;
+    }
+
+    .BitcoinCashLogo{
+        position: relative;
+        left: 18px;
+    }
+
+    .LitecoinLogo{
+        position: relative;
+        left: 3px;
+    }
+
+    .EOSLogo{
+        position: relative;
+        right: 8px;
+    }
+
+    
+       

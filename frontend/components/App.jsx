@@ -16,7 +16,7 @@ import HomeContainer from './home/home_container';
 const App = () => (
     <div>
         <header className='navBar'>
-          <h1 className='title'>Cryptobase</h1>
+            <Link className='title' to='/'>Cryptobase</Link>
           <GreetingContainer />
         </header>
         <Switch>
