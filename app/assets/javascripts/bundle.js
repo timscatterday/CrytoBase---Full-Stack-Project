@@ -341,7 +341,9 @@ function (_React$Component) {
         className: "sub_line"
       }, "Cryptobase is the easiest place to buy and sell digital currencies")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "crypto_chart"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Price"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Change"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Chart"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "name"
+      }, "Name")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Price"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Change"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Chart"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "BitcoinLogo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pic"
@@ -351,7 +353,9 @@ function (_React$Component) {
         width: "36"
       })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "crypto_name"
-      }, "Bitcoin"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "$9200"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "-1.10%"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Bitcoin ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "symbol"
+      }, "BTC")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "$9200"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "-1.10%"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "EthereumLogo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pic"
@@ -361,7 +365,9 @@ function (_React$Component) {
         height: "36"
       })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "crypto_name"
-      }, "Ethereum"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "$186"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "-1.70%"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Ethereum ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "symbol"
+      }, "ETH")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "$186"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "-1.70%"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "BitcoinCashLogo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pic"
@@ -371,7 +377,9 @@ function (_React$Component) {
         height: "36"
       })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "crypto_name"
-      }, "Bitcoin Cash"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "$290"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "-2.81%"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Bitcoin Cash ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "symbol"
+      }, "BCH")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "$290"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "-2.81%"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "LitecoinLogo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pic"
@@ -381,7 +389,9 @@ function (_React$Component) {
         height: "36"
       })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "crypto_name"
-      }, "Litecoin"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "$61"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "-3.86%"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Litecoin ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "symbol"
+      }, "LTC")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "$61"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "-3.86%"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "EOSLogo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pic"
@@ -391,7 +401,9 @@ function (_React$Component) {
         height: "36"
       })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "crypto_name"
-      }, "EOS"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "$3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "-2.20%"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")))));
+      }, "EOS ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "symbol"
+      }, "EOS")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "$3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "-2.20%"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")))));
     }
   }]);
 

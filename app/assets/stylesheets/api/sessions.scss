@@ -100,13 +100,24 @@
 };
 
 .crypto_chart{
-    text-align: center;
+    text-align: left;
     width: 100%;
     border-spacing: 47px;
     border-collapse: collapse;
     margin: auto;
-    width: 86%;
+    width: 75%;
+    background-color: white;
+    z-index: 1;
+    position: relative;
+    bottom: 142px;
+    border-radius: 5px;
  };
+
+    .name{
+        position: relative;
+        left: 180px;
+    }
+
     thead{
         padding-bottom: 5px;
     }
@@ -115,6 +126,7 @@
         font-size: 15px;
         color: gray;
         border: none;
+        height: 47px;
     }
 
     tbody{
@@ -122,7 +134,9 @@
     }
 
     tr {
-        border: 2px solid lightgray;
+        border: 1px solid lightgray;
+        border-left: none;
+        border-right: none;
     }
 
 
@@ -132,6 +146,7 @@
 
     tbody tr td {
         align-content: center;
+        font-size: 22px;
     }
 
     tbody tr td:first-child{
@@ -140,6 +155,8 @@
         display: inline-block;
         position: relative;
         top: 8px;
+        position: relative;
+        right: -112px;
     }
 
     .pic{
@@ -150,7 +167,17 @@
         float: left;
         position: relative;
         top: 9px;
-        left: 16px;
+        left: 29px;
+        color: black;
+        font-size: 22px;
+        font-weight: 100;
+    }
+
+    .symbol{
+        float: right;
+        margin-left: 17px;
+        color: lightgray;
+        font-weight: bolder;
     }
 
     tbody tr td:second-child{
@@ -163,22 +190,18 @@
 
     .EthereumLogo{
         position: relative;
-        left: 9px;
     }
 
     .BitcoinCashLogo{
         position: relative;
-        left: 18px;
     }
 
     .LitecoinLogo{
         position: relative;
-        left: 3px;
     }
 
     .EOSLogo{
         position: relative;
-        right: 8px;
     }
 
     
