@@ -339,7 +339,18 @@ function (_React$Component) {
         className: "main_line"
       }, "Buy and sell digital currency"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "sub_line"
-      }, "Cryptobase is the easiest place to buy and sell digital currencies")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+      }, "Cryptobase is the easiest place to buy, sell, and manage your digital currencies")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main_form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "input",
+        type: "text",
+        placeholder: "Email Address",
+        value: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main_button"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "home_button"
+      }, "Get Started")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "crypto_chart"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name"

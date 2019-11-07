@@ -39,5 +39,44 @@
      bottom: 150px;
  }
 
+ .main_form{
+    position: relative;
+    bottom: 300px;
+    left: 600px;
+ }
+
+ .input{
+    border-radius: 6px;
+    width: 300px;
+    position: relative;
+    left: -146px;
+    height: 56px;
+    bottom: 12px;
+ }
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 20px;
+    line-height: 4;
+    color: gray;
+}
+
+.main_button{
+    position: relative;
+    bottom: 350px;
+    left: 800px;
+}
+
+.home_button{
+    height: 60px;
+    position: relative;
+    background-color: #07b169;
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    color: white;
+    font-size: 20px;
+    bottom: 23px;
+    border-radius: 4px;
+}
+
 
 

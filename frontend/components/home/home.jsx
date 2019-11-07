@@ -11,7 +11,15 @@ class Home extends React.Component {
         <div>
             <div class='top_main'>
                 <p className='main_line'>Buy and sell digital currency</p>
-                <p className='sub_line'>Cryptobase is the easiest place to buy and sell digital currencies</p>
+                <p className='sub_line'>Cryptobase is the easiest place to buy, sell, and manage your digital currencies</p>
+            </div>
+
+            <div className='main_form'>
+                <input className='input' type="text" placeholder='Email Address' value=''/> 
+            </div>
+
+            <div className='main_button'>
+                <button className='home_button'>Get Started</button>
             </div>
 
             <table className='crypto_chart'>
