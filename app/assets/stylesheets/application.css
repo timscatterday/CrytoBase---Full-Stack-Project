@@ -83,4 +83,33 @@ input::-webkit-input-placeholder {
    left: 20px;
 }
 
+.main_bar{
+    color: #1652f0;
+    position: relative;
+    display: flex;
+    height: 250px;
+    width: 100%;
+    background-color: #1652f0;
+    align-items: center;
+    justify-content: center;
+}
+
+   .bar_stats {
+      color: white;
+      width: 79%;
+      text-align: center;
+   }
+
+   .stat{
+   display: inline-block;
+   width: 33%;
+   font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+   }
+
+   .big{
+      font-size: 58px;
+      font-weight: 600;
+   }
+
 

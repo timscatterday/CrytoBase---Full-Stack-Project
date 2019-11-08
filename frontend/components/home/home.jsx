@@ -16,7 +16,7 @@ class Home extends React.Component {
 
             <div className='home_input'>
                 <div className='main_form'>
-                    <input className='input' type="text" placeholder='Email Address' value='' />
+                    <input className='input' type="text" placeholder='Email Address'/>
                 </div>
 
                 <div className='main_button'>
@@ -67,6 +67,28 @@ class Home extends React.Component {
                     </tr>
                 </tbody>
             </table>
+
+
+            <div className='main_bar'>
+                <div className='bar_stats'>
+                    <p className='stat'> <div className='big'> $10M+ </div><div>digital currencies exchanged</div></p>
+                    <p className='stat'> <div className='big'>50+</div><div>countries supported</div></p>
+                    <p className='stat'> <div className='big'>1M+ </div><div>traders served</div></p>
+                </div>
+            </div>
+
+
+            <div className ='sub_bar'>
+                <div className='subbar_stats'>
+                        <div className='subbar_header'><p>Get started today!</p></div>
+
+                        <div><img src=""/></div>
+                        <div><img src=""/></div>
+                        <div><img src=""/></div>
+
+                </div>
+            </div>  
+
         </div>
       )
     }
