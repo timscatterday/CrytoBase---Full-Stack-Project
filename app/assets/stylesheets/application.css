@@ -45,6 +45,7 @@
     left: 600px;
  }
 
+
  .input{
     border-radius: 6px;
     width: 300px;
@@ -121,10 +122,11 @@ input::-webkit-input-placeholder {
 
    .subbar_header{
     text-align: center;
-    font-size: 32px;
     position: relative;
-    font-weight: 600;
     right: 32px;
+    font-size: 40px;
+    color: rgb(15, 50, 86);
+    font-weight: 500;
    }
 
    .subbar_stats{
@@ -133,7 +135,7 @@ input::-webkit-input-placeholder {
     height: 250px;
     justify-content: space-evenly;
     top: -5px;
-    left: 130px;
+    left: 20px;
    }
 
    .stats{

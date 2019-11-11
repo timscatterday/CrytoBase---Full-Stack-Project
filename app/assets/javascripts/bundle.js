@@ -410,7 +410,11 @@ function (_React$Component) {
         className: "crypto_name"
       }, "Bitcoin ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, "BTC")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets['BTC']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", this.props.assets['BTC']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "BTC")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets['BTC']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        style: {
+          color: this.props.assets['BTC']['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
+        }
+      }, "% ", this.props.assets['BTC']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "EthereumLogo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pic"
@@ -422,7 +426,11 @@ function (_React$Component) {
         className: "crypto_name"
       }, "Ethereum ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, "ETH")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets['ETH']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", this.props.assets['ETH']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "ETH")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets['ETH']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        style: {
+          color: this.props.assets['BTC']['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
+        }
+      }, "% ", this.props.assets['ETH']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "BitcoinCashLogo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pic"
@@ -434,7 +442,11 @@ function (_React$Component) {
         className: "crypto_name"
       }, "Bitcoin Cash ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, "BCH")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets['BCH']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", this.props.assets['BCH']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "BCH")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets['BCH']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        style: {
+          color: this.props.assets['BTC']['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
+        }
+      }, "% ", this.props.assets['BCH']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "LitecoinLogo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pic"
@@ -446,7 +458,11 @@ function (_React$Component) {
         className: "crypto_name"
       }, "Litecoin ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, "LTC")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets['LTC']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", this.props.assets['LTC']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "LTC")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets['LTC']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        style: {
+          color: this.props.assets['BTC']['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
+        }
+      }, "% ", this.props.assets['LTC']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "EOSLogo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pic"
@@ -458,7 +474,11 @@ function (_React$Component) {
         className: "crypto_name"
       }, "EOS ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, "EOS")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets['EOS']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", this.props.assets['EOS']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "EOS")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets['EOS']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        style: {
+          color: this.props.assets['BTC']['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
+        }
+      }, "% ", this.props.assets['EOS']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nan")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main_bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bar_stats"
@@ -504,11 +524,11 @@ function (_React$Component) {
         length: "50"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "stats"
-      }, "Start buying and selling")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Start buying and selling")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "line"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "line"
-      }))));
+        className: "line2"
+      }));
     }
   }]);
 
