@@ -4,7 +4,9 @@ const assetsReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_ASSETS:
-            return { assets: action }
+            let nextState = Object.assign({},state, action.assets['DISPLAY'])
+
+            return nextState;
         default:
             return state;
     }

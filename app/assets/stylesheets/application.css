@@ -89,6 +89,7 @@ input::-webkit-input-placeholder {
     display: flex;
     height: 250px;
     width: 100%;
+    bottom: 156px;
     background-color: #1652f0;
     align-items: center;
     justify-content: center;
@@ -111,5 +112,39 @@ input::-webkit-input-placeholder {
       font-size: 58px;
       font-weight: 600;
    }
+
+   .sub_bar{
+      position: relative;
+      bottom: 102px;
+      left: 31px;
+   }
+
+   .subbar_header{
+    text-align: center;
+    font-size: 32px;
+    position: relative;
+    font-weight: 600;
+    right: 32px;
+   }
+
+   .subbar_stats{
+    position: relative;
+    display: flex;
+    height: 250px;
+    justify-content: space-evenly;
+    top: -5px;
+    left: 130px;
+   }
+
+   .stats{
+    position: relative;
+    top: 20px;
+    right: 35px;
+   }
+
+   .pad{
+     padding: 57px;
+   }
+
 
 

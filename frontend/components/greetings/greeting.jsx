@@ -12,7 +12,7 @@ const Greeting = ({currentUser, logout}) => {
     const LoggedIn = () => (
         <hgroup class="header">
             <h2 class='header-email'>{currentUser.email}</h2>
-            <button onClick={logout}>Logout</button>
+            <button className='logout_button' onClick={logout}>Logout</button>
         </hgroup>
     );
 

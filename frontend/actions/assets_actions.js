@@ -9,8 +9,9 @@ export const receiveAssets= assets => ({
 
 export const getAssets = (assets) => dispatch => {
     return APIUtil.fetchAssets()
-        .then(assets => dispatch(receiveAssets(assets))),
-        err => (dispatch(receiveErrors(err.responseJSON)))
+        .then(assets => dispatch(receiveAssets(assets)),
+            err => (dispatch(receiveErrors(err.responseJSON)))
+        )
 };
 
 

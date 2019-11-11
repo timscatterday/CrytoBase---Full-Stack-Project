@@ -46,6 +46,16 @@
             font-family: Graphik, "Avenir Next", -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
         }
 
+        .header-email{
+            position: relative;
+            right: 33px;
+        }
+
+        .logout_button{
+            position: relative;
+            left: 141px;
+        }
+
 
 .login-form-container{
     display: flex;
@@ -158,6 +168,7 @@
         position: relative;
         right: -112px;
     }
+
 
     .pic{
         float: left;
