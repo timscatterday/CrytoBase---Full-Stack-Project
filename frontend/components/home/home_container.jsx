@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Home from './home';
-import {getAssets} from '../../actions/assets_actions'
+import {fetchAPIAssets} from '../../actions/assets_actions'
 
 
 const mapStateToProps = state => {
@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    getAssets: () => dispatch(getAssets())
+    getAssets: () => dispatch(fetchAPIAssets())
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(Home);

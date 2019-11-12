@@ -90,16 +90,16 @@
 /*!********************************************!*\
   !*** ./frontend/actions/assets_actions.js ***!
   \********************************************/
-/*! exports provided: RECEIVE_ASSETS, receiveAssets, getAssets */
+/*! exports provided: RECEIVE_ASSETS, receiveAssets, fetchAPIAssets */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ASSETS", function() { return RECEIVE_ASSETS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveAssets", function() { return receiveAssets; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAssets", function() { return getAssets; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAPIAssets", function() { return fetchAPIAssets; });
 /* harmony import */ var _util_crypto_currency_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/crypto_currency_api */ "./frontend/util/crypto_currency_api.js");
-var RECEIVE_ASSETS = 'RECEIVE_CRYPTOS';
+var RECEIVE_ASSETS = 'RECEIVE_ASSETS';
 
 var receiveAssets = function receiveAssets(assets) {
   return {
@@ -107,12 +107,10 @@ var receiveAssets = function receiveAssets(assets) {
     assets: assets
   };
 };
-var getAssets = function getAssets(assets) {
+var fetchAPIAssets = function fetchAPIAssets() {
   return function (dispatch) {
-    return _util_crypto_currency_api__WEBPACK_IMPORTED_MODULE_0__["fetchAssets"]().then(function (assets) {
-      return dispatch(receiveAssets(assets));
-    }, function (err) {
-      return dispatch(receiveErrors(err.responseJSON));
+    return Promise.all([_util_crypto_currency_api__WEBPACK_IMPORTED_MODULE_0__["fetchAssets"](), _util_crypto_currency_api__WEBPACK_IMPORTED_MODULE_0__["fetchGraphPrices"]()]).then(function (res) {
+      return dispatch(receiveAssets(res));
     });
   };
 };
@@ -565,7 +563,7 @@ var mapStateToProps = function mapStateToProps(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     getAssets: function getAssets() {
-      return dispatch(Object(_actions_assets_actions__WEBPACK_IMPORTED_MODULE_2__["getAssets"])());
+      return dispatch(Object(_actions_assets_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAPIAssets"])());
     }
   };
 };
@@ -838,7 +836,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   window.store = store;
-  window.getAssets = _actions_assets_actions__WEBPACK_IMPORTED_MODULE_2__["getAssets"];
+  window.dispatch = store.dispatch;
+  window.fetchAPIAssets = _actions_assets_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAPIAssets"];
   var root = document.getElementById("root");
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_4__["default"], {
     store: store
@@ -866,7 +865,14 @@ var assetsReducer = function assetsReducer() {
 
   switch (action.type) {
     case _actions_assets_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ASSETS"]:
-      var nextState = Object.assign({}, state, action.assets['DISPLAY']);
+      debugger;
+      var keys = ['502', '1186', '1991', '1140', '290'];
+      var nextState = Object.assign({}, state, action.assets[0]['DISPLAY']);
+
+      for (var i = 0; i < Object.keys(nextState).length; i++) {
+        nextState[Object.keys(nextState)[i]].prices = action.assets[1][keys[i]].prices;
+      }
+
       return nextState;
 
     default:
@@ -1084,19 +1090,25 @@ var configureStore = function configureStore() {
 /*!**********************************************!*\
   !*** ./frontend/util/crypto_currency_api.js ***!
   \**********************************************/
-/*! exports provided: fetchAssets, default */
+/*! exports provided: fetchAssets, fetchGraphPrices */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAssets", function() { return fetchAssets; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchGraphPrices", function() { return fetchGraphPrices; });
 var fetchAssets = function fetchAssets() {
   return $.ajax({
     url: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,LTC,EOS,BCH&tsyms=USD,EUR",
     method: 'GET'
   });
 };
-/* harmony default export */ __webpack_exports__["default"] = (fetchAssets);
+var fetchGraphPrices = function fetchGraphPrices() {
+  return $.ajax({
+    url: "https://api.nomics.com/v1/currencies/sparkline?key=2018-09-demo-dont-deploy-b69315e440beb145&start=".concat(new Date().getFullYear(), "-01-10T00%3A00%3A00Z&end=").concat(new Date().getFullYear(), "-").concat(new Date().getMonth() + 1, "-").concat(new Date().getDay(), "T00%3A00%3A00Z&c"),
+    method: 'GET'
+  });
+};
 
 /***/ }),
 

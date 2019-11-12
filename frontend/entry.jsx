@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import {getAssets} from './actions/assets_actions'
+import {fetchAPIAssets} from './actions/assets_actions'
 import configureStore from './store/store.js'
 import Root from './components/root';
 import {login, signup, logout} from './actions/session_actions';
@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore();
     }
     window.store = store;
-    window.getAssets = getAssets;
+    window.dispatch = store.dispatch;
+    window.fetchAPIAssets = fetchAPIAssets;
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={store} />, root);
 });
