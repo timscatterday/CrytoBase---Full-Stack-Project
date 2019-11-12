@@ -4,7 +4,6 @@ const assetsReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_ASSETS:
-            debugger
             let keys = ['502','1186','1991','1140','290']
 
             let nextState = Object.assign({}, state , action.assets[0]['DISPLAY'])
@@ -12,6 +11,8 @@ const assetsReducer = (state = {}, action) => {
             for(var i = 0; i < Object.keys(nextState).length;i ++){
                 nextState[Object.keys(nextState)[i]].prices = action.assets[1][keys[i]].prices
             }
+
+            debugger;
 
             return nextState;
         default:

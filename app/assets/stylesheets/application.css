@@ -148,5 +148,10 @@ input::-webkit-input-placeholder {
      padding: 57px;
    }
 
+   .graph{
+      position: relative;
+      right: 33px;
+   }
+
 
 
