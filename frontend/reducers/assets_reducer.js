@@ -12,8 +12,6 @@ const assetsReducer = (state = {}, action) => {
                 nextState[Object.keys(nextState)[i]].prices = action.assets[1][keys[i]].prices
             }
 
-            debugger;
-
             return nextState;
         default:
             return state;
