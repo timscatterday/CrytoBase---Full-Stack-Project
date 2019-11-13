@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.store = store;
     window.dispatch = store.dispatch;
     window.fetchAPIAssets = fetchAPIAssets;
+    window.signup = signup;
+    window.logout = logout;
+    window.login = login;
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={store} />, root);
 });

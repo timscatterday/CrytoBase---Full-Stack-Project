@@ -22,9 +22,21 @@ class SessionForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(() => {
             this.props.history.push('/')
-        })
-        
+        }) 
     };
+
+    renderErrors() {
+        return (
+            <ul className='session_errors'>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
 
     render(){
         return(
@@ -52,6 +64,7 @@ class SessionForm extends React.Component {
                     </label>
                     <br/>
                     <input className="session-submit" type="submit" value={this.props.formType} />
+                    {this.renderErrors()}
                 </div>
               </form>
             </div> 

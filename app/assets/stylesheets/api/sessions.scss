@@ -79,14 +79,15 @@
     margin: auto;
     border-radius: 21px;
     width: 371px;
-    height: 190px;
+    top: -147px;
+    height: 251px;
     text-align: left;
     padding: 16px;
 }
 
 .login-form{
     position: relative;
-    bottom: 23px;
+    bottom: 18px;
 }
 
 .login-input{
@@ -108,7 +109,13 @@
     text-shadow: none;
     position: relative;
     left: 240px;
-};
+}
+
+.session_errors{
+    position: relative;
+    color: red;
+    bottom: 9px;
+}
 
 .crypto_chart{
     text-align: left;
@@ -233,17 +240,37 @@
         width: 137px;
     }
 
-.user_home{
-    display: inline;
+.user_dashboard{
+    position: relative;
 }
 
-.grid_container{
-    display: grid;
+.user_portfolio{
     position: relative;
-    grid-template-columns: auto auto auto;
-    top: 70px;
-    padding: 10px;
-};
+    border: solid;
+    height: 400px;
+    width: 750px;
+    left: 10px;
+    top: 10px;
+}
+
+.user_following{
+    display: inline;
+    position: relative;
+}
+
+    .user_following h2 {
+        position: relative;
+        left: 11px;
+        top: 35px;
+    }
+
+    .grid_container{
+        display: grid;
+        position: relative;
+        grid-template-columns: auto auto auto;
+        top: 14px;
+        padding: 10px;
+    };
 
    .grid-item {
     position: relative;
@@ -253,6 +280,4 @@
     text-align: center;
    }
 
-
-    
        
