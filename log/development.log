@@ -15332,3 +15332,21 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 29ms (Views: 25.2ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for ::1 at 2019-11-13 09:46:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered static_pages/root.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 105ms (Views: 97.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2019-11-13 09:47:33 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered static_pages/root.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 63ms (Views: 59.2ms | ActiveRecord: 0.4ms)
+
+
