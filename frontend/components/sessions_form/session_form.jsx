@@ -1,15 +1,22 @@
 import React from 'react';
+import { clearErrors } from '../../actions/session_actions';
 
 class SessionForm extends React.Component {
     constructor(props){
         super(props)
 
+
+        let email = localStorage.getItem('email') ? localStorage.getItem('email') : ""
+
         this.state = {
-            email: "",
+            email: email,
             password: ""
         };
+
+
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
 
     update(field) {
         return e => this.setState({
@@ -19,9 +26,10 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        localStorage.clear()
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(() => {
-            this.props.history.push('/')
+        this.props.processForm(user).then((user) => {
+            this.props.history.push(`/portfolio/${user.id}`)
         }) 
     };
 
@@ -35,6 +43,10 @@ class SessionForm extends React.Component {
                 ))}
             </ul>
         );
+    }
+
+    componentWillUnmount(){
+        this.props.clearErrors()
     }
 
 

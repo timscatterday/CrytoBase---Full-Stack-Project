@@ -121,7 +121,7 @@ var fetchAPIAssets = function fetchAPIAssets() {
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, CLEAR_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveErrors, signup, login, logout */
+/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, CLEAR_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveErrors, clearErrors, signup, login, logout */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -133,6 +133,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCurrentUser", function() { return receiveCurrentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logoutCurrentUser", function() { return logoutCurrentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveErrors", function() { return receiveErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearErrors", function() { return clearErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
@@ -159,10 +160,16 @@ var receiveErrors = function receiveErrors(errors) {
     errors: errors
   };
 };
+var clearErrors = function clearErrors() {
+  return {
+    type: CLEAR_ERRORS
+  };
+};
 var signup = function signup(user) {
   return function (dispatch) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signup"](user).then(function (user) {
-      return dispatch(receiveCurrentUser(user));
+      dispatch(receiveCurrentUser(user));
+      return user;
     }, function (err) {
       return dispatch(receiveErrors(err.responseJSON));
     });
@@ -171,7 +178,8 @@ var signup = function signup(user) {
 var login = function login(user) {
   return function (dispatch) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](user).then(function (user) {
-      return dispatch(receiveCurrentUser(user));
+      dispatch(receiveCurrentUser(user));
+      return user;
     }, function (err) {
       return dispatch(receiveErrors(err.responseJSON));
     });
@@ -232,7 +240,7 @@ var App = function App() {
     component: _sessions_form_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["Route"], {
     exact: true,
-    path: "/portfolio",
+    path: "/portfolio/:id",
     component: _portfolio_portfolio_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["Route"], {
     exact: true,
@@ -341,6 +349,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-sparklines */ "./node_modules/react-sparklines/build/index.js");
 /* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_sparklines__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _sessions_form_session_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../sessions_form/session_form */ "./frontend/components/sessions_form/session_form.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -362,15 +371,22 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Home =
 /*#__PURE__*/
 function (_React$Component) {
   _inherits(Home, _React$Component);
 
   function Home(props) {
+    var _this;
+
     _classCallCheck(this, Home);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Home).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Home).call(this, props));
+    _this.state = {
+      email: ''
+    };
+    return _this;
   }
 
   _createClass(Home, [{
@@ -379,8 +395,27 @@ function (_React$Component) {
       this.props.getAssets();
     }
   }, {
+    key: "handleEmailChange",
+    value: function handleEmailChange() {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState({
+          email: e.target.value
+        });
+      };
+    }
+  }, {
+    key: "getStarted",
+    value: function getStarted() {
+      localStorage.setItem('email', this.state.email);
+      this.props.history.push('/signup');
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       if (!this.props.assets['BTC']) {
         return null;
       }
@@ -391,19 +426,26 @@ function (_React$Component) {
         className: "main_line"
       }, "Buy and sell digital currency"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "sub_line"
-      }, "Cryptobase is the easiest place to buy, sell, and manage your digital currencies")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Cryptobase is the easiest place to buy, sell, and manage your digital currencies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "get_started"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: function onSubmit() {
+          return _this3.getStarted();
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "home_input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main_form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "input",
         type: "text",
-        placeholder: "Email Address"
+        placeholder: "Email Address",
+        onChange: this.handleEmailChange()
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main_button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "home_button"
-      }, "Get Started"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+      }, "Get Started")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "crypto_chart"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name"
@@ -578,11 +620,17 @@ function (_React$Component) {
         length: "50"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "stats"
-      }, "Start buying and selling")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Start buying and selling"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "lines"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "line"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "line2"
-      }));
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "reference"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://nomics.com"
+      }, "Crypto Market Cap & Pricing Data Provided By Nomics")));
     }
   }]);
 
@@ -677,23 +725,29 @@ function (_React$Component) {
         className: "user_dashboard"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user_portfolio"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "portfolio_title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "portfolio_value"
+      }, "Portfolio Value:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "total"
+      }, "$1,000"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user_following"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Following"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid_container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid-item"
-      }, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid-item"
-      }, "2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid-item"
-      }, "3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid-item"
-      }, "4"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid-item"
-      }, "5"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid-item"
-      }, "6"))));
+      }))));
     }
   }]);
 
@@ -792,6 +846,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["login"])(user));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["clearErrors"])());
     }
   };
 };
@@ -811,6 +868,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -833,6 +891,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var SessionForm =
 /*#__PURE__*/
 function (_React$Component) {
@@ -844,8 +903,9 @@ function (_React$Component) {
     _classCallCheck(this, SessionForm);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SessionForm).call(this, props));
+    var email = localStorage.getItem('email') ? localStorage.getItem('email') : "";
     _this.state = {
-      email: "",
+      email: email,
       password: ""
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
@@ -867,9 +927,10 @@ function (_React$Component) {
       var _this3 = this;
 
       e.preventDefault();
+      localStorage.clear();
       var user = Object.assign({}, this.state);
-      this.props.processForm(user).then(function () {
-        _this3.props.history.push('/');
+      this.props.processForm(user).then(function (user) {
+        _this3.props.history.push("/portfolio/".concat(user.id));
       });
     }
   }, {
@@ -882,6 +943,11 @@ function (_React$Component) {
           key: "error-".concat(i)
         }, error);
       }));
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.props.clearErrors();
     }
   }, {
     key: "render",
@@ -942,10 +1008,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mapStateToProps = function mapStateToProps(_ref) {
-  var errors = _ref.errors;
+var mapStateToProps = function mapStateToProps(state) {
   return {
-    errors: errors.session,
+    errors: state.errors.session,
     formType: 'Sign Up'
   };
 };
@@ -954,6 +1019,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["signup"])(user));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["clearErrors"])());
     }
   };
 };
@@ -1149,6 +1217,9 @@ var sessionErrorsReducer = function sessionErrorsReducer() {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       return [];
 
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_ERRORS"]:
+      return [];
+
     default:
       return state;
   }
@@ -1218,7 +1289,6 @@ var usersReducer = function usersReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      debugger;
       return Object.assign({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
 
     default:
@@ -1277,7 +1347,7 @@ var fetchAssets = function fetchAssets() {
 };
 var fetchGraphPrices = function fetchGraphPrices() {
   return $.ajax({
-    url: "https://api.nomics.com/v1/currencies/sparkline?key=b852129db0b6a9f9d525a2dcbfb4cb86&start=".concat(new Date().getFullYear(), "-01-10T00%3A00%3A00Z&end=").concat(new Date().getFullYear(), "-").concat(new Date().getMonth() + 1, "-").concat(new Date().getDay(), "T00%3A00%3A00Z&c"),
+    url: "https://api.nomics.com/v1/currencies/sparkline?key=b852129db0b6a9f9d525a2dcbfb4cb86&start=".concat(new Date().getFullYear(), "-").concat(new Date().getMonth() + 1, "-01T00%3A00%3A00Z&end=").concat(new Date().getFullYear(), "-").concat(new Date().getMonth() + 1, "-").concat(new Date().getDay(), "T00%3A00%3A00Z&c"),
     method: 'GET'
   });
 };

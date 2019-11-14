@@ -1,16 +1,30 @@
 import React from 'react';
 import { Sparklines, SparklinesLine} from 'react-sparklines';
+import SessionForm from '../sessions_form/session_form';
 
 class Home extends React.Component {
     
     constructor(props){
         super(props);
+
+        this.state = {
+            email: ''
+        }
     
     };
 
     componentDidMount(){
         this.props.getAssets();
 
+    }
+
+    handleEmailChange(){
+        return (e) => this.setState({email: e.target.value})
+    }
+
+    getStarted(){
+        localStorage.setItem('email', this.state.email)
+        this.props.history.push('/signup')
     }
 
     render(){
@@ -23,17 +37,25 @@ class Home extends React.Component {
             <div class='top_main'>
                 <p className='main_line'>Buy and sell digital currency</p>
                 <p className='sub_line'>Cryptobase is the easiest place to buy, sell, and manage your digital currencies</p>
-            </div>
 
-            <div className='home_input'>
-                <div className='main_form'>
-                    <input className='input' type="text" placeholder='Email Address'/>
+                <div className='get_started'>
+                    <form onSubmit={() => this.getStarted()} >
+                        <div className='home_input'>
+                            <div className='main_form'>
+                                <input className='input' type="text" placeholder='Email Address' onChange={this.handleEmailChange()}/>
+                            </div>
+
+                            <div className='main_button'>
+                                <button className='home_button'>Get Started</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
 
-                <div className='main_button'>
-                    <button className='home_button'>Get Started</button>
-                </div>
             </div>
+
+
+
 
 
             <table className='crypto_chart'>
@@ -128,10 +150,17 @@ class Home extends React.Component {
                             <div className='pad'><img src="trading.png" height='50' length='50'/><div className='stats'>Start buying and selling</div></div>
 
                     </div>
-            </div>  
+                    <div className='lines'>
+                        <div className='line'></div>
+                        <div className='line2'></div>
+                    </div>
+            </div> 
 
-                <div className='line'></div>
-                <div className='line2'></div>
+
+            <div className='reference'>
+                <a href="https://nomics.com">Crypto Market Cap & Pricing Data Provided By Nomics</a>
+            </div> 
+
 
         </div>
       )

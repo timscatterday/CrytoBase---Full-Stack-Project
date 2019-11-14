@@ -80,7 +80,7 @@
     border-radius: 21px;
     width: 371px;
     top: -147px;
-    height: 251px;
+    height: 281px;
     text-align: left;
     padding: 16px;
 }
@@ -108,13 +108,13 @@
     font: bold 15px arial, sans-serif;
     text-shadow: none;
     position: relative;
-    left: 240px;
+    left: 136px;
 }
 
 .session_errors{
     position: relative;
     color: red;
-    bottom: 9px;
+    bottom: -4px;
 }
 
 .crypto_chart{
@@ -127,7 +127,7 @@
     background-color: white;
     z-index: 1;
     position: relative;
-    bottom: 288px;
+    bottom: 217px;
     border-radius: 5px;
  };
 
@@ -222,23 +222,29 @@
     .EOSLogo{
         position: relative;
     }
+
+    .lines {
+        position: relative;
+        right: 23px;
+        display: flex;
+        justify-content: space-evenly;
+    }
     
 
-    .line{
-        position: relative;
-        border-bottom: solid black 2px;
-        bottom: 275px;
-        left: 416px;
-        width: 137px;
-    }
+        .line{
+            position: relative;
+            border-bottom: solid black 2px;
+            width: 85px;
+            bottom: 164px;
+        }
 
-    .line2{
-        position: relative;
-        border-bottom: solid black 2px;
-        bottom: 276px;
-        left: 860px;
-        width: 137px;
-    }
+        .line2{
+            position: relative;
+            border-bottom: solid black 2px;
+            width: 85px;
+            bottom: 165px;
+            right: 16px;
+        }
 
 .user_dashboard{
     position: relative;
@@ -252,6 +258,25 @@
     left: 10px;
     top: 10px;
 }
+
+.portfolio_title{
+    position: relative;
+    left: 55px;
+    top: 39px;
+}
+
+    .portfolio_value{
+        left: 80px;
+        top: 35px;
+        color: darkgray;
+        font-size: 22px;
+        font-weight: 600;
+    }
+    
+    .total{
+        color: black;
+        font-size: 28px;
+    }
 
 .user_following{
     display: inline;
@@ -279,5 +304,6 @@
     font-size: 30px;
     text-align: center;
    }
+
 
        
