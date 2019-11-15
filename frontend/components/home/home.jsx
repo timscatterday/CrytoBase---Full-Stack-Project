@@ -18,6 +18,7 @@ class Home extends React.Component {
 
     }
 
+
     handleEmailChange(){
         return (e) => this.setState({email: e.target.value})
     }
@@ -39,17 +40,19 @@ class Home extends React.Component {
                 <p className='sub_line'>Cryptobase is the easiest place to buy, sell, and manage your digital currencies</p>
 
                 <div className='get_started'>
-                    <form onSubmit={() => this.getStarted()} >
-                        <div className='home_input'>
-                            <div className='main_form'>
-                                <input className='input' type="text" placeholder='Email Address' onChange={this.handleEmailChange()}/>
-                            </div>
+                    <div className='input_bar'>
+                        <form onSubmit={() => this.getStarted()} >
+                            <div className='home_input'>
+                                <div className='main_form'>
+                                    <input className='input' type="text" placeholder='Email Address' onChange={this.handleEmailChange()}/>
+                                </div>
 
-                            <div className='main_button'>
-                                <button className='home_button'>Get Started</button>
+                                <div className='main_button'>
+                                    <button className='home_button'>Get Started</button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
 
             </div>
@@ -156,11 +159,9 @@ class Home extends React.Component {
                     </div>
             </div> 
 
-
             <div className='reference'>
                 <a href="https://nomics.com">Crypto Market Cap & Pricing Data Provided By Nomics</a>
-            </div> 
-
+            </div>
 
         </div>
       )

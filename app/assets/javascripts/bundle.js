@@ -238,9 +238,9 @@ var App = function App() {
     exact: true,
     path: "/signup",
     component: _sessions_form_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["ProtectedRoute"], {
     exact: true,
-    path: "/portfolio/:id",
+    path: "/portfolio",
     component: _portfolio_portfolio_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["Route"], {
     exact: true,
@@ -428,6 +428,8 @@ function (_React$Component) {
         className: "sub_line"
       }, "Cryptobase is the easiest place to buy, sell, and manage your digital currencies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "get_started"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input_bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: function onSubmit() {
           return _this3.getStarted();
@@ -445,7 +447,7 @@ function (_React$Component) {
         className: "main_button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "home_button"
-      }, "Get Started")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+      }, "Get Started"))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "crypto_chart"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name"
@@ -930,7 +932,7 @@ function (_React$Component) {
       localStorage.clear();
       var user = Object.assign({}, this.state);
       this.props.processForm(user).then(function (user) {
-        _this3.props.history.push("/portfolio/".concat(user.id));
+        _this3.props.history.push("/portfolio");
       });
     }
   }, {
@@ -1347,7 +1349,7 @@ var fetchAssets = function fetchAssets() {
 };
 var fetchGraphPrices = function fetchGraphPrices() {
   return $.ajax({
-    url: "https://api.nomics.com/v1/currencies/sparkline?key=b852129db0b6a9f9d525a2dcbfb4cb86&start=".concat(new Date().getFullYear(), "-").concat(new Date().getMonth() + 1, "-01T00%3A00%3A00Z&end=").concat(new Date().getFullYear(), "-").concat(new Date().getMonth() + 1, "-").concat(new Date().getDay(), "T00%3A00%3A00Z&c"),
+    url: "https://api.nomics.com/v1/currencies/sparkline?key=b852129db0b6a9f9d525a2dcbfb4cb86&start=".concat(new Date().getFullYear(), "-01-01T00%3A00%3A00Z&end=").concat(new Date().getFullYear(), "-").concat(new Date().getMonth() + 1, "-").concat(new Date().getDay(), "T00%3A00%3A00Z&c"),
     method: 'GET'
   });
 };
@@ -1393,19 +1395,23 @@ var Protected = function Protected(_ref2) {
   var Component = _ref2.component,
       path = _ref2.path,
       loggedIn = _ref2.loggedIn,
-      exact = _ref2.exact;
+      exact = _ref2.exact,
+      user_id = _ref2.user_id,
+      url_id = _ref2.url_id;
+  debugger;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: path,
     exact: exact,
     render: function render(props) {
       return loggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
-        to: "/login"
+        to: "/"
       });
     }
   });
 };
 
-var mapStateToProps = function mapStateToProps(state) {
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  debugger;
   return {
     loggedIn: Boolean(state.session.id)
   };

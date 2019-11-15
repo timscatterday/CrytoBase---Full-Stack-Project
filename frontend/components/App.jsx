@@ -10,7 +10,7 @@ import { Provider} from 'react-redux';
 import GreetingContainer from './greetings/greeting_container.js';
 import SignupFormContainer from './sessions_form/signup_form_container';
 import LoginFormContainer from './sessions_form/login_form_container';
-import { AuthRoute} from '../util/route_util';
+import { AuthRoute, ProtectedRoute} from '../util/route_util';
 import HomeContainer from './home/home_container';
 import PortfolioComponentContainer from './portfolio/portfolio_container'
 
@@ -23,7 +23,7 @@ const App = () => (
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <Route exact path="/portfolio/:id" component={PortfolioComponentContainer} />
+            <ProtectedRoute exact path="/portfolio" component={PortfolioComponentContainer} />
             <Route exact path='/' component={HomeContainer}/>
         </Switch>
     </div>

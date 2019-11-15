@@ -23,12 +23,24 @@ class Portfolio extends React.Component {
             <div className='user_following'>
                 <h2>Following</h2>
                     <div className='grid_container' >
-                        <div className='grid-item'></div>
-                        <div className='grid-item'></div>
-                        <div className='grid-item'></div>
-                        <div className='grid-item'></div>
-                        <div className='grid-item'></div>
-                        <div className='grid-item'></div>
+                        <div className='grid-item'>
+                            
+                        </div>
+                        <div className='grid-item'>
+                            
+                        </div>
+                        <div className='grid-item'>
+
+                        </div>
+                        <div className='grid-item'>
+
+                        </div>
+                        <div className='grid-item'>
+
+                        </div>
+                        <div className='grid-item'>
+
+                        </div>
                     </div>
             </div>
 

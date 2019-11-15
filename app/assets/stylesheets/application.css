@@ -144,11 +144,13 @@ input::-webkit-input-placeholder {
    .get_started{
       display: flex;
       justify-content: center;
-      position: relative;
-      bottom: 105px;
-      left: 169px;
-      width: 81%;
    }
+
+      .input_bar{
+         position: relative;
+         bottom: 94px;
+         left: 60px;
+      }
 
 
 

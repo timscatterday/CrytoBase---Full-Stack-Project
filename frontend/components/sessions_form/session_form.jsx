@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
         localStorage.clear()
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then((user) => {
-            this.props.history.push(`/portfolio/${user.id}`)
+            this.props.history.push(`/portfolio`)
         }) 
     };
 

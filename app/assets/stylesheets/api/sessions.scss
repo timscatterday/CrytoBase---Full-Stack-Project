@@ -47,15 +47,16 @@
             font-family: Graphik, "Avenir Next", -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
         }
 
-        .header-email{
-            position: relative;
-            right: 33px;
+        .header{
+            display: inline;
+            margin: 3px;
         }
 
-        .logout_button{
-            position: relative;
-            left: 141px;
-        }
+            .logout_button{
+                position: absolute;
+                right: 21px;
+            }
+
 
 
 .login-form-container{
