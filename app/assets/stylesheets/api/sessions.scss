@@ -111,7 +111,20 @@
     font: bold 15px arial, sans-serif;
     text-shadow: none;
     position: relative;
-    left: 136px;
+    left: 64px;
+}
+
+.guest-login{
+    background: #1652f0;
+    color: white;
+    border-style: outset;
+    border-color: #1652f0;
+    height: 42px;
+    width: 100px;
+    font: bold 15px arial, sans-serif;
+    text-shadow: none;
+    position: relative;
+    left: 118px;
 }
 
 .session_errors{
