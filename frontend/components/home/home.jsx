@@ -15,7 +15,6 @@ class Home extends React.Component {
 
     componentDidMount(){
         this.props.getAssets();
-
     }
 
 
@@ -32,6 +31,7 @@ class Home extends React.Component {
         if (!this.props.assets['BTC']){
             return null;
         }
+
 
         return(
         <div>

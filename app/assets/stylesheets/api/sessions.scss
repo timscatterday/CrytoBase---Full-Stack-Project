@@ -50,6 +50,8 @@
         .header{
             display: inline;
             margin: 3px;
+            position: relative;
+            bottom: 10px;
         }
 
             .logout_button{
@@ -253,7 +255,7 @@
 
 .user_portfolio{
     position: relative;
-    border: solid;
+    border: darkgray solid;
     height: 400px;
     width: 750px;
     left: 10px;
@@ -300,11 +302,32 @@
 
    .grid-item {
     position: relative;
-    border: black 2px solid;
+    border: solid darkgray;
     padding: 101px;
     font-size: 30px;
     text-align: center;
    }
+
+    .port_logo{
+        bottom: 80px;
+        right: 98px;
+        position: relative;
+        display: flex;
+    }
+
+    .port_price{
+        display: flex;
+        position: absolute;
+        left: 12px;
+        top: 81px;
+    }
+
+    .port_percent{
+       display: flex;
+       position: relative;
+       left: 65px;
+       bottom: 64px;
+    }   
 
 
        

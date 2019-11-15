@@ -15,6 +15,7 @@ class SessionForm extends React.Component {
 
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.login = this.login.bind(this);
     }
 
 
@@ -32,6 +33,18 @@ class SessionForm extends React.Component {
             this.props.history.push(`/portfolio`)
         }) 
     };
+
+    login(e){
+        e.preventDefault();
+        const user = {
+            email: 'timscatterday@gmail.com',
+            password: 'password'
+        }
+        this.setState(user)
+        this.props.processForm(user).then(() => {
+            this.props.history.push('portfolio')
+        })
+    }
 
     renderErrors() {
         return (
@@ -76,6 +89,7 @@ class SessionForm extends React.Component {
                     </label>
                     <br/>
                     <input className="session-submit" type="submit" value={this.props.formType} />
+                    <input className='guest-login' type='submit' value='Demo Login' onClick={this.login}/>
                     {this.renderErrors()}
                 </div>
               </form>

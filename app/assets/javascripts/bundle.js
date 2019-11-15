@@ -689,6 +689,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-sparklines */ "./node_modules/react-sparklines/build/index.js");
+/* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_sparklines__WEBPACK_IMPORTED_MODULE_1__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -706,6 +708,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -739,15 +742,155 @@ function (_React$Component) {
         className: "grid_container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid-item"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_logo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_pic"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "http://www.thecoinface.com/assets/btc-8022fd53c251f18cb39cefede445f1c78a3b265989232f0bb46b9c4622e55a9e.png",
+        height: "36",
+        width: "36"
+      })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "crypto_name"
+      }, "Bitcoin ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "symbol"
+      }, "BTC"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_price"
+      }, this.props.assets['BTC']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_percent",
+        style: {
+          color: this.props.assets['BTC']['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
+        }
+      }, "% ", this.props.assets['BTC']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "graph"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["Sparklines"], {
+        data: Object.values(this.props.assets['BTC'].prices),
+        width: 100,
+        height: 50,
+        margin: 5
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["SparklinesLine"], {
+        color: "#f79319"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid-item"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_logo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "pic"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "http://www.thecoinface.com/assets/bch-03a53cc37436a99ba854e42df693fa52d92d88cbbce362fa217efd0e85be5e1f.png",
+        width: "36",
+        height: "36"
+      })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "crypto_name"
+      }, "Bitcoin Cash ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "symbol"
+      }, "BCH"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_price"
+      }, this.props.assets['BCH']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_percent",
+        style: {
+          color: this.props.assets['BCH']['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
+        }
+      }, "% ", this.props.assets['BCH']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "graph"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["Sparklines"], {
+        data: Object.values(this.props.assets['BCH'].prices),
+        width: 100,
+        height: 50,
+        margin: 5
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["SparklinesLine"], {
+        color: "#8dc351"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid-item"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_logo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "pic"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "http://www.thecoinface.com/assets/ltc-7160750bcbc115ac8a3229bc1120fb59e96a737d607a57b42fa8e2b092a14159.png",
+        width: "36",
+        height: "36"
+      })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "crypto_name"
+      }, "Litecoin ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "symbol"
+      }, "LTC"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_price"
+      }, this.props.assets['LTC']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_percent",
+        style: {
+          color: this.props.assets['LTC']['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
+        }
+      }, "% ", this.props.assets['LTC']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "graph"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["Sparklines"], {
+        data: Object.values(this.props.assets['LTC'].prices),
+        width: 100,
+        height: 50,
+        margin: 5
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["SparklinesLine"], {
+        color: "#c2c2c2"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid-item"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_logo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "pic"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://dynamic-assets.coinbase.com/deaca3d47b10ed4a91a872e9618706eec34081127762d88f2476ac8e99ada4b48525a9565cf2206d18c04053f278f693434af4d4629ca084a9d01b7a286a7e26/asset_icons/1f8489bb280fb0a0fd643c1161312ba49655040e9aaaced5f9ad3eeaf868eadc.png",
+        width: "36",
+        height: "36"
+      })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "crypto_name"
+      }, "EOS ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "symbol"
+      }, "EOS"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_price"
+      }, this.props.assets['EOS']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_percent",
+        style: {
+          color: this.props.assets['EOS']['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
+        }
+      }, "% ", this.props.assets['EOS']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "graph"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["Sparklines"], {
+        data: Object.values(this.props.assets['EOS'].prices),
+        width: 100,
+        height: 50,
+        margin: 5
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["SparklinesLine"], {
+        color: "#000000"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid-item"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_logo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "pic"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "http://www.thecoinface.com/assets/eth-99bf2102cc13a51bb226f931b8d0fa4c5b3ca9dc4179167e89d7ee3f677c3fdb.png",
+        width: "36",
+        height: "36"
+      })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "crypto_name"
+      }, "Ethereum ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "symbol"
+      }, "ETH"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_price"
+      }, this.props.assets['ETH']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_percent",
+        style: {
+          color: this.props.assets['ETH']['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
+        }
+      }, "% ", this.props.assets['ETH']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "graph"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["Sparklines"], {
+        data: Object.values(this.props.assets['ETH'].prices),
+        width: 100,
+        height: 50,
+        margin: 5
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["SparklinesLine"], {
+        color: "#7885cb"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid-item"
       }))));
     }
@@ -772,15 +915,23 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _portfolio__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./portfolio */ "./frontend/components/portfolio/portfolio.jsx");
+/* harmony import */ var _actions_assets_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/assets_actions */ "./frontend/actions/assets_actions.js");
+
 
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  return {};
+  return {
+    assets: state.entities.assets
+  };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    getAssets: function getAssets() {
+      return dispatch(Object(_actions_assets_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAPIAssets"])());
+    }
+  };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_portfolio__WEBPACK_IMPORTED_MODULE_1__["default"]));
@@ -911,6 +1062,7 @@ function (_React$Component) {
       password: ""
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.login = _this.login.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -933,6 +1085,21 @@ function (_React$Component) {
       var user = Object.assign({}, this.state);
       this.props.processForm(user).then(function (user) {
         _this3.props.history.push("/portfolio");
+      });
+    }
+  }, {
+    key: "login",
+    value: function login(e) {
+      var _this4 = this;
+
+      e.preventDefault();
+      var user = {
+        email: 'timscatterday@gmail.com',
+        password: 'password'
+      };
+      this.setState(user);
+      this.props.processForm(user).then(function () {
+        _this4.props.history.push('portfolio');
       });
     }
   }, {
@@ -979,6 +1146,11 @@ function (_React$Component) {
         className: "session-submit",
         type: "submit",
         value: this.props.formType
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "guest-login",
+        type: "submit",
+        value: "Demo Login",
+        onClick: this.login
       }), this.renderErrors())));
     }
   }]);
@@ -1398,7 +1570,6 @@ var Protected = function Protected(_ref2) {
       exact = _ref2.exact,
       user_id = _ref2.user_id,
       url_id = _ref2.url_id;
-  debugger;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: path,
     exact: exact,
@@ -1411,7 +1582,6 @@ var Protected = function Protected(_ref2) {
 };
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   return {
     loggedIn: Boolean(state.session.id)
   };
