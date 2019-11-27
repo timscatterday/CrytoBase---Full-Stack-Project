@@ -16,7 +16,7 @@ class Portfolio extends React.Component {
 
                 <div className='portfolio_title'>
                     <p className='portfolio_value'>Portfolio Value:</p>
-                    <p className='total'>$1,000</p>
+                    <p className='total'>$10,000</p>
                 </div>
 
             </div>

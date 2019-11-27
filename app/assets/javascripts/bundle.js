@@ -285,14 +285,19 @@ var Greeting = function Greeting(_ref) {
   };
 
   var LoggedIn = function LoggedIn() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hgroup", {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "portfolio_link"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      className: "portfolio_button",
+      to: "/portfolio"
+    }, "Portfolio")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hgroup", {
       "class": "header"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
       "class": "header-email"
     }, currentUser.email), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "logout_button",
       onClick: logout
-    }, "Logout"));
+    }, "Logout")));
   };
 
   return currentUser ? LoggedIn() : sessionRoutes();
@@ -736,7 +741,7 @@ function (_React$Component) {
         className: "portfolio_value"
       }, "Portfolio Value:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "total"
-      }, "$1,000"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "$10,000"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user_following"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Following"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid_container"
