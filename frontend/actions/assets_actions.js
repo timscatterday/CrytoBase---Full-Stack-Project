@@ -9,7 +9,7 @@ export const receiveAssets = assets => ({
 
 export const fetchAPIAssets = () => dispatch => {
     return (
-        Promise.all([APIUtil.fetchAssets(),APIUtil.fetchGraphPrices()])
+        Promise.all([APIUtil.fetchAssets(),APIUtil.fetchGraphPrices(), APIUtil.fetchConversionRate()])
             .then(res => dispatch(receiveAssets(res)))
     );
 };

@@ -12,6 +12,10 @@ const assetsReducer = (state = {}, action) => {
                 nextState[Object.keys(nextState)[i]].prices = action.assets[1][keys[i]].prices
             }
 
+            for(var i = 0; i < Object.keys(nextState).length; i++){
+                nextState[Object.keys(nextState)[i]].conversion = action.assets[2]['RAW']['USD'][Object.keys(nextState)[i]]['PRICE']
+            }
+
             return nextState;
         default:
             return state;

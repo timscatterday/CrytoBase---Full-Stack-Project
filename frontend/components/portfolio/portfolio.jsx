@@ -1,22 +1,122 @@
 import React from 'react';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
+import ls from 'local-storage'
+
 
 class Portfolio extends React.Component {
+   
     constructor(props){
         super(props)
 
+        this.state = {
+            portfolio_value: 0
+        };
+
+        this.updatePortfolio = this.updatePortfolio.bind(this)
+
     }
 
+    componentDidMount(){
+        this.props.getAssets();
+    }
+
+    componentDidUpdate(){
+        localStorage.setItem('portfolio_value', this.state.portfolio_value)
+
+    }
+
+    updatePortfolio(){
+
+        this.setState({portfolio_value: $('form').on('submit', () => {
+            let first = $('#dollar').val();
+            let next = $('#crypto_exc').val();
+            alert(first * next)
+        })})
+    }
+
+
     render(){
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
         return (
+
 
         <div className='user_dashboard'>
 
             <div className='user_portfolio'>
+                
+                <div className='port_value'>
+                    <p className='port_title'>Portfolio Value</p>
+                    <p>${this.state.portfolio_value}</p>
+                </div>
 
-                <div className='portfolio_title'>
-                    <p className='portfolio_value'>Portfolio Value:</p>
-                    <p className='total'>$10,000</p>
+                <div className='buy_and_sell'>
+                    <p>Buy and Sell</p>
+                    <div className='crypto_list'>
+                        <div className='trade'>
+                            <div>
+                                Bitcoin
+                                    <form className='form' onSubmit={this.updatePortfolio}>
+                                        <input className='buy_btn' id='dollar' type="text" placeholder='USD'/>
+                                        <input className='buy_btn' id='crypto_exc' type="text" value={this.props.assets['BTC']['conversion']}/>
+                                        <div className='buy_sell'>
+                                            <button type='button'>Buy</button>
+                                            <button type='button'>Sell</button>
+                                        </div>
+                                    </form>
+                            </div>
+                        </div>
+
+                        <div className='trade'>
+                            <div className='inputs'>
+                                Ethereum
+                                <input className='buy_btn' type="text" placeholder='USD'/>
+                                <input className='buy_btn' type="text" value={this.props.assets['ETH']['conversion']} />
+                                <div className='buy_sell'>
+                                    <button>Buy</button>
+                                    <button>Sell</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className='trade'>
+                            <div className='inputs'>
+                                Bitcoin Cash
+                                <input className='buy_btn' type="text" placeholder='USD'/>
+                                <input className='buy_btn' type="text" value={this.props.assets['BCH']['conversion']}/>
+                                <div className='buy_sell'>
+                                    <button>Buy</button>
+                                    <button>Sell</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='trade'>
+                            <div className='inputs'>
+                                Litecoin
+                                <input className='buy_btn' type="text" placeholder='USD'/>
+                                <input className='buy_btn' type="text" value={this.props.assets['LTC']['conversion']}/>
+                                <div className='buy_sell'>
+                                    <button>Buy</button>
+                                    <button>Sell</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='trade'>
+                            <div className='inputs'>
+                                EOS
+                                <input className='buy_btn' type="text" placeholder='USD'/>
+                                <input className='buy_btn' type="text" value={this.props.assets['EOS']['conversion']}/>
+                                <div className='buy_sell'>
+                                    <button>Buy</button>
+                                    <button>Sell</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>

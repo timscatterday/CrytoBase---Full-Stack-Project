@@ -109,7 +109,7 @@ var receiveAssets = function receiveAssets(assets) {
 };
 var fetchAPIAssets = function fetchAPIAssets() {
   return function (dispatch) {
-    return Promise.all([_util_crypto_currency_api__WEBPACK_IMPORTED_MODULE_0__["fetchAssets"](), _util_crypto_currency_api__WEBPACK_IMPORTED_MODULE_0__["fetchGraphPrices"]()]).then(function (res) {
+    return Promise.all([_util_crypto_currency_api__WEBPACK_IMPORTED_MODULE_0__["fetchAssets"](), _util_crypto_currency_api__WEBPACK_IMPORTED_MODULE_0__["fetchGraphPrices"](), _util_crypto_currency_api__WEBPACK_IMPORTED_MODULE_0__["fetchConversionRate"]()]).then(function (res) {
       return dispatch(receiveAssets(res));
     });
   };
@@ -291,9 +291,9 @@ var Greeting = function Greeting(_ref) {
       className: "portfolio_button",
       to: "/portfolio"
     }, "Portfolio")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hgroup", {
-      "class": "header"
+      className: "header"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-      "class": "header-email"
+      className: "header-email"
     }, currentUser.email), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "logout_button",
       onClick: logout
@@ -696,6 +696,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-sparklines */ "./node_modules/react-sparklines/build/index.js");
 /* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_sparklines__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! local-storage */ "./node_modules/local-storage/local-storage.js");
+/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(local_storage__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -706,13 +708,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -723,25 +726,135 @@ function (_React$Component) {
   _inherits(Portfolio, _React$Component);
 
   function Portfolio(props) {
+    var _this;
+
     _classCallCheck(this, Portfolio);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Portfolio).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Portfolio).call(this, props));
+    _this.state = {
+      portfolio_value: 0
+    };
+    _this.updatePortfolio = _this.updatePortfolio.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Portfolio, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.getAssets();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      localStorage.setItem('portfolio_value', this.state.portfolio_value);
+    }
+  }, {
+    key: "updatePortfolio",
+    value: function updatePortfolio() {
+      this.setState({
+        portfolio_value: $('form').on('submit', function () {
+          var first = $('#dollar').val();
+          var next = $('#crypto_exc').val();
+          alert(first * next);
+        })
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
+        src: "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user_dashboard"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user_portfolio"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "portfolio_title"
+        className: "port_value"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "portfolio_value"
-      }, "Portfolio Value:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "total"
-      }, "$10,000"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_title"
+      }, "Portfolio Value"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$", this.state.portfolio_value)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "buy_and_sell"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Buy and Sell"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "crypto_list"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "trade"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Bitcoin", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "form",
+        onSubmit: this.updatePortfolio
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "buy_btn",
+        id: "dollar",
+        type: "text",
+        placeholder: "USD"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "buy_btn",
+        id: "crypto_exc",
+        type: "text",
+        value: this.props.assets['BTC']['conversion']
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "buy_sell"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button"
+      }, "Buy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button"
+      }, "Sell"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "trade"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inputs"
+      }, "Ethereum", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "buy_btn",
+        type: "text",
+        placeholder: "USD"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "buy_btn",
+        type: "text",
+        value: this.props.assets['ETH']['conversion']
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "buy_sell"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Buy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Sell")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "trade"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inputs"
+      }, "Bitcoin Cash", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "buy_btn",
+        type: "text",
+        placeholder: "USD"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "buy_btn",
+        type: "text",
+        value: this.props.assets['BCH']['conversion']
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "buy_sell"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Buy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Sell")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "trade"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inputs"
+      }, "Litecoin", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "buy_btn",
+        type: "text",
+        placeholder: "USD"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "buy_btn",
+        type: "text",
+        value: this.props.assets['LTC']['conversion']
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "buy_sell"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Buy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Sell")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "trade"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inputs"
+      }, "EOS", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "buy_btn",
+        type: "text",
+        placeholder: "USD"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "buy_btn",
+        type: "text",
+        value: this.props.assets['EOS']['conversion']
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "buy_sell"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Buy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Sell"))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user_following"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Following"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grid_container"
@@ -1226,7 +1339,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_store_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/store.js */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _util_crypto_currency_api__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./util/crypto_currency_api */ "./frontend/util/crypto_currency_api.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1253,6 +1368,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   window.store = store;
+  window.fetchConversionRate = _util_crypto_currency_api__WEBPACK_IMPORTED_MODULE_6__["fetchConversionRate"];
   window.dispatch = store.dispatch;
   window.fetchAPIAssets = _actions_assets_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAPIAssets"];
   window.signup = _actions_session_actions__WEBPACK_IMPORTED_MODULE_5__["signup"];
@@ -1290,6 +1406,10 @@ var assetsReducer = function assetsReducer() {
 
       for (var i = 0; i < Object.keys(nextState).length; i++) {
         nextState[Object.keys(nextState)[i]].prices = action.assets[1][keys[i]].prices;
+      }
+
+      for (var i = 0; i < Object.keys(nextState).length; i++) {
+        nextState[Object.keys(nextState)[i]].conversion = action.assets[2]['RAW']['USD'][Object.keys(nextState)[i]]['PRICE'];
       }
 
       return nextState;
@@ -1511,16 +1631,23 @@ var configureStore = function configureStore() {
 /*!**********************************************!*\
   !*** ./frontend/util/crypto_currency_api.js ***!
   \**********************************************/
-/*! exports provided: fetchAssets, fetchGraphPrices */
+/*! exports provided: fetchAssets, fetchConversionRate, fetchGraphPrices */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAssets", function() { return fetchAssets; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchConversionRate", function() { return fetchConversionRate; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchGraphPrices", function() { return fetchGraphPrices; });
 var fetchAssets = function fetchAssets() {
   return $.ajax({
     url: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,LTC,EOS,BCH&tsyms=USD,EUR",
+    method: 'GET'
+  });
+};
+var fetchConversionRate = function fetchConversionRate() {
+  return $.ajax({
+    url: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=USD&tsyms=EOS,BCH,BTC,ETH,LTC",
     method: 'GET'
   });
 };
@@ -2880,6 +3007,215 @@ module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
+
+/***/ }),
+
+/***/ "./node_modules/local-storage/local-storage.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/local-storage/local-storage.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {
+
+var stub = __webpack_require__(/*! ./stub */ "./node_modules/local-storage/stub.js");
+var parse = __webpack_require__(/*! ./parse */ "./node_modules/local-storage/parse.js");
+var tracking = __webpack_require__(/*! ./tracking */ "./node_modules/local-storage/tracking.js");
+var ls = 'localStorage' in global && global.localStorage ? global.localStorage : stub;
+
+function accessor (key, value) {
+  if (arguments.length === 1) {
+    return get(key);
+  }
+  return set(key, value);
+}
+
+function get (key) {
+  const raw = ls.getItem(key);
+  const parsed = parse(raw);
+  return parsed;
+}
+
+function set (key, value) {
+  try {
+    ls.setItem(key, JSON.stringify(value));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+function remove (key) {
+  return ls.removeItem(key);
+}
+
+function clear () {
+  return ls.clear();
+}
+
+function backend (store) {
+  store && (ls = store);
+
+  return ls;
+}
+
+accessor.set = set;
+accessor.get = get;
+accessor.remove = remove;
+accessor.clear = clear;
+accessor.backend = backend;
+accessor.on = tracking.on;
+accessor.off = tracking.off;
+
+module.exports = accessor;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/local-storage/parse.js":
+/*!*********************************************!*\
+  !*** ./node_modules/local-storage/parse.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function parse (rawValue) {
+  const parsed = parseValue(rawValue);
+
+  if (parsed === undefined) {
+    return null;
+  }
+
+  return parsed;
+}
+
+function parseValue (rawValue) {
+  try {
+    return JSON.parse(rawValue);
+  } catch (err) {
+    return rawValue;
+  }
+}
+
+module.exports = parse;
+
+
+/***/ }),
+
+/***/ "./node_modules/local-storage/stub.js":
+/*!********************************************!*\
+  !*** ./node_modules/local-storage/stub.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var ms = {};
+
+function getItem (key) {
+  return key in ms ? ms[key] : null;
+}
+
+function setItem (key, value) {
+  ms[key] = value;
+  return true;
+}
+
+function removeItem (key) {
+  var found = key in ms;
+  if (found) {
+    return delete ms[key];
+  }
+  return false;
+}
+
+function clear () {
+  ms = {};
+  return true;
+}
+
+module.exports = {
+  getItem: getItem,
+  setItem: setItem,
+  removeItem: removeItem,
+  clear: clear
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/local-storage/tracking.js":
+/*!************************************************!*\
+  !*** ./node_modules/local-storage/tracking.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {
+
+var parse = __webpack_require__(/*! ./parse */ "./node_modules/local-storage/parse.js");
+var listeners = {};
+var listening = false;
+
+function listen () {
+  if (global.addEventListener) {
+    global.addEventListener('storage', change, false);
+  } else if (global.attachEvent) {
+    global.attachEvent('onstorage', change);
+  } else {
+    global.onstorage = change;
+  }
+}
+
+function change (e) {
+  if (!e) {
+    e = global.event;
+  }
+  var all = listeners[e.key];
+  if (all) {
+    all.forEach(fire);
+  }
+
+  function fire (listener) {
+    listener(parse(e.newValue), parse(e.oldValue), e.url || e.uri);
+  }
+}
+
+function on (key, fn) {
+  if (listeners[key]) {
+    listeners[key].push(fn);
+  } else {
+    listeners[key] = [fn];
+  }
+  if (listening === false) {
+    listen();
+  }
+}
+
+function off (key, fn) {
+  var ns = listeners[key];
+  if (ns.length > 1) {
+    ns.splice(ns.indexOf(fn), 1);
+  } else {
+    listeners[key] = [];
+  }
+}
+
+module.exports = {
+  on: on,
+  off: off
+};
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 

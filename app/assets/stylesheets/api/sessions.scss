@@ -282,38 +282,78 @@
     position: relative;
 }
 
-.user_portfolio{
-    position: relative;
-    border: darkgray solid;
-    height: 400px;
-    width: 750px;
-    left: 10px;
-    top: 10px;
-}
-
-.portfolio_title{
-    position: relative;
-    left: 55px;
-    top: 39px;
-}
-
-    .portfolio_value{
-        left: 80px;
-        top: 35px;
-        color: darkgray;
-        font-size: 49px;
-        font-weight: 600;
+    .user_portfolio{
+       display: flex;
+       flex-direction: row;
+       justify-content: space-around;
+       width: 100%
     }
+
+        .port_title{
+            color: black;
+            font-size: 49px;
+        }
+
+        .port_value{
+            width: 40%;
+            text-align: center;
+            height: 500px;
+            position: relative;
+            top: 10px;
+        }
+
+        .buy_and_sell{
+            border: lightgray solid;
+            width: 40%;
+            text-align: center;
+            height: 500px;
+            position: relative;
+            top: 10px;
+        }
+
+        .crypto_list{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .trade{
+            padding: 14px;
+            text-align: left;
+            border: lightgray solid;
+            margin-bottom: 6px;
+            margin-left: 9px;
+            margin-right: 9px;
+            background-color: orange;
+            height: 49px;
+        }
+
+        .inputs{
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+            top: 8px
+        }
+
+        .buy_btn{
+            padding: 13px;
+            height: 0px;
+            width: 116px;
+            margin-right: -27px;
+        }
+
+        .buy_sell{
+        }
+
+    
     
     .total{
        color: black;
        font-size: 42px;
     }
 
-.user_following{
-    display: inline;
-    position: relative;
-}
+    .user_following{
+        top: 305px;
+    }
 
     .user_following h2 {
         position: relative;

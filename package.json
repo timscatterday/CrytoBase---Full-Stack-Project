@@ -6,6 +6,7 @@
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
     "babel-loader": "^8.0.6",
+    "local-storage": "^2.0.0",
     "react": "^16.11.0",
     "react-charts": "^2.0.0-beta.4",
     "react-dom": "^16.11.0",
