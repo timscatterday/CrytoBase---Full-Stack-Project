@@ -757,11 +757,6 @@ function (_React$Component) {
       this.props.getAssets();
     }
   }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate() {
-      localStorage.setItem('portfolio_value', this.state.portfolio_value);
-    }
-  }, {
     key: "buyBTC",
     value: function buyBTC(event) {
       debugger;
@@ -851,14 +846,15 @@ function (_React$Component) {
         className: "port_value"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "port_title"
-      }, "Portfolio Value"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$", this.state.portfolio_value)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Portfolio Value"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "port_amount"
+      }, "$", this.state.portfolio_value)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "buy_and_sell"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Buy and Sell"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "crypto_list"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "trade"
+        className: "btc_trade"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        id: "BTC_form",
         className: "inputs",
         onSubmit: this.buyBTC
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -884,7 +880,7 @@ function (_React$Component) {
         type: "submit",
         value: "Buy"
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "trade"
+        className: "eth_trade"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         id: "ETH_form",
         className: "inputs",
@@ -911,7 +907,7 @@ function (_React$Component) {
         type: "submit",
         value: "Buy"
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "trade"
+        className: "bch_trade"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "inputs",
         onSubmit: this.buyBCH
@@ -937,7 +933,7 @@ function (_React$Component) {
         type: "submit",
         value: "Buy"
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "trade"
+        className: "ltc_trade"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "inputs",
         onSubmit: this.buyLTC
@@ -963,7 +959,7 @@ function (_React$Component) {
         type: "submit",
         value: "Buy"
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "trade"
+        className: "eos_trade"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "inputs",
         onSubmit: this.buyEOS
@@ -1007,7 +1003,7 @@ function (_React$Component) {
         className: "crypto_name"
       }, "Bitcoin ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, "BTC")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, parseFloat(this.state.btc_value * parseFloat(this.props.assets['BTC']['conversion']).toFixed(4)).toFixed(5)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (parseFloat(this.state.btc_value / this.state.total) * 100).toFixed(2))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+      }, "BTC")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, parseFloat(this.state.btc_value * parseFloat(this.props.assets['BTC']['conversion']).toFixed(4)).toFixed(5)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (parseFloat(this.state.btc_value / this.state.total) * 100).toFixed(2) ? (parseFloat(this.state.btc_value / this.state.total) * 100).toFixed(2) : 0)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         className: "table_body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "EthereumLogo"
@@ -1021,7 +1017,7 @@ function (_React$Component) {
         className: "crypto_name"
       }, "Ethereum ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, "ETH")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, parseFloat(this.state.eth_value * parseFloat(this.props.assets['ETH']['conversion']).toFixed(4)).toFixed(5)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (parseFloat(this.state.eth_value / this.state.total) * 100).toFixed(2))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+      }, "ETH")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, parseFloat(this.state.eth_value * parseFloat(this.props.assets['ETH']['conversion']).toFixed(4)).toFixed(5)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (parseFloat(this.state.eth_value / this.state.total) * 100).toFixed(2) || 0)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         className: "table_body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "BitcoinCashLogo"
@@ -1035,7 +1031,7 @@ function (_React$Component) {
         className: "crypto_name"
       }, "Bitcoin Cash ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, "BCH")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, parseFloat(this.state.bch_value * parseFloat(this.props.assets['BCH']['conversion']).toFixed(4)).toFixed(5)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (parseFloat(this.state.bch_value / this.state.total) * 100).toFixed(2))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+      }, "BCH")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, parseFloat(this.state.bch_value * parseFloat(this.props.assets['BCH']['conversion']).toFixed(4)).toFixed(5)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (parseFloat(this.state.bch_value / this.state.total) * 100).toFixed(2) || 0)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         className: "table_body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "LitecoinLogo"
@@ -1049,7 +1045,7 @@ function (_React$Component) {
         className: "crypto_name"
       }, "Litecoin ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, "LTC")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, parseFloat(this.state.ltc_value * parseFloat(this.props.assets['LTC']['conversion']).toFixed(4)).toFixed(5)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (parseFloat(this.state.ltc_value / this.state.total) * 100).toFixed(2))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+      }, "LTC")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, parseFloat(this.state.ltc_value * parseFloat(this.props.assets['LTC']['conversion']).toFixed(4)).toFixed(5)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (parseFloat(this.state.ltc_value / this.state.total) * 100).toFixed(2) || 0)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         className: "table_body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "EOSLogo"
@@ -1063,7 +1059,7 @@ function (_React$Component) {
         className: "crypto_name"
       }, "EOS ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, "EOS")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, parseFloat(this.state.eos_value * parseFloat(this.props.assets['EOS']['conversion']).toFixed(4)).toFixed(5)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (parseFloat(this.state.eos_value / this.state.total) * 100).toFixed(2)))));
+      }, "EOS")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, parseFloat(this.state.eos_value * parseFloat(this.props.assets['EOS']['conversion']).toFixed(4)).toFixed(5)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (parseFloat(this.state.eos_value / this.state.total) * 100).toFixed(2) || 0))));
     }
   }]);
 

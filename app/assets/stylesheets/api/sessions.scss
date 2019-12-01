@@ -163,6 +163,7 @@
     border-radius: 5px;
  };
 
+
     .name{
         position: relative;
         left: 180px;
@@ -302,6 +303,11 @@
             top: 10px;
         }
 
+        .port_amount{
+            color: black;
+            font-size: 78px;
+        }
+
         .buy_and_sell{
             border: lightgray solid;
             width: 40%;
@@ -326,6 +332,70 @@
             background-color: orange;
             height: 49px;
         }
+
+        .btc_trade{
+             padding: 14px;
+             color: white;
+            text-align: left;
+            border: lightgray solid;
+            margin-bottom: 6px;
+            margin-left: 9px;
+            margin-right: 9px;
+            background-color: orange;
+            height: 49px;
+        }
+
+        .eth_trade{
+            padding: 14px;
+            color: white;
+            text-align: left;
+            border: lightgray solid;
+            margin-bottom: 6px;
+            margin-left: 9px;
+            margin-right: 9px;
+            background-color: #728bec;
+            height: 49px;
+        }
+
+
+        .bch_trade{
+            padding: 14px;
+            color: white;
+            text-align: left;
+            border: lightgray solid;
+            margin-bottom: 6px;
+            margin-left: 9px;
+            margin-right: 9px;
+            background-color: #98c962;
+            height: 49px;
+        }
+
+        .ltc_trade{
+            background-color: #c7c2c2;
+            color: white;
+             padding: 14px;
+            text-align: left;
+            border: lightgray solid;
+            margin-bottom: 6px;
+            margin-left: 9px;
+            margin-right: 9px;
+            height: 49px;
+        }
+
+        .eos_trade{
+            background-color: #000000;
+            color: white;
+            padding: 14px;
+            text-align: left;
+            border: lightgray solid;
+            margin-bottom: 6px;
+            margin-left: 9px;
+            margin-right: 9px;
+            height: 49px;
+        }
+
+
+        
 
         .inputs{
            width: 100%;
