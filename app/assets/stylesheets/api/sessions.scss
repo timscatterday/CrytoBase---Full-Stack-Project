@@ -328,22 +328,41 @@
         }
 
         .inputs{
-            display: flex;
-            justify-content: space-around;
-            position: relative;
-            top: 8px
+           width: 100%;
+           text-align: center;
         }
 
-        .buy_btn{
-            padding: 13px;
-            height: 0px;
-            width: 116px;
-            margin-right: -27px;
-        }
+    
+            #first{
+                float: left;
+                width: 100px;
+            }
 
-        .buy_sell{
-        }
+            #second{
+                display: inline-block;
+                margin: auto;
+                width: 100px;
+            }
 
+                .exchange_btn{
+                  display: flex;
+                    height: 35px;
+                    position: relative;
+                    right: 87px;
+                }
+
+                .buy_btn{
+                    display: inline;
+                    width: 118px;
+                    margin: 6px;
+                }
+
+            #third{
+                float: right;
+                width: 100px;
+            }
+
+       
     
     
     .total{
@@ -361,42 +380,33 @@
         top: 35px;
     }
 
-    .grid_container{
-        display: grid;
+    .table_header{
+        display: flex;
         position: relative;
-        grid-template-columns: auto auto auto;
-        top: 14px;
-        padding: 10px;
-    };
+        width: 96%;
+        height: 43px;
+        align-items: center;
+    }
 
-   .grid-item {
-    position: relative;
-    border: solid darkgray;
-    padding: 101px;
-    font-size: 30px;
-    text-align: center;
-   }
+    .table_header th {
+        width: 246px;
+        height: 21px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .port_table_row td {
+        width: 246px;
+        height: 21px;
+        text-align: center;
+        vertical-align: middle;
+        padding: 10px;
+    }
 
     .port_logo{
-        bottom: 80px;
-        right: 98px;
-        position: relative;
-        display: flex;
     }
 
-    .port_price{
-        display: flex;
-        position: absolute;
-        left: 12px;
-        top: 81px;
-    }
-
-    .port_percent{
-       display: flex;
-       position: relative;
-       left: 65px;
-       bottom: 64px;
-    }   
+   
 
 
        
