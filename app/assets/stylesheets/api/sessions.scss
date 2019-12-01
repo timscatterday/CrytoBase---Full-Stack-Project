@@ -363,7 +363,9 @@
             }
 
        
-    
+    .allocation_title{
+        color: blue;
+    }
     
     .total{
        color: black;
@@ -380,32 +382,19 @@
         top: 35px;
     }
 
-    .table_header{
-        display: flex;
-        position: relative;
-        width: 96%;
-        height: 43px;
-        align-items: center;
-    }
-
-    .table_header th {
-        width: 246px;
-        height: 21px;
+    .table_header th{
         text-align: center;
-        vertical-align: middle;
+        width: 19%;
     }
 
-    .port_table_row td {
-        width: 246px;
-        height: 21px;
+    .table_body{
         text-align: center;
-        vertical-align: middle;
-        padding: 10px;
+        width: 19%;
     }
 
-    .port_logo{
+    .table_body td{
+        padding-top: 13px;
     }
-
    
 
 
