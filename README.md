@@ -11,3 +11,9 @@ Cryptobase is a clone of the web application Coinbase. Cryptobase allows users t
 * Retrieves real time cryptocurrency prices and exchange rates
 * Displays each users portfolio value and asset allocation
 
+## Frameworks
+
+* React - construct frontend application
+* Redux - maintains the application state
+* Rails - backend framework
+
