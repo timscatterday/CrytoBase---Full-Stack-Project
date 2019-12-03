@@ -6,3 +6,8 @@ Cryptobase is a clone of the web application Coinbase. Cryptobase allows users t
 
 ![Landing Page](https://user-images.githubusercontent.com/46978514/70005346-24462380-151e-11ea-93b5-6b436872d79f.png)
 
+## Features
+
+* Retrieves real time cryptocurrency prices and exchange rates
+* Displays each users portfolio value and asset allocation
+
