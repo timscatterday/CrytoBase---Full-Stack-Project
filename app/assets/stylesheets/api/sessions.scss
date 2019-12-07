@@ -285,9 +285,10 @@
 
     .user_portfolio{
        display: flex;
-       flex-direction: row;
-       justify-content: space-around;
-       width: 100%
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        padding-bottom: 44px;
     }
 
         .port_title{
@@ -309,12 +310,13 @@
         }
 
         .buy_and_sell{
-            border: lightgray solid;
             width: 40%;
             text-align: center;
             height: 500px;
             position: relative;
-            top: 10px;
+            top: 41px;
+            border: lightgray solid;
+            border-radius: 8px;
         }
 
         .crypto_list{
@@ -325,7 +327,6 @@
         .trade{
             padding: 14px;
             text-align: left;
-            border: lightgray solid;
             margin-bottom: 6px;
             margin-left: 9px;
             margin-right: 9px;
@@ -337,24 +338,24 @@
              padding: 14px;
              color: white;
             text-align: left;
-            border: lightgray solid;
             margin-bottom: 6px;
             margin-left: 9px;
             margin-right: 9px;
             background-color: orange;
             height: 49px;
+            border-radius: 10px;
         }
 
         .eth_trade{
             padding: 14px;
             color: white;
             text-align: left;
-            border: lightgray solid;
             margin-bottom: 6px;
             margin-left: 9px;
             margin-right: 9px;
             background-color: #728bec;
             height: 49px;
+            border-radius: 10px;
         }
 
 
@@ -362,12 +363,12 @@
             padding: 14px;
             color: white;
             text-align: left;
-            border: lightgray solid;
             margin-bottom: 6px;
             margin-left: 9px;
             margin-right: 9px;
             background-color: #98c962;
             height: 49px;
+            border-radius: 10px;
         }
 
         .ltc_trade{
@@ -375,11 +376,11 @@
             color: white;
              padding: 14px;
             text-align: left;
-            border: lightgray solid;
             margin-bottom: 6px;
             margin-left: 9px;
             margin-right: 9px;
             height: 49px;
+            border-radius: 10px
         }
 
         .eos_trade{
@@ -387,11 +388,11 @@
             color: white;
             padding: 14px;
             text-align: left;
-            border: lightgray solid;
             margin-bottom: 6px;
             margin-left: 9px;
             margin-right: 9px;
             height: 49px;
+            border-radius: 10px;
         }
 
 
