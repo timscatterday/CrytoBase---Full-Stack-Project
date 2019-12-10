@@ -683,9 +683,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/portfolio/portfolio.jsx":
+/***/ "./frontend/components/portfolio/BuyWidget.jsx":
 /*!*****************************************************!*\
-  !*** ./frontend/components/portfolio/portfolio.jsx ***!
+  !*** ./frontend/components/portfolio/BuyWidget.jsx ***!
   \*****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -694,13 +694,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-sparklines */ "./node_modules/react-sparklines/build/index.js");
-/* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_sparklines__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! local-storage */ "./node_modules/local-storage/local-storage.js");
-/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(local_storage__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! url */ "./node_modules/url/url.js");
-/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(url__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -717,6 +713,145 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var fromUSDtoCrypto = function fromUSDtoCrypto(amount_usd, crypto_per_usd) {
+  var crypto_amount = parseFloat(amount_usd) * parseFloat(crypto_per_usd);
+  var display_crypto_amount = crypto_amount.toFixed(6);
+  return display_crypto_amount;
+};
+
+var BuyWidget =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(BuyWidget, _Component);
+
+  function BuyWidget(props) {
+    var _this;
+
+    _classCallCheck(this, BuyWidget);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(BuyWidget).call(this, props));
+    _this.state = {
+      amount_usd: 0
+    }, _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(BuyWidget, [{
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault(); // TODO
+
+      var amount_usd = this.state.amount_usd;
+      var _this$props = this.props,
+          conversion_rate = _this$props.conversion_rate,
+          asset_name = _this$props.asset_name,
+          ticker = _this$props.ticker;
+      console.log('BuyWidget.handleSubmit ticker', ticker);
+      console.log('BuyWidget.handleSubmit asset_name', asset_name);
+      console.log('BuyWidget.handleSubmit conversion_rate', conversion_rate);
+      this.props.buyCrypto(ticker, amount_usd, conversion_rate);
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(e) {
+      var _e$target = e.target,
+          name = _e$target.name,
+          value = _e$target.value;
+      this.setState(_defineProperty({}, name, value));
+      console.log('BuyWidget.handleChange e', e);
+      console.log('BuyWidget.handleChange name', name);
+      console.log('BuyWidget.handleChange value', value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var amount_usd = this.state.amount_usd;
+      var _this$props2 = this.props,
+          conversion_rate = _this$props2.conversion_rate,
+          asset_name = _this$props2.asset_name,
+          ticker = _this$props2.ticker;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "".concat(ticker, "_trade")
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "inputs",
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "first"
+      }, asset_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "second"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "exchange_btn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "buy_btn",
+        type: "number",
+        placeholder: "USD",
+        onChange: this.handleChange,
+        value: amount_usd,
+        name: "amount_usd"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "buy_btn",
+        id: "crypto_exc",
+        type: "number",
+        value: fromUSDtoCrypto(amount_usd, conversion_rate)
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "third"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "submit",
+        value: "Buy"
+      }))));
+    }
+  }]);
+
+  return BuyWidget;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (BuyWidget);
+
+/***/ }),
+
+/***/ "./frontend/components/portfolio/portfolio.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/portfolio/portfolio.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _BuyWidget__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BuyWidget */ "./frontend/components/portfolio/BuyWidget.jsx");
+/* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-sparklines */ "./node_modules/react-sparklines/build/index.js");
+/* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_sparklines__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! local-storage */ "./node_modules/local-storage/local-storage.js");
+/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(local_storage__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! url */ "./node_modules/url/url.js");
+/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(url__WEBPACK_IMPORTED_MODULE_4__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -743,11 +878,6 @@ function (_React$Component) {
       eos_value: parseFloat(localStorage.getItem('tim_eos')) || 0,
       total: (parseFloat(localStorage.getItem('tim_btc')) || 0) + (parseFloat(localStorage.getItem('tim_eth')) || 0) + (parseFloat(localStorage.getItem('tim_bch')) || 0) + (parseFloat(localStorage.getItem('tim_ltc')) || 0) + (parseFloat(localStorage.getItem('tim_eos')) || 0) || 0
     };
-    _this.buyBTC = _this.buyBTC.bind(_assertThisInitialized(_this));
-    _this.buyETH = _this.buyETH.bind(_assertThisInitialized(_this));
-    _this.buyBCH = _this.buyBCH.bind(_assertThisInitialized(_this));
-    _this.buyLTC = _this.buyLTC.bind(_assertThisInitialized(_this));
-    _this.buyEOS = _this.buyEOS.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -757,80 +887,16 @@ function (_React$Component) {
       this.props.getAssets();
     }
   }, {
-    key: "buyBTC",
-    value: function buyBTC(event) {
-      debugger;
-      event.preventDefault();
-      var amount = parseFloat(document.getElementById('dollar').value);
-      var exc_rate = parseFloat(document.getElementById('crypto_exc').value);
+    key: "buyCrypto",
+    value: function buyCrypto(ticker, amount_usd, exc_rate) {
+      var portfolio_value = parseInt(this.state.portfolio_value) + parseInt(amount_usd);
+      var ticker_value = parseInt(this.state["".concat(ticker, "_value")]) + parseInt(amount_usd);
       this.setState({
-        portfolio_value: this.state.portfolio_value += amount
+        portfolio_value: portfolio_value
       });
-      this.setState({
-        btc_value: this.state.btc_value += amount
-      });
+      this.setState(_defineProperty({}, "".concat(ticker, "_value"), ticker_value));
       localStorage.setItem('tim_portfolio', this.state.portfolio_value);
-      localStorage.setItem('tim_btc', this.state.btc_value);
-    }
-  }, {
-    key: "buyETH",
-    value: function buyETH(event) {
-      event.preventDefault();
-      var eth_amount = parseFloat(document.getElementById('eth_dollar').value);
-      var eth_exc_rate = parseFloat(document.getElementById('eth_crypto_exc').value);
-      this.setState({
-        portfolio_value: this.state.portfolio_value += eth_amount
-      });
-      this.setState({
-        eth_value: this.state.eth_value += eth_amount
-      });
-      localStorage.setItem('tim_portfolio', this.state.portfolio_value);
-      localStorage.setItem('tim_eth', this.state.eth_value);
-    }
-  }, {
-    key: "buyBCH",
-    value: function buyBCH(event) {
-      event.preventDefault();
-      var bch_amount = parseFloat(document.getElementById('bch_dollar').value);
-      var bch_exc_rate = parseFloat(document.getElementById('bch_crypto_exc').value);
-      this.setState({
-        bch_value: this.state.portfolio_value += bch_amount
-      });
-      this.setState({
-        bch_value: this.state.bch_value += bch_amount
-      });
-      localStorage.setItem('tim_portfolio', this.state.portfolio_value);
-      localStorage.setItem('tim_bch', this.state.bch_value);
-    }
-  }, {
-    key: "buyLTC",
-    value: function buyLTC(event) {
-      event.preventDefault();
-      var ltc_amount = parseFloat(document.getElementById('ltc_dollar').value);
-      var ltc_exc_rate = parseFloat(document.getElementById('ltc_crypto_exc').value);
-      this.setState({
-        portfolio_value: this.state.portfolio_value += ltc_amount
-      });
-      this.setState({
-        ltc_value: this.state.ltc_value += ltc_amount
-      });
-      localStorage.setItem('tim_portfolio', this.state.portfolio_value);
-      localStorage.setItem('tim_ltc', this.state.ltc_value);
-    }
-  }, {
-    key: "buyEOS",
-    value: function buyEOS(event) {
-      event.preventDefault();
-      var eos_amount = parseFloat(document.getElementById('eos_dollar').value);
-      var eos_exc_rate = parseFloat(document.getElementById('eos_crypto_exc').value);
-      this.setState({
-        portfolio_value: this.state.portfolio_value += eos_amount
-      });
-      this.setState({
-        eos_value: this.state.eos_value += eos_amount
-      });
-      localStorage.setItem('tim_portfolio', this.state.portfolio_value);
-      localStorage.setItem('tim_eos', this.state.eos_value);
+      localStorage.setItem(["tim_".concat(ticker)], this.state["".concat(ticker, "_value")]);
     }
   }, {
     key: "render",
@@ -852,139 +918,32 @@ function (_React$Component) {
         className: "buy_and_sell"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Buy and Sell"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "crypto_list"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "btc_trade"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "inputs",
-        onSubmit: this.buyBTC
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "first"
-      }, "Bitcoin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "second"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "exchange_btn"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "buy_btn",
-        id: "dollar",
-        type: "number",
-        placeholder: "USD",
-        onChange: this.btc_convert
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "buy_btn",
-        id: "crypto_exc",
-        type: "number",
-        value: parseFloat(this.props.assets['BTC']['conversion']).toFixed(6)
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "third"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        value: "Buy"
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "eth_trade"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        id: "ETH_form",
-        className: "inputs",
-        onSubmit: this.buyETH
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "first"
-      }, "Ethereum"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "second"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "exchange_btn"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "buy_btn",
-        id: "eth_dollar",
-        type: "number",
-        placeholder: "USD"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "buy_btn",
-        id: "eth_crypto_exc",
-        type: "number",
-        value: parseFloat(this.props.assets['ETH']['conversion']).toFixed(6)
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "third"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        value: "Buy"
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "bch_trade"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "inputs",
-        onSubmit: this.buyBCH
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "first"
-      }, "Bitcoin Cash"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "second"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "exchange_btn"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "buy_btn",
-        id: "bch_dollar",
-        type: "number",
-        placeholder: "USD"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "buy_btn",
-        id: "bch_crypto_exc",
-        type: "number",
-        value: parseFloat(this.props.assets['BCH']['conversion']).toFixed(6)
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "third"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        value: "Buy"
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ltc_trade"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "inputs",
-        onSubmit: this.buyLTC
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "first"
-      }, "Litecoin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "second"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "exchange_btn"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "buy_btn",
-        id: "ltc_dollar",
-        type: "number",
-        placeholder: "USD"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "buy_btn",
-        id: "ltc_crypto_exc",
-        type: "number",
-        value: parseFloat(this.props.assets['LTC']['conversion']).toFixed(6)
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "third"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        value: "Buy"
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "eos_trade"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "inputs",
-        onSubmit: this.buyEOS
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "first"
-      }, "EOS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "second"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "exchange_btn"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "buy_btn",
-        id: "eos_dollar",
-        type: "number",
-        placeholder: "USD"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "buy_btn",
-        id: "eos_crypto_exc",
-        type: "number",
-        value: parseFloat(this.props.assets['EOS']['conversion']).toFixed(6)
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "third"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        value: "Buy"
-      }))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      }, this.props.assets['BTC'] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        buyCrypto: this.buyCrypto.bind(this),
+        ticker: "btc",
+        conversion_rate: parseFloat(this.props.assets['BTC']['conversion']).toFixed(6),
+        asset_name: "Bitcoin"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        buyCrypto: this.buyCrypto.bind(this),
+        ticker: "eth",
+        conversion_rate: parseFloat(this.props.assets['ETH']['conversion']).toFixed(6),
+        asset_name: "Ethereum"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        buyCrypto: this.buyCrypto.bind(this),
+        ticker: "bch",
+        conversion_rate: parseFloat(this.props.assets['BCH']['conversion']).toFixed(6),
+        asset_name: "Bitcoin Cash"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        buyCrypto: this.buyCrypto.bind(this),
+        ticker: "ltc",
+        conversion_rate: parseFloat(this.props.assets['LTC']['conversion']).toFixed(6),
+        asset_name: "Litecoin"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        buyCrypto: this.buyCrypto.bind(this),
+        ticker: "eos",
+        conversion_rate: parseFloat(this.props.assets['EOS']['conversion']).toFixed(6),
+        asset_name: "EOS"
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "allocation_title"
       }, "Your Assets"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         className: "table_header",
@@ -35136,7 +35095,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

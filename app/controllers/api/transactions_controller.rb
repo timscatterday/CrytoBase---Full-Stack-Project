@@ -11,13 +11,15 @@ class Api::TransactionsController < ApplicationController
 
         # suppose to wait for validation
 
-        Transaction.create(
+        @transaction = Transaction.create(
             :user_id => user_id,
             :asset => asset,
             :price => price,
             :amount => amount,
             :amount_usd => amount_usd
         )
+
+        render json: @transaction
         
     end
 
