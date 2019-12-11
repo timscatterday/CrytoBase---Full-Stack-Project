@@ -25,9 +25,6 @@ class BuyWidget extends Component {
         // TODO
         const { amount_usd } = this.state
         const { conversion_rate, asset_name, ticker } = this.props
-        console.log('BuyWidget.handleSubmit ticker', ticker)
-        console.log('BuyWidget.handleSubmit asset_name', asset_name)
-        console.log('BuyWidget.handleSubmit conversion_rate', conversion_rate)
         this.props.buyCrypto(ticker, amount_usd, conversion_rate)
     }
 

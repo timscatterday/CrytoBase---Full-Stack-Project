@@ -1,5 +1,6 @@
 import React from 'react';
 import BuyWidget  from './BuyWidget';
+import Allocation from './Allocation';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 import ls from 'local-storage'
 import { parse } from 'url';
@@ -43,6 +44,7 @@ class Portfolio extends React.Component {
 
     render(){
 
+        const {getAssets, assets} = this.props;
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -111,6 +113,8 @@ class Portfolio extends React.Component {
                 <th>Allocation</th>
             </tr>
 
+            {/* <Allocation assets={assets} getAssets={getAssets} assetname='Bitcoin' ticker='BTC' lower_ticker='btc' img='http://www.thecoinface.com/assets/btc-8022fd53c251f18cb39cefede445f1c78a3b265989232f0bb46b9c4622e55a9e.png' /> */}
+
             <tr className='table_body'>
                 <td><div className='BitcoinLogo'><div className='pic'><img src="http://www.thecoinface.com/assets/btc-8022fd53c251f18cb39cefede445f1c78a3b265989232f0bb46b9c4622e55a9e.png" height='36' width='36' /></div> <div className='crypto_name'>Bitcoin <div className='symbol'>BTC</div></div></div></td>
                 <td>{parseFloat(this.state.btc_value * parseFloat(this.props.assets['BTC']['conversion']).toFixed(4)).toFixed(5)}</td>
@@ -120,7 +124,7 @@ class Portfolio extends React.Component {
             <tr className='table_body'>
                 <td><div className='EthereumLogo'><div className='pic'><img src='http://www.thecoinface.com/assets/eth-99bf2102cc13a51bb226f931b8d0fa4c5b3ca9dc4179167e89d7ee3f677c3fdb.png' width='36' height='36' /></div> <div className='crypto_name'>Ethereum <div className='symbol'>ETH</div></div></div></td>
                 <td>{parseFloat(this.state.eth_value * parseFloat(this.props.assets['ETH']['conversion']).toFixed(4)).toFixed(5)}</td>
-                <td>% {(parseFloat(this.state.eth_value / this.state.total) * 100).toFixed(2) || 0}</td>
+                <td>%{(parseFloat(this.state.eth_value / this.state.total) * 100).toFixed(2) || 0}</td>
             </tr>
 
             <tr className='table_body'>

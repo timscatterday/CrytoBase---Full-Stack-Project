@@ -341,10 +341,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/home/home.jsx":
-/*!*******************************************!*\
-  !*** ./frontend/components/home/home.jsx ***!
-  \*******************************************/
+/***/ "./frontend/components/home/dashboard.jsx":
+/*!************************************************!*\
+  !*** ./frontend/components/home/dashboard.jsx ***!
+  \************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -354,7 +354,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-sparklines */ "./node_modules/react-sparklines/build/index.js");
 /* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_sparklines__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _sessions_form_session_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../sessions_form/session_form */ "./frontend/components/sessions_form/session_form.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -372,6 +371,201 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Dashboard =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Dashboard, _React$Component);
+
+  function Dashboard(props) {
+    _classCallCheck(this, Dashboard);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Dashboard).call(this, props));
+  }
+
+  _createClass(Dashboard, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.getAssets();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          assetname = _this$props.assetname,
+          img = _this$props.img,
+          chart_color = _this$props.chart_color,
+          ticker = _this$props.ticker;
+
+      if (!this.props.assets["".concat(ticker)]) {
+        return null;
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "".concat(assetname, "Logo")
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "pic"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: img,
+        height: "36",
+        width: "36"
+      })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "crypto_name"
+      }, assetname, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "symbol"
+      }, "BTC")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets["".concat(ticker)]['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        style: {
+          color: this.props.assets["".concat(ticker)]['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
+        }
+      }, "% ", this.props.assets["".concat(ticker)]['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "graph"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["Sparklines"], {
+        data: Object.values(this.props.assets["".concat(ticker)].prices),
+        width: 100,
+        height: 50,
+        margin: 5
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["SparklinesLine"], {
+        color: chart_color
+      })))));
+    }
+  }]);
+
+  return Dashboard;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Dashboard);
+
+/***/ }),
+
+/***/ "./frontend/components/home/email.jsx":
+/*!********************************************!*\
+  !*** ./frontend/components/home/email.jsx ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Email =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Email, _React$Component);
+
+  function Email(props) {
+    _classCallCheck(this, Email);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Email).call(this, props));
+  }
+
+  _createClass(Email, [{
+    key: "handleEmailChange",
+    value: function handleEmailChange() {
+      var _this = this;
+
+      return function (e) {
+        return _this.setState({
+          email: e.target.value
+        });
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "get_started"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input_bar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: function onSubmit() {
+          return _this2.getStarted();
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "home_input"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main_form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "input",
+        type: "text",
+        placeholder: "Email Address",
+        onChange: this.handleEmailChange()
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main_button"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "home_button"
+      }, "Get Started"))))));
+    }
+  }]);
+
+  return Email;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (Email);
+
+/***/ }),
+
+/***/ "./frontend/components/home/home.jsx":
+/*!*******************************************!*\
+  !*** ./frontend/components/home/home.jsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _email__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./email */ "./frontend/components/home/email.jsx");
+/* harmony import */ var _dashboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dashboard */ "./frontend/components/home/dashboard.jsx");
+/* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-sparklines */ "./node_modules/react-sparklines/build/index.js");
+/* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_sparklines__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _sessions_form_session_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../sessions_form/session_form */ "./frontend/components/sessions_form/session_form.jsx");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
 
 
 
@@ -400,17 +594,6 @@ function (_React$Component) {
       this.props.getAssets();
     }
   }, {
-    key: "handleEmailChange",
-    value: function handleEmailChange() {
-      var _this2 = this;
-
-      return function (e) {
-        return _this2.setState({
-          email: e.target.value
-        });
-      };
-    }
-  }, {
     key: "getStarted",
     value: function getStarted() {
       localStorage.setItem('email', this.state.email);
@@ -419,183 +602,73 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
-
       if (!this.props.assets['BTC']) {
         return null;
       }
 
+      var _this$props = this.props,
+          assets = _this$props.assets,
+          getAssets = _this$props.getAssets;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "top_main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "main_line"
       }, "Buy and sell digital currency"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "sub_line"
-      }, "Cryptobase is the easiest place to buy, sell, and manage your digital currencies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "get_started"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "input_bar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: function onSubmit() {
-          return _this3.getStarted();
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "home_input"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "main_form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "input",
-        type: "text",
-        placeholder: "Email Address",
-        onChange: this.handleEmailChange()
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "main_button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "home_button"
-      }, "Get Started"))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+      }, "Cryptobase is the easiest place to buy, sell, and manage your digital currencies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_email__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "crypto_chart"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name"
-      }, "Name")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Price"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Change"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Chart"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "BitcoinLogo"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "pic"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "http://www.thecoinface.com/assets/btc-8022fd53c251f18cb39cefede445f1c78a3b265989232f0bb46b9c4622e55a9e.png",
-        height: "36",
-        width: "36"
-      })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "crypto_name"
-      }, "Bitcoin ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "symbol"
-      }, "BTC")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets['BTC']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        style: {
-          color: this.props.assets['BTC']['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
-        }
-      }, "% ", this.props.assets['BTC']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "graph"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["Sparklines"], {
-        data: Object.values(this.props.assets['BTC'].prices),
-        width: 100,
-        height: 50,
-        margin: 5
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["SparklinesLine"], {
-        color: "#f79319"
-      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "EthereumLogo"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "pic"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "http://www.thecoinface.com/assets/eth-99bf2102cc13a51bb226f931b8d0fa4c5b3ca9dc4179167e89d7ee3f677c3fdb.png",
-        width: "36",
-        height: "36"
-      })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "crypto_name"
-      }, "Ethereum ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "symbol"
-      }, "ETH")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets['ETH']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        style: {
-          color: this.props.assets['ETH']['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
-        }
-      }, "% ", this.props.assets['ETH']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "graph"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["Sparklines"], {
-        data: Object.values(this.props.assets['ETH'].prices),
-        width: 100,
-        height: 50,
-        margin: 5
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["SparklinesLine"], {
-        color: "#7885cb"
-      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "BitcoinCashLogo"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "pic"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "http://www.thecoinface.com/assets/bch-03a53cc37436a99ba854e42df693fa52d92d88cbbce362fa217efd0e85be5e1f.png",
-        width: "36",
-        height: "36"
-      })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "crypto_name"
-      }, "Bitcoin Cash ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "symbol"
-      }, "BCH")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets['BCH']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        style: {
-          color: this.props.assets['BCH']['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
-        }
-      }, "% ", this.props.assets['BCH']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "graph"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["Sparklines"], {
-        data: Object.values(this.props.assets['BCH'].prices),
-        width: 100,
-        height: 50,
-        margin: 5
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["SparklinesLine"], {
-        color: "#8dc351"
-      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "LitecoinLogo"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "pic"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "http://www.thecoinface.com/assets/ltc-7160750bcbc115ac8a3229bc1120fb59e96a737d607a57b42fa8e2b092a14159.png",
-        width: "36",
-        height: "36"
-      })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "crypto_name"
-      }, "Litecoin ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "symbol"
-      }, "LTC")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets['LTC']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        style: {
-          color: this.props.assets['LTC']['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
-        }
-      }, "% ", this.props.assets['LTC']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "graph"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["Sparklines"], {
-        data: Object.values(this.props.assets['LTC'].prices),
-        width: 100,
-        height: 50,
-        margin: 5
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["SparklinesLine"], {
-        color: "#c2c2c2"
-      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "EOSLogo"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "pic"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://dynamic-assets.coinbase.com/deaca3d47b10ed4a91a872e9618706eec34081127762d88f2476ac8e99ada4b48525a9565cf2206d18c04053f278f693434af4d4629ca084a9d01b7a286a7e26/asset_icons/1f8489bb280fb0a0fd643c1161312ba49655040e9aaaced5f9ad3eeaf868eadc.png",
-        width: "36",
-        height: "36"
-      })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "crypto_name"
-      }, "EOS ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "symbol"
-      }, "EOS")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, this.props.assets['EOS']['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        style: {
-          color: this.props.assets['EOS']['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
-        }
-      }, "% ", this.props.assets['EOS']['USD']['CHANGEPCT24HOUR']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "graph"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["Sparklines"], {
-        data: Object.values(this.props.assets['EOS'].prices),
-        width: 100,
-        height: 50,
-        margin: 5
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["SparklinesLine"], {
-        color: "000000"
-      }))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Name")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Price"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Change"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Chart"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        assetname: 'Bitcoin',
+        ticker: 'BTC',
+        img: "http://www.thecoinface.com/assets/btc-8022fd53c251f18cb39cefede445f1c78a3b265989232f0bb46b9c4622e55a9e.png",
+        assets: assets,
+        getAssets: getAssets,
+        chart_color: '#f79319'
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        assetname: 'Ethereum',
+        ticker: 'ETH',
+        img: "http://www.thecoinface.com/assets/eth-99bf2102cc13a51bb226f931b8d0fa4c5b3ca9dc4179167e89d7ee3f677c3fdb.png",
+        assets: assets,
+        getAssets: getAssets,
+        chart_color: '#7885cb'
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        assetname: 'BitcoinCash',
+        ticker: 'BCH',
+        img: "http://www.thecoinface.com/assets/bch-03a53cc37436a99ba854e42df693fa52d92d88cbbce362fa217efd0e85be5e1f.png",
+        assets: assets,
+        getAssets: getAssets,
+        chart_color: '#8dc351'
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        assetname: 'Litecoin',
+        ticker: 'LTC',
+        img: "http://www.thecoinface.com/assets/ltc-7160750bcbc115ac8a3229bc1120fb59e96a737d607a57b42fa8e2b092a14159.png",
+        assets: assets,
+        getAssets: getAssets,
+        chart_color: "#c2c2c2"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        assetname: 'EOS',
+        ticker: 'EOS',
+        img: "https://dynamic-assets.coinbase.com/deaca3d47b10ed4a91a872e9618706eec34081127762d88f2476ac8e99ada4b48525a9565cf2206d18c04053f278f693434af4d4629ca084a9d01b7a286a7e26/asset_icons/1f8489bb280fb0a0fd643c1161312ba49655040e9aaaced5f9ad3eeaf868eadc.png",
+        assets: assets,
+        getAssets: getAssets,
+        chart_color: '000000'
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main_bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bar_stats"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "stat"
-      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "big"
       }, " $10M+ "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "digital currencies exchanged")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "stat"
-      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "big"
       }, "50+"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "countries supported")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "stat"
-      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "big"
       }, "1M+ "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "traders served")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sub_bar"
@@ -683,6 +756,98 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/portfolio/Allocation.jsx":
+/*!******************************************************!*\
+  !*** ./frontend/components/portfolio/Allocation.jsx ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Allocation =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Allocation, _React$Component);
+
+  function Allocation(props) {
+    var _this;
+
+    _classCallCheck(this, Allocation);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Allocation).call(this, props));
+    _this.state = {
+      portfolio_value: parseInt(localStorage.getItem('tim_portfolio')) || 0,
+      btc_value: parseFloat(localStorage.getItem('tim_btc')) || 0,
+      eth_value: parseFloat(localStorage.getItem('tim_eth')) || 0,
+      bch_value: parseFloat(localStorage.getItem('tim_bch')) || 0,
+      ltc_value: parseFloat(localStorage.getItem('tim_ltc')) || 0,
+      eos_value: parseFloat(localStorage.getItem('tim_eos')) || 0,
+      total: (parseFloat(localStorage.getItem('tim_btc')) || 0) + (parseFloat(localStorage.getItem('tim_eth')) || 0) + (parseFloat(localStorage.getItem('tim_bch')) || 0) + (parseFloat(localStorage.getItem('tim_ltc')) || 0) + (parseFloat(localStorage.getItem('tim_eos')) || 0) || 0
+    };
+    return _this;
+  }
+
+  _createClass(Allocation, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.getAssets();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          ticker = _this$props.ticker,
+          img = _this$props.img,
+          assetname = _this$props.assetname;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+        className: "table_body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "".concat(assetname, "Logo")
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "pic"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: img,
+        height: "36",
+        width: "36"
+      })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "crypto_name"
+      }, assetname, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "symbol"
+      }, ticker)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, parseFloat(this.state.btc_value * parseFloat(this.props.assets["".concat(ticker)]['conversion']).toFixed(4)).toFixed(5)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (parseFloat(this.state.btc_value / this.state.total) * 100).toFixed(2) ? (parseFloat(this.state.btc_value / this.state.total) * 100).toFixed(2) : 0));
+    }
+  }]);
+
+  return Allocation;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (Allocation);
+
+/***/ }),
+
 /***/ "./frontend/components/portfolio/BuyWidget.jsx":
 /*!*****************************************************!*\
   !*** ./frontend/components/portfolio/BuyWidget.jsx ***!
@@ -750,9 +915,6 @@ function (_Component) {
           conversion_rate = _this$props.conversion_rate,
           asset_name = _this$props.asset_name,
           ticker = _this$props.ticker;
-      console.log('BuyWidget.handleSubmit ticker', ticker);
-      console.log('BuyWidget.handleSubmit asset_name', asset_name);
-      console.log('BuyWidget.handleSubmit conversion_rate', conversion_rate);
       this.props.buyCrypto(ticker, amount_usd, conversion_rate);
     }
   }, {
@@ -826,12 +988,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _BuyWidget__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BuyWidget */ "./frontend/components/portfolio/BuyWidget.jsx");
-/* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-sparklines */ "./node_modules/react-sparklines/build/index.js");
-/* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_sparklines__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! local-storage */ "./node_modules/local-storage/local-storage.js");
-/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(local_storage__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! url */ "./node_modules/url/url.js");
-/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(url__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Allocation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Allocation */ "./frontend/components/portfolio/Allocation.jsx");
+/* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-sparklines */ "./node_modules/react-sparklines/build/index.js");
+/* harmony import */ var react_sparklines__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_sparklines__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! local-storage */ "./node_modules/local-storage/local-storage.js");
+/* harmony import */ var local_storage__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(local_storage__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! url */ "./node_modules/url/url.js");
+/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(url__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -851,6 +1014,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -901,6 +1065,9 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this$props = this.props,
+          getAssets = _this$props.getAssets,
+          assets = _this$props.assets;
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
         src: "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
       });
@@ -976,7 +1143,7 @@ function (_React$Component) {
         className: "crypto_name"
       }, "Ethereum ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, "ETH")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, parseFloat(this.state.eth_value * parseFloat(this.props.assets['ETH']['conversion']).toFixed(4)).toFixed(5)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (parseFloat(this.state.eth_value / this.state.total) * 100).toFixed(2) || 0)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+      }, "ETH")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, parseFloat(this.state.eth_value * parseFloat(this.props.assets['ETH']['conversion']).toFixed(4)).toFixed(5)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "%", (parseFloat(this.state.eth_value / this.state.total) * 100).toFixed(2) || 0)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         className: "table_body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "BitcoinCashLogo"
