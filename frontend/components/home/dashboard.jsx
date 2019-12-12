@@ -7,10 +7,6 @@ class Dashboard extends React.Component {
 
     };
 
-    componentDidMount() {
-        this.props.getAssets();
-    }
-
     render(){
 
         const {assetname, img, chart_color, ticker} = this.props;

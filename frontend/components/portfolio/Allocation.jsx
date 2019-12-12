@@ -23,13 +23,13 @@ class Allocation extends React.Component {
 
     render(){
 
-        const {ticker, img, assetname } = this.props;
+        const { ticker, img, assetname, lower_ticker } = this.props;
 
         return (
             <tr className='table_body'>
                 <td><div className={`${assetname}Logo`}><div className='pic'><img src={img} height='36' width='36' /></div> <div className='crypto_name'>{assetname} <div className='symbol'>{ticker}</div></div></div></td>
-                <td>{parseFloat(this.state.btc_value * parseFloat(this.props.assets[`${ticker}`]['conversion']).toFixed(4)).toFixed(5)}</td>
-                <td>% {(parseFloat(this.state.btc_value / this.state.total) * 100).toFixed(2) ? (parseFloat(this.state.btc_value / this.state.total) * 100).toFixed(2) : 0}</td>
+                <td>{parseFloat(this.state[`${lower_ticker}_value`] * parseFloat(this.props.assets[`${ticker}`]['conversion']).toFixed(4)).toFixed(5)}</td>
+                <td>% {(parseFloat(this.state[`${lower_ticker}_value`] / this.state.total) * 100).toFixed(2) ? (parseFloat(this.state[`${lower_ticker}_value`] / this.state.total) * 100).toFixed(2) : 0}</td>
             </tr>
         )
     }

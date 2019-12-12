@@ -22,7 +22,6 @@ class BuyWidget extends Component {
 
     handleSubmit(e){
         e.preventDefault();
-        // TODO
         const { amount_usd } = this.state
         const { conversion_rate, asset_name, ticker } = this.props
         this.props.buyCrypto(ticker, amount_usd, conversion_rate)

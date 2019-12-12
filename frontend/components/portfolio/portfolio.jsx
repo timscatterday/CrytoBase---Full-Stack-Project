@@ -27,7 +27,7 @@ class Portfolio extends React.Component {
 
     componentDidMount(){
         this.props.getAssets();
-
+        this.props.fetchTransactions();
     }
 
     buyCrypto(ticker, amount_usd, exc_rate){
@@ -43,6 +43,8 @@ class Portfolio extends React.Component {
 
 
     render(){
+
+        console.log('portfolio.jsx.render this.props.transactions', this.props.transactions)
 
         const {getAssets, assets} = this.props;
 

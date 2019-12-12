@@ -1,6 +1,5 @@
 class Api::TransactionsController < ApplicationController
     
-    # {user, asset, price, amount, amount_usd, type = ['Buy', 'Sell']}
 
     def create
         user_id = params[:user_id]
