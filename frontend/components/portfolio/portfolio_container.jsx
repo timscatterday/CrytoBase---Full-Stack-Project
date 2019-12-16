@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import Portfolio from './portfolio';
 import { fetchAPIAssets } from '../../actions/assets_actions';
-import { fetchAPITransactions } from '../../actions/transactions_actions';
+import { fetchAPITransactions, createTransaction } from '../../actions/transactions_actions';
+
 
 const mapStateToProps = state => {
     return {
@@ -12,7 +13,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     getAssets: () => dispatch(fetchAPIAssets()),
-    fetchTransactions: () => dispatch(fetchAPITransactions())
+    fetchTransactions: () => dispatch(fetchAPITransactions()),
+    createTransaction: (transaction) => dispatch(createTransaction(transaction))
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(Portfolio);

@@ -32248,3 +32248,1545 @@ Processing by Api::TransactionsController#show as JSON
 Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-12 14:37:47 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 41ms (Views: 14.5ms | ActiveRecord: 21.4ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-12 14:37:50 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (3.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 7ms (Views: 3.1ms | ActiveRecord: 3.1ms)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/api/transactions/" for ::1 at 2019-12-12 14:39:45 -0800
+Error occurred while parsing request parameters.
+Contents:
+
+{"user_id" : 2,
+	"asset" : "ETH",
+	"price" : '$144.66',
+	"amount" : 1,
+	"amount_usd" : 12345 
+}
+
+JSON::ParserError - 765: unexpected token at '{"user_id" : 2,
+	"asset" : "ETH",
+	"price" : '$144.66',
+	"amount" : 1,
+	"amount_usd" : 12345 
+}':
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-12 14:43:25 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (10.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 17ms (Views: 4.3ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-12 14:54:46 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 21ms (Views: 13.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2019-12-12 15:14:54 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OZ1gjQknvG-ZJEa6b2nxuA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 241ms (Views: 224.2ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/" for ::1 at 2019-12-12 21:43:29 -0800
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/timscatterday/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OZ1gjQknvG-ZJEa6b2nxuA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 2580ms (Views: 2554.1ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-12 21:43:35 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (3.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 52ms (Views: 24.3ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-12 21:44:43 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-12 22:19:04 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (2.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 18ms (Views: 12.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 08:14:01 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OZ1gjQknvG-ZJEa6b2nxuA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (1.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 215ms (Views: 110.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 08:14:04 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (2.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:05:29 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OZ1gjQknvG-ZJEa6b2nxuA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 113ms (Views: 101.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:05:37 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OZ1gjQknvG-ZJEa6b2nxuA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 63ms (Views: 59.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:06:08 -0800
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/timscatterday/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OZ1gjQknvG-ZJEa6b2nxuA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 1517ms (Views: 1490.4ms | ActiveRecord: 18.2ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:07:43 -0800
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/timscatterday/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OZ1gjQknvG-ZJEa6b2nxuA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 1225ms (Views: 1205.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:07:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OZ1gjQknvG-ZJEa6b2nxuA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 69ms (Views: 65.9ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-12-13 09:07:59 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OZ1gjQknvG-ZJEa6b2nxuA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:18
+  [1m[36mUser Update (11.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "PeiNLmuf-KRL88czXzLOAA"], ["updated_at", "2019-12-13 17:07:59.847930"], ["id", 1]]
+  ↳ app/models/user.rb:18
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:18
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 29ms (Views: 9.6ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:08:03 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 75ms (Views: 70.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:08:49 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered static_pages/root.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 68ms (Views: 63.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:09:03 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:10:38 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 55ms (Views: 50.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:13:17 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 44ms (Views: 40.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:13:34 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 57ms (Views: 53.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/session" for ::1 at 2019-12-13 09:13:40 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"timscatterday@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "timscatterday@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:18
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "nA4tK372p62XJvDmg87qEw"], ["updated_at", "2019-12-13 17:13:40.494348"], ["id", 1]]
+  ↳ app/models/user.rb:18
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:18
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 235ms (Views: 11.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:16:14 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nA4tK372p62XJvDmg87qEw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 61ms (Views: 55.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:17:26 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nA4tK372p62XJvDmg87qEw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 77ms (Views: 72.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:19:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nA4tK372p62XJvDmg87qEw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 46ms (Views: 41.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:20:10 -0800
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/timscatterday/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nA4tK372p62XJvDmg87qEw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 1797ms (Views: 1780.4ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:22:28 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nA4tK372p62XJvDmg87qEw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 80ms (Views: 72.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:26:32 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nA4tK372p62XJvDmg87qEw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 578ms (Views: 572.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 09:27:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nA4tK372p62XJvDmg87qEw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 377ms (Views: 373.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 09:28:07 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 28ms (Views: 10.6ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 09:30:18 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.9ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 09:30:23 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.9ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 10:49:44 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 14ms (Views: 8.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 10:53:29 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 10:53:32 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 10:53:37 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 10:53:48 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 10:53:54 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 10:53:57 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 10:54:00 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 10:54:06 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nA4tK372p62XJvDmg87qEw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 114ms (Views: 109.0ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-12-13 10:54:09 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nA4tK372p62XJvDmg87qEw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:18
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Mm5XX9S0gDM0kL5djNBDfg"], ["updated_at", "2019-12-13 18:54:09.450520"], ["id", 1]]
+  ↳ app/models/user.rb:18
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:18
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.0ms)
+Completed 200 OK in 19ms (Views: 10.5ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/session" for ::1 at 2019-12-13 10:54:24 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"timscatterday@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "timscatterday@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:18
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "HjrbGF2ouWsh4Lg8IUpxpg"], ["updated_at", "2019-12-13 18:54:24.289713"], ["id", 1]]
+  ↳ app/models/user.rb:18
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:18
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 221ms (Views: 10.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 10:54:24 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-12-13 10:54:39 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HjrbGF2ouWsh4Lg8IUpxpg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:18
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "b24H8VxWVHnsYYQ7rQMQGw"], ["updated_at", "2019-12-13 18:54:39.192863"], ["id", 1]]
+  ↳ app/models/user.rb:18
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:18
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/session" for ::1 at 2019-12-13 11:01:34 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"timscatterday@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "timscatterday@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:18
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "4yaq5zG4nUzVKt2il8od1g"], ["updated_at", "2019-12-13 19:01:34.860141"], ["id", 1]]
+  ↳ app/models/user.rb:18
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:18
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.0ms)
+Completed 200 OK in 225ms (Views: 9.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 11:01:34 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 11:09:24 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-12-13 11:09:29 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yaq5zG4nUzVKt2il8od1g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:18
+  [1m[36mUser Update (2.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "0XIhFUpIoFVRLkQU2v2wXQ"], ["updated_at", "2019-12-13 19:09:29.892069"], ["id", 1]]
+  ↳ app/models/user.rb:18
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:18
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.9ms)
+Completed 200 OK in 18ms (Views: 10.6ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/api/session" for ::1 at 2019-12-13 13:33:40 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"timscatterday@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "timscatterday@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:23
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:18
+  [1m[36mUser Update (5.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "yHaP5BoEe_Pr-5R50uCWcQ"], ["updated_at", "2019-12-13 21:33:41.239235"], ["id", 1]]
+  ↳ app/models/user.rb:18
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:18
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered api/users/show.json.jbuilder (14.5ms)
+Completed 200 OK in 506ms (Views: 32.8ms | ActiveRecord: 20.9ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-13 13:33:41 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (2.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 14:14:47 -0800
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/timscatterday/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yHaP5BoEe_Pr-5R50uCWcQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 2394ms (Views: 2363.2ms | ActiveRecord: 20.8ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 14:14:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yHaP5BoEe_Pr-5R50uCWcQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 55ms (Views: 51.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 14:15:09 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yHaP5BoEe_Pr-5R50uCWcQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 59ms (Views: 55.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 14:15:10 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yHaP5BoEe_Pr-5R50uCWcQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 56ms (Views: 53.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 14:15:12 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yHaP5BoEe_Pr-5R50uCWcQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 43ms (Views: 39.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 14:15:17 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yHaP5BoEe_Pr-5R50uCWcQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 46ms (Views: 42.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-12-13 14:15:21 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yHaP5BoEe_Pr-5R50uCWcQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:18
+  [1m[36mUser Update (12.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "NJBAbea75z_xyEytALuFYw"], ["updated_at", "2019-12-13 22:15:21.594141"], ["id", 1]]
+  ↳ app/models/user.rb:18
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:18
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 32ms (Views: 10.3ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 10:05:00 -0800
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/timscatterday/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered static_pages/root.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 2638ms (Views: 2617.6ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 10:46:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered static_pages/root.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 106ms (Views: 90.9ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/api/session" for ::1 at 2019-12-16 10:46:52 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"timscatterday@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "timscatterday@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:23
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:18
+  [1m[36mUser Update (15.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["updated_at", "2019-12-16 18:46:52.941443"], ["id", 1]]
+  ↳ app/models/user.rb:18
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:18
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (2.5ms)
+Completed 200 OK in 297ms (Views: 12.0ms | ActiveRecord: 37.5ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 10:46:53 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (6.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 60ms (Views: 22.1ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 11:23:23 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 11ms (Views: 6.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 11:23:28 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (40.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (52.1ms)
+Completed 200 OK in 649ms (Views: 603.5ms | ActiveRecord: 41.3ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 11:25:29 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 448ms (Views: 445.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 11:25:32 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 11:27:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 404ms (Views: 401.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 11:27:33 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (7.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 11ms (Views: 2.6ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 11:36:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 411ms (Views: 407.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 11:37:02 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 11:38:03 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 419ms (Views: 415.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 11:38:06 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (17.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 21ms (Views: 3.3ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 11:56:14 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 416ms (Views: 412.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 11:56:18 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (5.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 11ms (Views: 4.2ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 11:57:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 618ms (Views: 615.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 11:57:02 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (2.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 11:57:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 427ms (Views: 423.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 11:57:29 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (2.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 11:57:33 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"btc", "price"=>"0.000144", "amount"=>"0.000144", "amount_usd"=>"0", "user_id"=>"1"}
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (8.3ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "price", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["asset", "btc"], ["price", 0], ["amount", 0.000144], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 19:57:33.758358"], ["updated_at", "2019-12-16 19:57:33.758358"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 200 OK in 54ms (Views: 0.8ms | ActiveRecord: 12.0ms)
+
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 11:57:42 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"btc", "price"=>"0.000144", "amount"=>"0.000144", "amount_usd"=>"0", "user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (1.5ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "price", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["asset", "btc"], ["price", 0], ["amount", 0.000144], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 19:57:42.920963"], ["updated_at", "2019-12-16 19:57:42.920963"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 11:57:48 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"eth", "price"=>"0.007589", "amount"=>"0.007589", "amount_usd"=>"0", "user_id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (1.4ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "price", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["asset", "eth"], ["price", 0], ["amount", 0.007589], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 19:57:48.012069"], ["updated_at", "2019-12-16 19:57:48.012069"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 11:57:51 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"bch", "price"=>"0.005117", "amount"=>"0.005117", "amount_usd"=>"0", "user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (1.2ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "price", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["asset", "bch"], ["price", 0], ["amount", 0.005117], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 19:57:51.498985"], ["updated_at", "2019-12-16 19:57:51.498985"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 11:57:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 11:58:01 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (6.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 10ms (Views: 3.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 11:59:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 412ms (Views: 409.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 11:59:54 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 12:00:02 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"ltc", "price"=>"0.025107", "amount"=>"0.025107", "amount_usd"=>"0", "user_id"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (8.4ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "price", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["asset", "ltc"], ["price", 0], ["amount", 0.025107], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 20:00:02.070624"], ["updated_at", "2019-12-16 20:00:02.070624"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 200 OK in 16ms (Views: 0.6ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 12:00:02 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 12:05:05 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 437ms (Views: 434.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 12:05:21 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 397ms (Views: 393.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 12:05:23 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 12:05:33 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"btc", "price"=>"$ 6,933.88", "amount"=>"0.014256", "amount_usd"=>"NaN", "user_id"=>"1"}
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "price", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["asset", "btc"], ["price", 0], ["amount", 0.014256], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 20:05:33.110620"], ["updated_at", "2019-12-16 20:05:33.110620"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 12:05:33 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 12:06:18 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 411ms (Views: 408.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 12:06:20 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (8.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 13ms (Views: 3.5ms | ActiveRecord: 8.0ms)
+
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 12:06:42 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"BTC", "price"=>"$ 6,933.36", "amount"=>"0.003024", "amount_usd"=>"NaN", "user_id"=>"1"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (0.5ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "price", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["asset", "BTC"], ["price", 0], ["amount", 0.003024], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 20:06:42.974157"], ["updated_at", "2019-12-16 20:06:42.974157"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 12:06:42 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 12:11:56 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"eos", "amount"=>"8.532420", "amount_usd"=>"NaN", "user_id"=>"1"}
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (9.9ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["asset", "eos"], ["amount", 8.53242], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 20:11:56.971864"], ["updated_at", "2019-12-16 20:11:56.971864"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 13.7ms)
+
+
+
+PG::NotNullViolation - ERROR:  null value in column "price" violates not-null constraint
+DETAIL:  Failing row contains (15, eos, null, 8.53242, 0, 1, 2019-12-16 20:11:56.971864, 2019-12-16 20:11:56.971864).
+:
+  app/controllers/api/transactions_controller.rb:13:in `create'
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 12:12:13 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"BTC", "price"=>"$ 6,933.36", "amount"=>"0.001440", "amount_usd"=>"NaN", "user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (2.8ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "price", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["asset", "BTC"], ["price", 0], ["amount", 0.00144], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 20:12:13.936229"], ["updated_at", "2019-12-16 20:12:13.936229"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 12:12:13 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 12:13:35 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 533ms (Views: 530.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 12:13:37 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 12:13:44 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"EOS", "amount"=>"4.255320", "amount_usd"=>"NaN", "user_id"=>"1"}
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (6.0ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["asset", "EOS"], ["amount", 4.25532], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 20:13:44.204259"], ["updated_at", "2019-12-16 20:13:44.204259"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (1.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 9.7ms)
+
+
+
+PG::NotNullViolation - ERROR:  null value in column "price" violates not-null constraint
+DETAIL:  Failing row contains (17, EOS, null, 4.25532, 0, 1, 2019-12-16 20:13:44.204259, 2019-12-16 20:13:44.204259).
+:
+  app/controllers/api/transactions_controller.rb:13:in `create'
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 12:14:03 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"EOS", "amount"=>"0.851064", "amount_usd"=>"NaN", "user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (4.5ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["asset", "EOS"], ["amount", 0.851064], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 20:14:03.266512"], ["updated_at", "2019-12-16 20:14:03.266512"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 6.0ms)
+
+
+
+PG::NotNullViolation - ERROR:  null value in column "price" violates not-null constraint
+DETAIL:  Failing row contains (18, EOS, null, 0.851064, 0, 1, 2019-12-16 20:14:03.266512, 2019-12-16 20:14:03.266512).
+:
+  app/controllers/api/transactions_controller.rb:13:in `create'
+
+Started GET "/" for ::1 at 2019-12-16 12:14:17 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 12:14:18 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (2.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 12:14:26 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"EOS", "amount"=>"1.276053", "amount_usd"=>"NaN", "user_id"=>"1"}
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (3.1ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["asset", "EOS"], ["amount", 1.276053], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 20:14:26.198964"], ["updated_at", "2019-12-16 20:14:26.198964"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 6.5ms)
+
+
+
+PG::NotNullViolation - ERROR:  null value in column "price" violates not-null constraint
+DETAIL:  Failing row contains (19, EOS, null, 1.276053, 0, 1, 2019-12-16 20:14:26.198964, 2019-12-16 20:14:26.198964).
+:
+  app/controllers/api/transactions_controller.rb:13:in `create'
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 12:15:23 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"EOS", "amount"=>"0.425351", "amount_usd"=>"NaN", "user_id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (3.0ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["asset", "EOS"], ["amount", 0.425351], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 20:15:23.490808"], ["updated_at", "2019-12-16 20:15:23.490808"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (1.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 11.4ms)
+
+
+
+PG::NotNullViolation - ERROR:  null value in column "price" violates not-null constraint
+DETAIL:  Failing row contains (20, EOS, null, 0.425351, 0, 1, 2019-12-16 20:15:23.490808, 2019-12-16 20:15:23.490808).
+:
+  app/controllers/api/transactions_controller.rb:13:in `create'
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 12:15:37 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"LTC", "amount"=>"0.024963", "amount_usd"=>"NaN", "user_id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (8.9ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["asset", "LTC"], ["amount", 0.024963], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 20:15:37.309903"], ["updated_at", "2019-12-16 20:15:37.309903"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (4.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 14.1ms)
+
+
+
+PG::NotNullViolation - ERROR:  null value in column "price" violates not-null constraint
+DETAIL:  Failing row contains (21, LTC, null, 0.024963, 0, 1, 2019-12-16 20:15:37.309903, 2019-12-16 20:15:37.309903).
+:
+  app/controllers/api/transactions_controller.rb:13:in `create'
+
+Started GET "/" for ::1 at 2019-12-16 12:18:40 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 412ms (Views: 409.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 12:18:42 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (15.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 21ms (Views: 5.1ms | ActiveRecord: 15.1ms)
+
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 12:18:47 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"LTC", "price"=>"$ 40.20", "amount"=>"0.024876", "amount_usd"=>"NaN", "user_id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (3.9ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "price", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["asset", "LTC"], ["price", 0], ["amount", 0.024876], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 20:18:47.735119"], ["updated_at", "2019-12-16 20:18:47.735119"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 12:18:47 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 13:33:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 527ms (Views: 518.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 13:33:03 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (11.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 29ms (Views: 16.5ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 13:33:10 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"BTC", "price"=>"6902.8", "amount"=>"0.000145", "amount_usd"=>"1", "user_id"=>"1"}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (21.2ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "price", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["asset", "BTC"], ["price", 6902], ["amount", 0.000145], ["amount_usd", 1], ["user_id", 1], ["created_at", "2019-12-16 21:33:10.170634"], ["updated_at", "2019-12-16 21:33:10.170634"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 200 OK in 36ms (Views: 0.5ms | ActiveRecord: 24.9ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 13:33:10 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 13:34:30 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"BTC", "price"=>"6902.8", "amount"=>"0.000007", "amount_usd"=>"0", "user_id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (1.9ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "price", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["asset", "BTC"], ["price", 6902], ["amount", 7.0e-06], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 21:34:30.678369"], ["updated_at", "2019-12-16 21:34:30.678369"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 13:34:30 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 13:35:39 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 384ms (Views: 380.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 13:35:41 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 13:41:34 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 414ms (Views: 410.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/deaca3d47b10ed4a91a872e9618706eec34081127762d88f2476ac8e99ada4b48525a9565cf2206d18c04053f278f693434af4d4629ca084a9d01b7a286a7e26" for ::1 at 2019-12-16 13:41:37 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/deaca3d47b10ed4a91a872e9618706eec34081127762d88f2476ac8e99ada4b48525a9565cf2206d18c04053f278f693434af4d4629ca084a9d01b7a286a7e26"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 13:41:37 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 13:42:02 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 13:42:03 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 39ms (Views: 35.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/deaca3d47b10ed4a91a872e9618706eec34081127762d88f2476ac8e99ada4b48525a9565cf2206d18c04053f278f693434af4d4629ca084a9d01b7a286a7e26" for ::1 at 2019-12-16 13:42:05 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/deaca3d47b10ed4a91a872e9618706eec34081127762d88f2476ac8e99ada4b48525a9565cf2206d18c04053f278f693434af4d4629ca084a9d01b7a286a7e26"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 13:42:05 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 13:43:57 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 416ms (Views: 410.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 13:44:02 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 13:44:04 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (2.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 13:44:43 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"BCH", "price"=>"$ 197.57", "amount"=>"0.005061", "amount_usd"=>"NaN", "user_id"=>"1"}
+  [1m[35m (4.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (0.7ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "price", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["asset", "BCH"], ["price", 0], ["amount", 0.005061], ["amount_usd", 0], ["user_id", 1], ["created_at", "2019-12-16 21:44:43.966474"], ["updated_at", "2019-12-16 21:44:43.966474"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 200 OK in 14ms (Views: 0.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 13:44:43 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 13:45:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 421ms (Views: 418.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-12-16 13:46:08 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PM6lPu6kH6Yfgo6htUwnfQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 386ms (Views: 383.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 13:46:10 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (1.9ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 13:46:16 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (9.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 15ms (Views: 5.3ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/api/transactions/" for ::1 at 2019-12-16 13:46:23 -0800
+Processing by Api::TransactionsController#create as JSON
+  Parameters: {"asset"=>"LTC", "price"=>"40.14", "amount"=>"0.024919", "amount_usd"=>"1", "user_id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[36mTransaction Create (0.5ms)[0m  [1m[32mINSERT INTO "transactions" ("asset", "price", "amount", "amount_usd", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["asset", "LTC"], ["price", 40], ["amount", 0.024919], ["amount_usd", 1], ["user_id", 1], ["created_at", "2019-12-16 21:46:23.911429"], ["updated_at", "2019-12-16 21:46:23.911429"]]
+  ↳ app/controllers/api/transactions_controller.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/transactions_controller.rb:13
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/transactions/by_user_id/1" for ::1 at 2019-12-16 13:46:23 -0800
+Processing by Api::TransactionsController#by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (user_id ='1')[0m
+  ↳ app/controllers/api/transactions_controller.rb:34
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.6ms)
+
+
