@@ -56,14 +56,14 @@ class BuyWidget extends Component {
                                 type="number" 
                                 placeholder='USD' 
                                 onChange={this.handleChange} 
-                                value={amount_usd} 
+                                value={amount_usd === '0' ? '$1' : amount_usd} 
                                 name="amount_usd"
                             />
                             <input 
                                 className='buy_btn' 
                                 id='crypto_exc' 
                                 type="number" 
-                                value={fromUSDtoCrypto(amount_usd, conversion_rate)} 
+                                value={fromUSDtoCrypto(amount_usd, conversion_rate) === "0.000000" ? conversion_rate : fromUSDtoCrypto(amount_usd, conversion_rate)}
                             />
                         </div>
                     </div>

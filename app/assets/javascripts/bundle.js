@@ -830,21 +830,9 @@ function (_React$Component) {
   _inherits(Allocation, _React$Component);
 
   function Allocation(props) {
-    var _this;
-
     _classCallCheck(this, Allocation);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Allocation).call(this, props));
-    _this.state = {
-      portfolio_value: parseInt(localStorage.getItem('tim_portfolio')) || 0,
-      btc_value: parseFloat(localStorage.getItem('tim_btc')) || 0,
-      eth_value: parseFloat(localStorage.getItem('tim_eth')) || 0,
-      bch_value: parseFloat(localStorage.getItem('tim_bch')) || 0,
-      ltc_value: parseFloat(localStorage.getItem('tim_ltc')) || 0,
-      eos_value: parseFloat(localStorage.getItem('tim_eos')) || 0,
-      total: (parseFloat(localStorage.getItem('tim_btc')) || 0) + (parseFloat(localStorage.getItem('tim_eth')) || 0) + (parseFloat(localStorage.getItem('tim_bch')) || 0) + (parseFloat(localStorage.getItem('tim_ltc')) || 0) + (parseFloat(localStorage.getItem('tim_eos')) || 0) || 0
-    };
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(Allocation).call(this, props));
   }
 
   _createClass(Allocation, [{
@@ -856,10 +844,15 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var _this$props = this.props,
+          assets = _this$props.assets,
           ticker = _this$props.ticker,
           img = _this$props.img,
           assetname = _this$props.assetname,
-          lower_ticker = _this$props.lower_ticker;
+          lower_ticker = _this$props.lower_ticker,
+          user_ticker_quantity = _this$props.user_ticker_quantity,
+          user_ticker_usd_value = _this$props.user_ticker_usd_value,
+          transactions = _this$props.transactions,
+          user_portfolio_value = _this$props.user_portfolio_value;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         className: "table_body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -874,7 +867,7 @@ function (_React$Component) {
         className: "crypto_name"
       }, assetname, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, ticker)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, parseFloat(this.state["".concat(lower_ticker, "_value")] * parseFloat(this.props.assets["".concat(ticker)]['conversion']).toFixed(4)).toFixed(5)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (parseFloat(this.state["".concat(lower_ticker, "_value")] / this.state.total) * 100).toFixed(2) ? (parseFloat(this.state["".concat(lower_ticker, "_value")] / this.state.total) * 100).toFixed(2) : 0));
+      }, ticker)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, user_ticker_quantity(ticker, transactions).toFixed(4)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (user_ticker_usd_value(ticker, transactions, assets[ticker]['USD']['PRICE']) / user_portfolio_value(transactions, assets)).toFixed(2)));
     }
   }]);
 
@@ -990,13 +983,13 @@ function (_Component) {
         type: "number",
         placeholder: "USD",
         onChange: this.handleChange,
-        value: amount_usd,
+        value: amount_usd === '0' ? '$1' : amount_usd,
         name: "amount_usd"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "buy_btn",
         id: "crypto_exc",
         type: "number",
-        value: fromUSDtoCrypto(amount_usd, conversion_rate)
+        value: fromUSDtoCrypto(amount_usd, conversion_rate) === "0.000000" ? conversion_rate : fromUSDtoCrypto(amount_usd, conversion_rate)
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "third"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -1036,8 +1029,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var url__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(url__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1068,21 +1059,9 @@ function (_React$Component) {
   _inherits(Portfolio, _React$Component);
 
   function Portfolio(props) {
-    var _this;
-
     _classCallCheck(this, Portfolio);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Portfolio).call(this, props));
-    _this.state = {
-      portfolio_value: parseInt(localStorage.getItem('tim_portfolio')) || 0,
-      btc_value: parseFloat(localStorage.getItem('tim_btc')) || 0,
-      eth_value: parseFloat(localStorage.getItem('tim_eth')) || 0,
-      bch_value: parseFloat(localStorage.getItem('tim_bch')) || 0,
-      ltc_value: parseFloat(localStorage.getItem('tim_ltc')) || 0,
-      eos_value: parseFloat(localStorage.getItem('tim_eos')) || 0,
-      total: (parseFloat(localStorage.getItem('tim_btc')) || 0) + (parseFloat(localStorage.getItem('tim_eth')) || 0) + (parseFloat(localStorage.getItem('tim_bch')) || 0) + (parseFloat(localStorage.getItem('tim_ltc')) || 0) + (parseFloat(localStorage.getItem('tim_eos')) || 0) || 0
-    };
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(Portfolio).call(this, props));
   }
 
   _createClass(Portfolio, [{
@@ -1094,14 +1073,6 @@ function (_React$Component) {
   }, {
     key: "buyCrypto",
     value: function buyCrypto(ticker, amount_usd, exc_rate, ticker_quantity) {
-      var portfolio_value = parseInt(this.state.portfolio_value) + parseInt(amount_usd);
-      var ticker_value = parseInt(this.state["".concat(ticker, "_value")]) + parseInt(amount_usd);
-      this.setState({
-        portfolio_value: portfolio_value
-      });
-      this.setState(_defineProperty({}, "".concat(ticker, "_value"), ticker_value));
-      localStorage.setItem('tim_portfolio', this.state.portfolio_value);
-      localStorage.setItem(["tim_".concat(ticker)], this.state["".concat(ticker, "_value")]);
       var transaction = {
         ticker: ticker,
         price: exc_rate,
@@ -1172,6 +1143,10 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Asset"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Balance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Allocation")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         getAssets: getAssets,
+        transactions: transactions,
+        user_ticker_quantity: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"],
+        user_ticker_usd_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_usd_value"],
+        user_portfolio_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_portfolio_value"],
         assetname: "Bitcoin",
         ticker: "BTC",
         lower_ticker: "btc",
@@ -1179,6 +1154,10 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         getAssets: getAssets,
+        transactions: transactions,
+        user_ticker_quantity: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"],
+        user_ticker_usd_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_usd_value"],
+        user_portfolio_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_portfolio_value"],
         assetname: "Ethereum",
         ticker: "ETH",
         lower_ticker: "btc",
@@ -1186,6 +1165,10 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         getAssets: getAssets,
+        transactions: transactions,
+        user_ticker_quantity: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"],
+        user_ticker_usd_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_usd_value"],
+        user_portfolio_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_portfolio_value"],
         assetname: "Bitcoin Cash",
         ticker: "BCH",
         lower_ticker: "bch",
@@ -1193,6 +1176,10 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         getAssets: getAssets,
+        transactions: transactions,
+        user_ticker_quantity: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"],
+        user_ticker_usd_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_usd_value"],
+        user_portfolio_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_portfolio_value"],
         assetname: "Litecoin",
         ticker: "LTC",
         lower_ticker: "ltc",
@@ -1200,6 +1187,10 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         getAssets: getAssets,
+        transactions: transactions,
+        user_ticker_quantity: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"],
+        user_ticker_usd_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_usd_value"],
+        user_portfolio_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_portfolio_value"],
         assetname: "EOS",
         ticker: "EOS",
         lower_ticker: "eos",
