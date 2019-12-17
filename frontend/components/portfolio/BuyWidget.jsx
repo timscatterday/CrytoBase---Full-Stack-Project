@@ -56,7 +56,7 @@ class BuyWidget extends Component {
                                 type="number" 
                                 placeholder='USD' 
                                 onChange={this.handleChange} 
-                                value={amount_usd === '0' ? '$1' : amount_usd} 
+                                value={amount_usd} 
                                 name="amount_usd"
                             />
                             <input 
@@ -70,6 +70,7 @@ class BuyWidget extends Component {
 
                     <div id='third'>
                         <input type="submit" value='Buy' />
+                        <input type="submit" value="Sell" />
                     </div>
 
                 </form>

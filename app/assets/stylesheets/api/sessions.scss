@@ -341,6 +341,18 @@
             height: 49px;
         }
 
+        .USD_trade{
+            padding: 14px;
+            color: blue($color: #000000);
+            text-align: left;
+            margin-bottom: 6px;
+            margin-left: 9px;
+            margin-right: 9px;
+            background-color: orange;
+            height: 49px;
+            border-radius: 10px;
+        }
+
         .BTC_trade{
             padding: 14px;
             color: white;
@@ -360,7 +372,7 @@
             margin-bottom: 6px;
             margin-left: 9px;
             margin-right: 9px;
-            background-color: #728bec;
+            background-color: blue;
             height: 49px;
             border-radius: 10px;
         }
@@ -441,6 +453,8 @@
             #third{
                 float: right;
                 width: 100px;
+                position: relative;
+                top: 9px;
             }
 
        
@@ -465,18 +479,32 @@
 
     .table_header th{
         text-align: center;
-        width: 19%;
+        width: 27%;
     }
 
     .table_body{
         text-align: center;
-        width: 19%;
+        width: 26%;
     }
 
     .table_body td{
         padding-top: 13px;
     }
-   
+
+    .progress-bar{
+    position: relative;
+    height: 20px;
+    width: 350px;
+    border-radius: 50px;
+    border: 1px solid #333;
+}
+
+    .filler {
+        background: #1DA598;
+        height: 100%;
+        border-radius: inherit;
+        transition: width .2s ease-in;
+    }
 
 
        

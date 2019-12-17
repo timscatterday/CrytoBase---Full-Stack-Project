@@ -867,7 +867,7 @@ function (_React$Component) {
         className: "crypto_name"
       }, assetname, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, ticker)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, user_ticker_quantity(ticker, transactions).toFixed(4)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (user_ticker_usd_value(ticker, transactions, assets[ticker]['USD']['PRICE']) / user_portfolio_value(transactions, assets)).toFixed(2)));
+      }, ticker)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, user_ticker_quantity(ticker, transactions).toFixed(4)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (user_ticker_usd_value(ticker, transactions, assets[ticker]['USD']['PRICE']) / user_portfolio_value(transactions, assets) * 100).toFixed(2)));
     }
   }]);
 
@@ -983,7 +983,7 @@ function (_Component) {
         type: "number",
         placeholder: "USD",
         onChange: this.handleChange,
-        value: amount_usd === '0' ? '$1' : amount_usd,
+        value: amount_usd,
         name: "amount_usd"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "buy_btn",
@@ -995,6 +995,9 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: "Buy"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "submit",
+        value: "Sell"
       }))));
     }
   }]);
@@ -1101,7 +1104,7 @@ function (_React$Component) {
         className: "port_title"
       }, "Portfolio Value"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "port_amount"
-      }, "$", Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_portfolio_value"])(transactions, assets))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "$", parseFloat(Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_portfolio_value"])(transactions, assets)).toFixed(2))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "buy_and_sell"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Buy and Sell"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "crypto_list"

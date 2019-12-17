@@ -7,6 +7,7 @@ import ls from 'local-storage'
 import { parse } from 'url';
 
 
+
 class Portfolio extends React.Component {
    
     constructor(props){
@@ -47,7 +48,7 @@ class Portfolio extends React.Component {
                 
                 <div className='port_value'>
                     <p className='port_title'>Portfolio Value</p>
-                    <p className='port_amount'>${user_portfolio_value(transactions, assets)}</p>
+                    <p className='port_amount'>${parseFloat(user_portfolio_value(transactions, assets)).toFixed(2)}</p>
                 </div>
 
                 <div className='buy_and_sell'>
@@ -107,6 +108,19 @@ class Portfolio extends React.Component {
                 <th>Balance</th>
                 <th>Allocation</th>
             </tr>
+
+            {/* <Allocation assets={assets}
+                getAssets={getAssets}
+                transactions={transactions}
+                user_ticker_quantity={user_ticker_quantity}
+                user_ticker_usd_value={user_ticker_usd_value}
+                user_portfolio_value={user_portfolio_value}
+                assetname='USD'
+                ticker='USD'
+                lower_ticker='usd'
+                img='https://dynamic-assets.coinbase.com/3c15df5e2ac7d4abbe9499ed9335041f00c620f28e8de2f93474a9f432058742cdf4674bd43f309e69778a26969372310135be97eb183d91c492154176d455b8/asset_icons/9d67b728b6c8f457717154b3a35f9ddc702eae7e76c4684ee39302c4d7fd0bb8.png'
+            /> */}
+
 
             <Allocation assets={assets} 
                 getAssets={getAssets} 
