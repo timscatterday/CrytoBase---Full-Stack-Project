@@ -934,7 +934,7 @@ var fromUSDtoCrypto = function fromUSDtoCrypto(amount_usd, crypto_per_usd) {
 
 var fromCryptoUSD = function fromCryptoUSD(amount_crypto, crypto_to_usd) {
   var usd_value = parseFloat(amount_crypto) * parseFloat(crypto_to_usd);
-  return Math.round(usd_value);
+  return usd_value;
 };
 
 var BuyWidget =
@@ -1041,7 +1041,7 @@ function (_Component) {
       })), mode === "Sell" && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "buy_btn",
         type: "number",
-        placeholder: "Token",
+        placeholder: "0",
         onChange: this.handleChange,
         value: amount_crypto,
         name: "amount_crypto"
@@ -1049,7 +1049,7 @@ function (_Component) {
         className: "buy_btn",
         id: "crypto_exc",
         type: "number",
-        value: fromCryptoUSD(amount_crypto, ticker_value) === "0.000000" ? conversion_rate : fromCryptoUSD(amount_usd, ticker_value)
+        value: fromCryptoUSD(amount_crypto, ticker_value) === 0 ? ticker_value : parseFloat(fromCryptoUSD(amount_crypto, ticker_value)).toFixed(2)
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "third"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {

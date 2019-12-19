@@ -8,7 +8,7 @@ const fromUSDtoCrypto = (amount_usd, crypto_per_usd) => {
 
 const fromCryptoUSD = (amount_crypto, crypto_to_usd) => {
     const usd_value = parseFloat(amount_crypto) * parseFloat(crypto_to_usd);
-    return Math.round(usd_value);
+    return usd_value;
 }
 
 class BuyWidget extends Component {
@@ -86,7 +86,7 @@ class BuyWidget extends Component {
                                     <input 
                                         className='buy_btn' 
                                         id='crypto_exc' 
-                                        type="number" 
+                                        type="number"
                                         value={fromUSDtoCrypto(amount_usd, conversion_rate) === "0.000000" ? conversion_rate : fromUSDtoCrypto(amount_usd, conversion_rate)}
                                     />
                                 </>
@@ -97,7 +97,7 @@ class BuyWidget extends Component {
                                     <input
                                         className='buy_btn'
                                         type="number"
-                                        placeholder='Token'
+                                        placeholder="0"
                                         onChange={this.handleChange}
                                         value={amount_crypto}
                                         name="amount_crypto"
@@ -106,7 +106,7 @@ class BuyWidget extends Component {
                                         className='buy_btn'
                                         id='crypto_exc'
                                         type="number"
-                                        value={fromCryptoUSD(amount_crypto, ticker_value) === "0.000000" ? conversion_rate : fromCryptoUSD(amount_usd, ticker_value)}
+                                        value={fromCryptoUSD(amount_crypto, ticker_value) === 0 ? ticker_value : parseFloat(fromCryptoUSD(amount_crypto, ticker_value)).toFixed(2)}
                                     />
                                 </>
                             }
