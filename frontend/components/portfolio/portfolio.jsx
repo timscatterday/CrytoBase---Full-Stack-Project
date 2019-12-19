@@ -149,13 +149,10 @@ class Portfolio extends React.Component {
 
             </div>
 
-                <h2 className='allocation_title'>Your Assets</h2>
                 
-        <table>
+        <table className='table_container'>
             <tr className='table_header' rowSpan='3'>
-                <th>Asset</th>
-                <th>Balance</th>
-                <th>Allocation</th>
+                <th>Your Assets</th>
             </tr>
 
 
@@ -176,7 +173,7 @@ class Portfolio extends React.Component {
             <Allocation 
                 assets={assets} 
                 transactions={transactions} 
-                assetname='Bitcoin Cash' 
+                assetname='BitcoinCash' 
                 ticker='BCH' 
                 lower_ticker='bch' 
                 img='http://www.thecoinface.com/assets/bch-03a53cc37436a99ba854e42df693fa52d92d88cbbce362fa217efd0e85be5e1f.png' 

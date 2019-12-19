@@ -869,7 +869,9 @@ function (_React$Component) {
           transactions = _this$props2.transactions;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         className: "table_body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "first_row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "".concat(assetname, "Logo")
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pic"
@@ -881,7 +883,7 @@ function (_React$Component) {
         className: "crypto_name"
       }, assetname, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, ticker)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Object(_util_transactions__WEBPACK_IMPORTED_MODULE_1__["user_ticker_quantity"])(ticker, transactions).toFixed(4)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", this.allocation_percentage()));
+      }, ticker)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Object(_util_transactions__WEBPACK_IMPORTED_MODULE_1__["user_ticker_quantity"])(ticker, transactions).toFixed(4), " ", ticker), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", this.allocation_percentage()));
     }
   }]);
 
@@ -1250,12 +1252,12 @@ function (_React$Component) {
         conversion_rate: parseFloat(assets['EOS']['conversion']).toFixed(6),
         asset_name: "EOS",
         ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["fromStringtoDollar"])(assets['EOS']['USD']['PRICE'])
-      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "allocation_title"
-      }, "Your Assets"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        className: "table_container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         className: "table_header",
         rowSpan: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Asset"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Balance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Allocation")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Your Assets")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         transactions: transactions,
         assetname: "Bitcoin",
@@ -1272,7 +1274,7 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         transactions: transactions,
-        assetname: "Bitcoin Cash",
+        assetname: "BitcoinCash",
         ticker: "BCH",
         lower_ticker: "bch",
         img: "http://www.thecoinface.com/assets/bch-03a53cc37436a99ba854e42df693fa52d92d88cbbce362fa217efd0e85be5e1f.png"
