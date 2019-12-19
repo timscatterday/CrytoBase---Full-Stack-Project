@@ -31,7 +31,7 @@ Cryptobase is a clone of the web application Coinbase. Cryptobase allows users t
 
 ### Portfolio Page
 
-<img width="1427" alt="Screen Shot 2019-12-17 at 9 23 48 AM" src="https://user-images.githubusercontent.com/46978514/71019686-a6525280-20af-11ea-9a19-482030dc8346.png">
+https://user-images.githubusercontent.com/46978514/71213037-72219200-2267-11ea-8e0b-d2346d8d83ae.png
 
 * Users are able to buy and sell cryptocurrency assets at current exchange rates.
 * Portfolio value is reconciled upon user login to display current value of portfolio holdings.
