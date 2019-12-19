@@ -804,6 +804,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_transactions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../util/transactions */ "./frontend/util/transactions.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -814,13 +815,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -830,29 +832,41 @@ function (_React$Component) {
   _inherits(Allocation, _React$Component);
 
   function Allocation(props) {
+    var _this;
+
     _classCallCheck(this, Allocation);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Allocation).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Allocation).call(this, props));
+    _this.allocation_percentage = _this.allocation_percentage.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Allocation, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.getAssets();
+    key: "allocation_percentage",
+    value: function allocation_percentage() {
+      var _this$props = this.props,
+          ticker = _this$props.ticker,
+          transactions = _this$props.transactions,
+          assets = _this$props.assets;
+      var ticker_value = Object(_util_transactions__WEBPACK_IMPORTED_MODULE_1__["user_ticker_usd_value"])(ticker, transactions, assets[ticker]['USD']['PRICE']);
+      var portfolio_value = Object(_util_transactions__WEBPACK_IMPORTED_MODULE_1__["user_portfolio_value"])(transactions, assets);
+
+      if (ticker_value === 0 && portfolio_value === 0) {
+        return "0.00";
+      }
+
+      return (ticker_value / portfolio_value * 100).toFixed(2);
     }
   }, {
     key: "render",
     value: function render() {
-      var _this$props = this.props,
-          assets = _this$props.assets,
-          ticker = _this$props.ticker,
-          img = _this$props.img,
-          assetname = _this$props.assetname,
-          lower_ticker = _this$props.lower_ticker,
-          user_ticker_quantity = _this$props.user_ticker_quantity,
-          user_ticker_usd_value = _this$props.user_ticker_usd_value,
-          transactions = _this$props.transactions,
-          user_portfolio_value = _this$props.user_portfolio_value;
+      var _this$props2 = this.props,
+          assets = _this$props2.assets,
+          ticker = _this$props2.ticker,
+          img = _this$props2.img,
+          assetname = _this$props2.assetname,
+          lower_ticker = _this$props2.lower_ticker,
+          transactions = _this$props2.transactions;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         className: "table_body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -863,11 +877,11 @@ function (_React$Component) {
         src: img,
         height: "36",
         width: "36"
-      })), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "crypto_name"
       }, assetname, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, ticker)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, user_ticker_quantity(ticker, transactions).toFixed(4)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", (user_ticker_usd_value(ticker, transactions, assets[ticker]['USD']['PRICE']) / user_portfolio_value(transactions, assets) * 100).toFixed(2)));
+      }, ticker)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Object(_util_transactions__WEBPACK_IMPORTED_MODULE_1__["user_ticker_quantity"])(ticker, transactions).toFixed(4)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", this.allocation_percentage()));
     }
   }]);
 
@@ -918,6 +932,11 @@ var fromUSDtoCrypto = function fromUSDtoCrypto(amount_usd, crypto_per_usd) {
   return display_crypto_amount;
 };
 
+var fromCryptoUSD = function fromCryptoUSD(amount_crypto, crypto_to_usd) {
+  var usd_value = parseFloat(amount_crypto) * parseFloat(crypto_to_usd);
+  return Math.round(usd_value);
+};
+
 var BuyWidget =
 /*#__PURE__*/
 function (_Component) {
@@ -930,7 +949,8 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(BuyWidget).call(this, props));
     _this.state = {
-      amount_usd: 0
+      amount_usd: 0,
+      amount_crypto: 0
     }, _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
@@ -940,13 +960,37 @@ function (_Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      var amount_usd = this.state.amount_usd;
+      var mode = this.props.mode || "Sell";
+      var _this$state = this.state,
+          amount_usd = _this$state.amount_usd,
+          amount_crypto = _this$state.amount_crypto;
       var _this$props = this.props,
           conversion_rate = _this$props.conversion_rate,
           asset_name = _this$props.asset_name,
           ticker = _this$props.ticker,
-          ticker_value = _this$props.ticker_value;
-      this.props.buyCrypto(ticker, amount_usd, ticker_value, fromUSDtoCrypto(amount_usd, conversion_rate));
+          ticker_value = _this$props.ticker_value,
+          available_usd = _this$props.available_usd,
+          ticker_amount = _this$props.ticker_amount;
+
+      if (mode === 'Sell') {
+        if (amount_crypto <= ticker_amount) {
+          this.props.BuyorSellCrypto(ticker, fromCryptoUSD(amount_crypto, ticker_value), ticker_value, amount_crypto, mode);
+        } else {
+          alert("Do not have enough tokens");
+        }
+      }
+
+      ;
+
+      if (mode === 'Buy') {
+        if (amount_usd <= available_usd) {
+          this.props.BuyorSellCrypto(ticker, amount_usd, ticker_value, fromUSDtoCrypto(amount_usd, conversion_rate), mode);
+        } else {
+          alert("Not enough USD in account");
+        }
+      }
+
+      ;
     }
   }, {
     key: "handleChange",
@@ -962,11 +1006,15 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var amount_usd = this.state.amount_usd;
+      var _this$state2 = this.state,
+          amount_usd = _this$state2.amount_usd,
+          amount_crypto = _this$state2.amount_crypto;
       var _this$props2 = this.props,
           conversion_rate = _this$props2.conversion_rate,
           asset_name = _this$props2.asset_name,
-          ticker = _this$props2.ticker;
+          ticker = _this$props2.ticker,
+          ticker_value = _this$props2.ticker_value;
+      var mode = this.props.mode || "Sell";
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "".concat(ticker, "_trade")
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -978,7 +1026,7 @@ function (_Component) {
         id: "second"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "exchange_btn"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, mode === "Buy" && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "buy_btn",
         type: "number",
         placeholder: "USD",
@@ -990,14 +1038,24 @@ function (_Component) {
         id: "crypto_exc",
         type: "number",
         value: fromUSDtoCrypto(amount_usd, conversion_rate) === "0.000000" ? conversion_rate : fromUSDtoCrypto(amount_usd, conversion_rate)
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), mode === "Sell" && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "buy_btn",
+        type: "number",
+        placeholder: "Token",
+        onChange: this.handleChange,
+        value: amount_crypto,
+        name: "amount_crypto"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "buy_btn",
+        id: "crypto_exc",
+        type: "number",
+        value: fromCryptoUSD(amount_crypto, ticker_value) === "0.000000" ? conversion_rate : fromCryptoUSD(amount_usd, ticker_value)
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "third"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "mode_button",
         type: "submit",
-        value: "Buy"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        value: "Sell"
+        value: mode
       }))));
     }
   }]);
@@ -1062,9 +1120,15 @@ function (_React$Component) {
   _inherits(Portfolio, _React$Component);
 
   function Portfolio(props) {
+    var _this;
+
     _classCallCheck(this, Portfolio);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Portfolio).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Portfolio).call(this, props));
+    _this.state = {
+      mode: 'Buy'
+    };
+    return _this;
   }
 
   _createClass(Portfolio, [{
@@ -1072,25 +1136,38 @@ function (_React$Component) {
     value: function componentDidMount() {
       this.props.getAssets();
       this.props.fetchTransactions();
-    }
+    } // BuyorSellCrypto(ticker, amount_usd, exc_rate, ticker_quantity){
+    //     const transaction = {
+    //         ticker: ticker, 
+    //         price: exc_rate, 
+    //         amount: ticker_quantity,
+    //         type: 'Buy'
+    //     };
+    //     this.props.createTransaction(transaction)
+    // };
+
   }, {
-    key: "buyCrypto",
-    value: function buyCrypto(ticker, amount_usd, exc_rate, ticker_quantity) {
+    key: "BuyorSellCrypto",
+    value: function BuyorSellCrypto(ticker, amount_usd, exc_rate, ticker_quantity, type) {
       var transaction = {
         ticker: ticker,
         price: exc_rate,
-        amount: ticker_quantity
+        amount: ticker_quantity,
+        type: type
       };
       this.props.createTransaction(transaction);
     }
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       console.log('portfolio.jsx.render this.props.transactions', this.props.transactions);
       var _this$props = this.props,
           getAssets = _this$props.getAssets,
           assets = _this$props.assets,
           transactions = _this$props.transactions;
+      var mode = this.state.mode;
       react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
         src: "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
       });
@@ -1099,41 +1176,76 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user_portfolio"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "port_value_container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "USD_amount"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "My Portfolio"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Available USD:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$", Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_usd_amount"])(transactions)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "port_value"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "port_title"
-      }, "Portfolio Value"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, "Portfolio Value"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "port_amount"
-      }, "$", parseFloat(Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_portfolio_value"])(transactions, assets)).toFixed(2))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "$", parseFloat(Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_portfolio_value"])(transactions, assets)).toFixed(2)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "buy_and_sell"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Buy and Sell"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "buy_sell_button_container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "buy_sell_button",
+        onClick: function onClick() {
+          _this2.setState({
+            mode: "Buy"
+          });
+        }
+      }, "Buy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "buy_sell_button",
+        onClick: function onClick() {
+          return _this2.setState({
+            mode: "Sell"
+          });
+        }
+      }, "Sell")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "crypto_list"
       }, assets['BTC'] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        buyCrypto: this.buyCrypto.bind(this),
+        mode: mode,
+        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_usd_amount"])(transactions),
+        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"])("BTC", transactions),
+        BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
         ticker: "BTC",
         conversion_rate: parseFloat(assets['BTC']['conversion']).toFixed(6),
         asset_name: "Bitcoin",
         ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["fromStringtoDollar"])(assets['BTC']['USD']['PRICE'])
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        buyCrypto: this.buyCrypto.bind(this),
+        mode: mode,
+        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_usd_amount"])(transactions),
+        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"])("ETH", transactions),
+        BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
         ticker: "ETH",
         conversion_rate: parseFloat(assets['ETH']['conversion']).toFixed(6),
         asset_name: "Ethereum",
         ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["fromStringtoDollar"])(assets['ETH']['USD']['PRICE'])
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        buyCrypto: this.buyCrypto.bind(this),
+        mode: mode,
+        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_usd_amount"])(transactions),
+        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"])("BCH", transactions),
+        BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
         ticker: "BCH",
         conversion_rate: parseFloat(assets['BCH']['conversion']).toFixed(6),
         asset_name: "Bitcoin Cash",
         ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["fromStringtoDollar"])(assets['BCH']['USD']['PRICE'])
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        buyCrypto: this.buyCrypto.bind(this),
+        mode: mode,
+        BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
+        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_usd_amount"])(transactions),
+        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"])("LTC", transactions),
         ticker: "LTC",
         conversion_rate: parseFloat(assets['LTC']['conversion']).toFixed(6),
         asset_name: "Litecoin",
         ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["fromStringtoDollar"])(assets['LTC']['USD']['PRICE'])
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        buyCrypto: this.buyCrypto.bind(this),
+        mode: mode,
+        BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
+        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_usd_amount"])(transactions),
+        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"])("EOS", transactions),
         ticker: "EOS",
         conversion_rate: parseFloat(assets['EOS']['conversion']).toFixed(6),
         asset_name: "EOS",
@@ -1145,55 +1257,35 @@ function (_React$Component) {
         rowSpan: "3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Asset"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Balance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Allocation")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
-        getAssets: getAssets,
         transactions: transactions,
-        user_ticker_quantity: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"],
-        user_ticker_usd_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_usd_value"],
-        user_portfolio_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_portfolio_value"],
         assetname: "Bitcoin",
         ticker: "BTC",
         lower_ticker: "btc",
         img: "http://www.thecoinface.com/assets/btc-8022fd53c251f18cb39cefede445f1c78a3b265989232f0bb46b9c4622e55a9e.png"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
-        getAssets: getAssets,
         transactions: transactions,
-        user_ticker_quantity: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"],
-        user_ticker_usd_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_usd_value"],
-        user_portfolio_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_portfolio_value"],
         assetname: "Ethereum",
         ticker: "ETH",
         lower_ticker: "btc",
         img: "http://www.thecoinface.com/assets/eth-99bf2102cc13a51bb226f931b8d0fa4c5b3ca9dc4179167e89d7ee3f677c3fdb.png"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
-        getAssets: getAssets,
         transactions: transactions,
-        user_ticker_quantity: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"],
-        user_ticker_usd_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_usd_value"],
-        user_portfolio_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_portfolio_value"],
         assetname: "Bitcoin Cash",
         ticker: "BCH",
         lower_ticker: "bch",
         img: "http://www.thecoinface.com/assets/bch-03a53cc37436a99ba854e42df693fa52d92d88cbbce362fa217efd0e85be5e1f.png"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
-        getAssets: getAssets,
         transactions: transactions,
-        user_ticker_quantity: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"],
-        user_ticker_usd_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_usd_value"],
-        user_portfolio_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_portfolio_value"],
         assetname: "Litecoin",
         ticker: "LTC",
         lower_ticker: "ltc",
         img: "http://www.thecoinface.com/assets/ltc-7160750bcbc115ac8a3229bc1120fb59e96a737d607a57b42fa8e2b092a14159.png"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
-        getAssets: getAssets,
         transactions: transactions,
-        user_ticker_quantity: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"],
-        user_ticker_usd_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_usd_value"],
-        user_portfolio_value: _util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_portfolio_value"],
         assetname: "EOS",
         ticker: "EOS",
         lower_ticker: "eos",
@@ -2011,7 +2103,15 @@ var INITIAL_USD_AMOUNT = 10000; // create an action creator that fetches our tra
 
 var user_usd_amount = function user_usd_amount(transactions) {
   var amount = transactions.reduce(function (acc, curr) {
-    return acc + curr.amount_usd;
+    if (curr.tx_type === "Buy") {
+      return acc - curr.amount_usd;
+    }
+
+    if (curr.tx_type === "Sell") {
+      return acc + curr.amount_usd;
+    }
+
+    return acc;
   }, INITIAL_USD_AMOUNT);
   return amount;
 };
@@ -2026,7 +2126,15 @@ var user_ticker_quantity = function user_ticker_quantity(ticker, transactions) {
     }
   });
   var amount_of_ticker = transactions_with_ticker.reduce(function (acc, curr) {
-    return acc + curr.amount;
+    if (curr.tx_type === "Buy") {
+      return acc + curr.amount;
+    }
+
+    if (curr.tx_type === "Sell") {
+      return acc - curr.amount;
+    }
+
+    return acc;
   }, 0);
   return amount_of_ticker;
 };
@@ -2097,7 +2205,8 @@ var createTransaction = function createTransaction(user_id, transaction) {
     price: transaction.price,
     amount: transaction.amount,
     amount_usd: Math.round(transaction.price * transaction.amount),
-    user_id: user_id
+    user_id: user_id,
+    type: transaction.type
   };
   return $.ajax({
     url: "api/transactions/",

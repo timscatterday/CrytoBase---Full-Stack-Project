@@ -1,7 +1,7 @@
 import React from 'react';
 import BuyWidget  from './BuyWidget';
 import Allocation from './Allocation';
-import { user_portfolio_value, user_ticker_quantity, user_ticker_usd_value, fromStringtoDollar} from '../../util/transactions'
+import { user_portfolio_value, fromStringtoDollar, user_usd_amount, user_ticker_quantity} from '../../util/transactions';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 import ls from 'local-storage'
 import { parse } from 'url';
@@ -12,6 +12,10 @@ class Portfolio extends React.Component {
    
     constructor(props){
         super(props)
+
+        this.state = {
+            mode: 'Buy'
+        };
     }
 
     componentDidMount(){
@@ -19,12 +23,24 @@ class Portfolio extends React.Component {
         this.props.fetchTransactions();
     }
 
-    buyCrypto(ticker, amount_usd, exc_rate, ticker_quantity){
+    // BuyorSellCrypto(ticker, amount_usd, exc_rate, ticker_quantity){
+
+    //     const transaction = {
+    //         ticker: ticker, 
+    //         price: exc_rate, 
+    //         amount: ticker_quantity,
+    //         type: 'Buy'
+    //     };
+    //     this.props.createTransaction(transaction)
+    // };
+
+    BuyorSellCrypto(ticker, amount_usd, exc_rate, ticker_quantity, type) {
 
         const transaction = {
-            ticker: ticker, 
-            price: exc_rate, 
-            amount: ticker_quantity
+            ticker: ticker,
+            price: exc_rate,
+            amount: ticker_quantity,
+            type: type
         };
         this.props.createTransaction(transaction)
     };
@@ -36,6 +52,7 @@ class Portfolio extends React.Component {
         console.log('portfolio.jsx.render this.props.transactions', this.props.transactions)
 
         const {getAssets, assets, transactions} = this.props;
+        const {mode} = this.state;
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -46,46 +63,78 @@ class Portfolio extends React.Component {
 
             <div className='user_portfolio'>
                 
-                <div className='port_value'>
-                    <p className='port_title'>Portfolio Value</p>
-                    <p className='port_amount'>${parseFloat(user_portfolio_value(transactions, assets)).toFixed(2)}</p>
+                <div className='port_value_container'>
+                    
+                    <div className='USD_amount'>
+                        <div>My Portfolio</div>
+                        <div>
+                            <p>Available USD:</p>
+                            <p>${user_usd_amount(transactions)}</p>
+                        </div>
+                    </div>
+                    
+                    <div className='port_value'>
+                        <div className='port_title'>Portfolio Value</div>
+                        <div className='port_amount'>${parseFloat(user_portfolio_value(transactions, assets)).toFixed(2)}</div>
+                    </div>
+
                 </div>
 
+        
                 <div className='buy_and_sell'>
-                    <p>Buy and Sell</p>
+                    <div className='buy_sell_button_container'>
+                        <button className='buy_sell_button' onClick={() => { this.setState({ mode: "Buy" }) }}>Buy</button>
+                        <button className='buy_sell_button' onClick={() => this.setState({ mode: "Sell" })}>Sell</button>
+                    </div>
+                
                     <div className='crypto_list'>
                         {assets['BTC'] && 
                           <>
                                 <BuyWidget
-                                    buyCrypto={this.buyCrypto.bind(this)}
+                                    mode={mode}
+                                    available_usd={user_usd_amount(transactions)}
+                                    ticker_amount={user_ticker_quantity("BTC", transactions)}
+                                    BuyorSellCrypto={this.BuyorSellCrypto.bind(this)}
                                     ticker='BTC'
                                     conversion_rate={parseFloat(assets['BTC']['conversion']).toFixed(6)}
                                     asset_name="Bitcoin"
                                     ticker_value = {fromStringtoDollar(assets['BTC']['USD']['PRICE'])}
                                 />
                                 <BuyWidget
-                                    buyCrypto={this.buyCrypto.bind(this)}
+                                    mode={mode}
+                                    available_usd={user_usd_amount(transactions)}
+                                    ticker_amount={user_ticker_quantity("ETH", transactions)}
+                                    BuyorSellCrypto={this.BuyorSellCrypto.bind(this)}
                                     ticker='ETH'
                                     conversion_rate={parseFloat(assets['ETH']['conversion']).toFixed(6)}
                                     asset_name="Ethereum"
                                     ticker_value={fromStringtoDollar(assets['ETH']['USD']['PRICE'])}
                                 />
                                 <BuyWidget
-                                    buyCrypto={this.buyCrypto.bind(this)}
+                                    mode={mode}
+                                    available_usd={user_usd_amount(transactions)}
+                                    ticker_amount={user_ticker_quantity("BCH", transactions)}
+                                    BuyorSellCrypto={this.BuyorSellCrypto.bind(this)}
                                     ticker='BCH'
                                     conversion_rate={parseFloat(assets['BCH']['conversion']).toFixed(6)}
                                     asset_name="Bitcoin Cash"
                                     ticker_value={fromStringtoDollar(assets['BCH']['USD']['PRICE'])}
                                 />
                                 <BuyWidget
-                                    buyCrypto={this.buyCrypto.bind(this)}
+                                    mode={mode}
+                                    BuyorSellCrypto={this.BuyorSellCrypto.bind(this)}
+                                    available_usd={user_usd_amount(transactions)}
+                                    ticker_amount={user_ticker_quantity("LTC", transactions)}
                                     ticker='LTC'
                                     conversion_rate={parseFloat(assets['LTC']['conversion']).toFixed(6)}
                                     asset_name="Litecoin"
                                     ticker_value={fromStringtoDollar(assets['LTC']['USD']['PRICE'])}
                                 />
                                 <BuyWidget
-                                    buyCrypto={this.buyCrypto.bind(this)}
+                                    mode={mode}
+                                    BuyorSellCrypto={this.BuyorSellCrypto.bind(this)}
+                                    available_usd={user_usd_amount(transactions)}
+                                    ticker_amount={user_ticker_quantity("EOS", transactions)}
                                     ticker='EOS'
                                     conversion_rate={parseFloat(assets['EOS']['conversion']).toFixed(6)}
                                     asset_name="EOS"
@@ -109,36 +158,16 @@ class Portfolio extends React.Component {
                 <th>Allocation</th>
             </tr>
 
-            {/* <Allocation assets={assets}
-                getAssets={getAssets}
-                transactions={transactions}
-                user_ticker_quantity={user_ticker_quantity}
-                user_ticker_usd_value={user_ticker_usd_value}
-                user_portfolio_value={user_portfolio_value}
-                assetname='USD'
-                ticker='USD'
-                lower_ticker='usd'
-                img='https://dynamic-assets.coinbase.com/3c15df5e2ac7d4abbe9499ed9335041f00c620f28e8de2f93474a9f432058742cdf4674bd43f309e69778a26969372310135be97eb183d91c492154176d455b8/asset_icons/9d67b728b6c8f457717154b3a35f9ddc702eae7e76c4684ee39302c4d7fd0bb8.png'
-            /> */}
-
 
             <Allocation assets={assets} 
-                getAssets={getAssets} 
-                transactions={transactions} 
-                user_ticker_quantity={user_ticker_quantity}
-                user_ticker_usd_value = {user_ticker_usd_value}
-                user_portfolio_value = {user_portfolio_value} 
+                transactions={transactions}  
                 assetname='Bitcoin' 
                 ticker='BTC' 
                 lower_ticker='btc' 
                 img='http://www.thecoinface.com/assets/btc-8022fd53c251f18cb39cefede445f1c78a3b265989232f0bb46b9c4622e55a9e.png' 
             />
-            <Allocation assets={assets} 
-                getAssets={getAssets} 
+            <Allocation assets={assets}  
                 transactions={transactions} 
-                user_ticker_quantity={user_ticker_quantity}
-                user_ticker_usd_value = {user_ticker_usd_value}
-                user_portfolio_value = {user_portfolio_value} 
                 assetname='Ethereum' 
                 ticker='ETH' 
                 lower_ticker='btc' 
@@ -146,11 +175,7 @@ class Portfolio extends React.Component {
             />
             <Allocation 
                 assets={assets} 
-                getAssets={getAssets} 
                 transactions={transactions} 
-                user_ticker_quantity={user_ticker_quantity}
-                user_ticker_usd_value = {user_ticker_usd_value}
-                user_portfolio_value = {user_portfolio_value} 
                 assetname='Bitcoin Cash' 
                 ticker='BCH' 
                 lower_ticker='bch' 
@@ -158,11 +183,7 @@ class Portfolio extends React.Component {
             />
             <Allocation 
                 assets={assets} 
-                getAssets={getAssets} 
                 transactions={transactions} 
-                user_ticker_quantity={user_ticker_quantity}
-                user_ticker_usd_value = {user_ticker_usd_value}
-                user_portfolio_value = {user_portfolio_value} 
                 assetname='Litecoin' 
                 ticker='LTC' 
                 lower_ticker='ltc' 
@@ -170,11 +191,7 @@ class Portfolio extends React.Component {
             />
             <Allocation 
                 assets={assets} 
-                getAssets={getAssets} 
                 transactions={transactions}
-                user_ticker_quantity={user_ticker_quantity}
-                user_ticker_usd_value = {user_ticker_usd_value}
-                user_portfolio_value = {user_portfolio_value} 
                 assetname='EOS' 
                 ticker='EOS' 
                 lower_ticker='eos' 

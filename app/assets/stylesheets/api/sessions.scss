@@ -284,28 +284,45 @@
 }
 
     .user_portfolio{
-       display: flex;
+        display: flex;
         flex-direction: row;
         justify-content: space-around;
         width: 100%;
         padding-bottom: 44px;
+        padding-top: 50px;
+        background-color:#1652f0;
     }
 
         .port_title{
             color: black;
             font-size: 49px;
+        }
+
+        .port_value_container{
+            width: 33%;
+            text-align: center;
+            height: 458px;
             position: relative;
-            top: 69px;
+            border: solid;
+            z-index: 1;
+            background-color: white;
+        }
+
+        .USD_amount{
+            border-bottom: #000000;
+            border-bottom: solid;
+            align-items: center;
+            display: flex;
+            justify-content: space-around;
+            height: 57px;
         }
 
         .port_value{
-            width: 28%;
-            text-align: center;
-            height: 436px;
+            color: #000000;
+            display: flex;
+            flex-direction: column;
             position: relative;
-            top: 42px;
-            border-radius: 50%;
-            border: solid;
+            top: 81px;
         }
 
         .port_amount{
@@ -316,13 +333,9 @@
         }
 
         .buy_and_sell{
-            width: 44%;
+            width: 40%;
             text-align: center;
             height: 500px;
-            position: relative;
-            top: 41px;
-            left: 41px;
-            border: lightgray solid;
             border-radius: 8px;
         }
 
@@ -372,7 +385,7 @@
             margin-bottom: 6px;
             margin-left: 9px;
             margin-right: 9px;
-            background-color: blue;
+            background-color: #637eea;
             height: 49px;
             border-radius: 10px;
         }
@@ -506,5 +519,32 @@
         transition: width .2s ease-in;
     }
 
+    .buy_sell_button_container{
+        display: flex;
+        padding-bottom: 1px;
+        margin-left: 11px;
+        margin-right: -35px;
+    }
+
+    .buy_sell_button{
+        color: dodgerblue;
+        width: 47%;
+        height: 50px;
+        font-size: 27px;
+        border-radius: 4px;
+    }
+
+        .buy_sell_button:hover{
+            background-color: lightgrey;
+        }
+
+        .mode_button{
+            color: dodgerblue;
+            width: 82%;
+        }
+
+        #third{
+            height: 20px;;
+        }
 
        

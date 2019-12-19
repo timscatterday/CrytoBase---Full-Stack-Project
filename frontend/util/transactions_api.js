@@ -13,7 +13,8 @@ export const createTransaction = (user_id, transaction) => {
         price: transaction.price,
         amount: transaction.amount,
         amount_usd: Math.round(transaction.price * transaction.amount),
-        user_id: user_id
+        user_id: user_id,
+        type: transaction.type
     }
     return $.ajax({
         url: `api/transactions/`,

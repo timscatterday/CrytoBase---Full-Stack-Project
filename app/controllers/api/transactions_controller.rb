@@ -7,6 +7,7 @@ class Api::TransactionsController < ApplicationController
         price = params[:price]
         amount = params[:amount]
         amount_usd = params[:amount_usd]
+        tx_type = params[:type]
 
         # suppose to wait for validation
 
@@ -15,7 +16,8 @@ class Api::TransactionsController < ApplicationController
             :asset => asset,
             :price => price,
             :amount => amount,
-            :amount_usd => amount_usd
+            :amount_usd => amount_usd,
+            :tx_type => tx_type,
         )
 
         render json: @transaction

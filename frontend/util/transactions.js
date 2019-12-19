@@ -6,7 +6,13 @@ const INITIAL_USD_AMOUNT = 10000
 
 export const user_usd_amount = (transactions) => {
     const amount = transactions.reduce((acc, curr) => {
-        return acc + curr.amount_usd;
+        if(curr.tx_type === "Buy") {
+            return acc - curr.amount_usd
+        }
+        if(curr.tx_type === "Sell"){
+            return acc + curr.amount_usd;
+        }
+        return acc;
     }, INITIAL_USD_AMOUNT)
     return amount;
 };
@@ -23,7 +29,13 @@ export const user_ticker_quantity = (ticker, transactions) => {
     })
 
     const amount_of_ticker = transactions_with_ticker.reduce((acc, curr) => {
-        return acc + curr.amount;
+        if (curr.tx_type === "Buy") {
+            return acc + curr.amount
+        }
+        if (curr.tx_type === "Sell") {
+            return acc - curr.amount
+        }
+        return acc;
     }, 0)
 
     return amount_of_ticker;
