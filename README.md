@@ -35,4 +35,4 @@ Cryptobase is a clone of the web application Coinbase. Cryptobase allows users t
 
 * Users are able to buy and sell cryptocurrency assets at current exchange rates.
 * Created Transaction API endpoint to persist user's buy and sell transactions to database, creating historical record of all users transactions
-* Portfolio's real time value is calculated upon user login to display current value of portfolio and individual holdings.
+* Portfolio's real time value is calculated through historical transaction records from database upon user login to display current value of portfolio and individual holdings.
