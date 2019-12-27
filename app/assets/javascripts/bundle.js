@@ -743,11 +743,7 @@ function (_React$Component) {
         className: "line"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "line2"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "reference"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://nomics.com"
-      }, "Crypto Market Cap & Pricing Data Provided By Nomics")));
+      }))));
     }
   }]);
 
@@ -825,6 +821,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+;
 
 var Allocation =
 /*#__PURE__*/
@@ -883,7 +880,7 @@ function (_React$Component) {
         className: "crypto_name"
       }, assetname, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, ticker)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Object(_util_transactions__WEBPACK_IMPORTED_MODULE_1__["user_ticker_quantity"])(ticker, transactions).toFixed(4), " ", ticker), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "% ", this.allocation_percentage()));
+      }, ticker)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Object(_util_transactions__WEBPACK_IMPORTED_MODULE_1__["user_ticker_quantity"])(ticker, transactions).toFixed(4), " ", ticker), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "%", this.allocation_percentage()));
     }
   }]);
 
@@ -35753,7 +35750,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
