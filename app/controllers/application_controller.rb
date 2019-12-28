@@ -1,6 +1,11 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :logged_in?
+  before_action :allow_cross_domain_ajax
+  def allow_cross_domain_ajax
+      headers['Access-Control-Allow-Origin'] = '*'
+      headers['Access-Control-Request-Method'] = 'GET, POST, OPTIONS'
+  end
   
+  helper_method :current_user, :logged_in?
   skip_before_action :verify_authenticity_token
 
   def logout!
