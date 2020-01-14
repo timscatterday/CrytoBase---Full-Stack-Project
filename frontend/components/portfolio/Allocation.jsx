@@ -1,5 +1,6 @@
 import React from 'react';
-import { user_portfolio_value, user_ticker_quantity, user_ticker_usd_value, fromStringtoDollar } from '../../util/transactions';;
+import { user_portfolio_value, user_ticker_quantity, user_ticker_usd_value, fromStringtoDollar } from '../../util/transactions';
+import { Progress } from 'semantic-ui-react';
 
 class Allocation extends React.Component {
 
