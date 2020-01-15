@@ -226,8 +226,7 @@ var createTransaction = function createTransaction(transaction) {
 };
 var fetchAPITransactions = function fetchAPITransactions() {
   return function (dispatch) {
-    console.log('transactions_actions FetchAPITransactions store', store); // if store is available get user otherwise return default id
-
+    // if store is available get user otherwise return default id
     var user_id = window.store ? window.store.getState().session.id : 0;
     return Promise.all([_util_transactions_api__WEBPACK_IMPORTED_MODULE_0__["fetchTransactions"](user_id)]).then(function (res) {
       return dispatch(fetchTransactions(res));
@@ -743,7 +742,9 @@ function (_React$Component) {
         className: "line"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "line2"
-      }))));
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+        href: "https://nomics.com"
+      }), "Crypto Market Cap & Pricing Data Provided By Nomics"));
     }
   }]);
 
@@ -999,9 +1000,6 @@ function (_Component) {
           name = _e$target.name,
           value = _e$target.value;
       this.setState(_defineProperty({}, name, value));
-      console.log('BuyWidget.handleChange e', e);
-      console.log('BuyWidget.handleChange name', name);
-      console.log('BuyWidget.handleChange value', value);
     }
   }, {
     key: "render",
@@ -1136,16 +1134,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       this.props.getAssets();
       this.props.fetchTransactions();
-    } // BuyorSellCrypto(ticker, amount_usd, exc_rate, ticker_quantity){
-    //     const transaction = {
-    //         ticker: ticker, 
-    //         price: exc_rate, 
-    //         amount: ticker_quantity,
-    //         type: 'Buy'
-    //     };
-    //     this.props.createTransaction(transaction)
-    // };
-
+    }
   }, {
     key: "BuyorSellCrypto",
     value: function BuyorSellCrypto(ticker, amount_usd, exc_rate, ticker_quantity, type) {
@@ -1162,7 +1151,6 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log('portfolio.jsx.render this.props.transactions', this.props.transactions);
       var _this$props = this.props,
           getAssets = _this$props.getAssets,
           assets = _this$props.assets,
@@ -1687,7 +1675,6 @@ var assetsReducer = function assetsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
-  debugger;
 
   switch (action.type) {
     case _actions_assets_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ASSETS"]:
@@ -1961,6 +1948,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAssets", function() { return fetchAssets; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchConversionRate", function() { return fetchConversionRate; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchGraphPrices", function() { return fetchGraphPrices; });
+/* harmony import */ var _urls__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./urls */ "./frontend/util/urls.js");
+
 var fetchAssets = function fetchAssets() {
   return $.ajax({
     url: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,LTC,EOS,BCH&tsyms=USD,EUR",
@@ -2166,14 +2155,11 @@ var fromStringtoDollar = function fromStringtoDollar(usd_string) {
 
 var user_portfolio_value = function user_portfolio_value(transactions, current_values) {
   var tickers = ['BTC', 'ETH', "BCH", "LTC", "EOS"];
-  console.log("user_portolio_value current_values", current_values);
   return tickers.reduce(function (acc, ticker) {
     if (current_values[ticker]) {
-      console.log("user_portfolio_value ticker_found current_values[ticker]", current_values[ticker]);
       var ticker_value = user_ticker_usd_value(ticker, transactions, current_values[ticker]['USD'].PRICE);
       return acc + ticker_value;
     } else {
-      console.log("user_portfolio_value ticker not found", ticker);
       return acc;
     }
   }, 0);
@@ -80120,7 +80106,7 @@ var partitionHTMLProps = function partitionHTMLProps(props) {
 /*!*************************************************************!*\
   !*** ./node_modules/semantic-ui-react/dist/es/lib/index.js ***!
   \*************************************************************/
-/*! exports provided: AutoControlledComponent, ModernAutoControlledComponent, getChildMapping, mergeChildMappings, childrenUtils, useKeyOnly, useKeyOrValueAndKey, useValueAndKey, useMultipleProp, useTextAlignProp, useVerticalAlignProp, useWidthProp, customPropTypes, eventStack, createShorthand, createShorthandFactory, createHTMLDivision, createHTMLIframe, createHTMLImage, createHTMLInput, createHTMLLabel, createHTMLParagraph, getUnhandledProps, getElementType, htmlInputAttrs, htmlInputEvents, htmlInputProps, htmlImageProps, partitionHTMLProps, isBrowser, doesNodeContainClick, leven, createPaginationItems, SUI, numberToWordMap, numberToWord, normalizeOffset, normalizeTransitionDuration, objectDiff */
+/*! exports provided: AutoControlledComponent, ModernAutoControlledComponent, getChildMapping, mergeChildMappings, childrenUtils, useKeyOnly, useKeyOrValueAndKey, useValueAndKey, useMultipleProp, useTextAlignProp, useVerticalAlignProp, useWidthProp, customPropTypes, eventStack, getUnhandledProps, getElementType, htmlInputAttrs, htmlInputEvents, htmlInputProps, htmlImageProps, partitionHTMLProps, isBrowser, doesNodeContainClick, leven, createPaginationItems, SUI, numberToWordMap, numberToWord, normalizeOffset, normalizeTransitionDuration, objectDiff, createShorthand, createShorthandFactory, createHTMLDivision, createHTMLIframe, createHTMLImage, createHTMLInput, createHTMLLabel, createHTMLParagraph */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

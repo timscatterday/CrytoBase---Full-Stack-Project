@@ -2,7 +2,6 @@ import { RECEIVE_ASSETS} from "../actions/assets_actions";
 
 const assetsReducer = (state = {}, action) => {
     Object.freeze(state);
-    debugger;
     switch (action.type) {
         case RECEIVE_ASSETS:
             let keys = ['263','623','1031','605','151']

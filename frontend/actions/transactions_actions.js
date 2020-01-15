@@ -18,7 +18,6 @@ export const createTransaction = transaction => {
 
 
 export const fetchAPITransactions = () => dispatch => {
-    console.log('transactions_actions FetchAPITransactions store', store);
     // if store is available get user otherwise return default id
     const user_id = (window.store) ? window.store.getState().session.id : 0;
 

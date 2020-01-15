@@ -70,15 +70,12 @@ export const fromStringtoDollar = (usd_string) => {
 
 export const user_portfolio_value = (transactions, current_values) => {
     const tickers = ['BTC', 'ETH', "BCH", "LTC", "EOS"];
-    console.log("user_portolio_value current_values", current_values)
 
     return tickers.reduce((acc, ticker) => {
         if(current_values[ticker]){
-            console.log("user_portfolio_value ticker_found current_values[ticker]", current_values[ticker])
             const ticker_value = user_ticker_usd_value(ticker, transactions, current_values[ticker]['USD'].PRICE);
             return acc + ticker_value;
         } else {
-            console.log("user_portfolio_value ticker not found", ticker)
             return acc;
         }
     }, 0);

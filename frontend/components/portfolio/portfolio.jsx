@@ -23,17 +23,6 @@ class Portfolio extends React.Component {
         this.props.fetchTransactions();
     }
 
-    // BuyorSellCrypto(ticker, amount_usd, exc_rate, ticker_quantity){
-
-    //     const transaction = {
-    //         ticker: ticker, 
-    //         price: exc_rate, 
-    //         amount: ticker_quantity,
-    //         type: 'Buy'
-    //     };
-    //     this.props.createTransaction(transaction)
-    // };
-
     BuyorSellCrypto(ticker, amount_usd, exc_rate, ticker_quantity, type) {
 
         const transaction = {
@@ -48,9 +37,6 @@ class Portfolio extends React.Component {
 
 
     render(){
-
-        console.log('portfolio.jsx.render this.props.transactions', this.props.transactions)
-
         const {getAssets, assets, transactions} = this.props;
         const {mode} = this.state;
 
@@ -175,7 +161,7 @@ class Portfolio extends React.Component {
                 transactions={transactions} 
                 assetname='BitcoinCash' 
                 ticker='BCH' 
-                lower_ticker='bch' 
+                lower_ticker='bch'
                 img='http://www.thecoinface.com/assets/bch-03a53cc37436a99ba854e42df693fa52d92d88cbbce362fa217efd0e85be5e1f.png' 
             />
             <Allocation 

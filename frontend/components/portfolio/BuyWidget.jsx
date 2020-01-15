@@ -51,10 +51,6 @@ class BuyWidget extends Component {
         const {target: {name, value}} = e;
         
         this.setState({[name] : value})
-
-        console.log('BuyWidget.handleChange e' , e)
-        console.log('BuyWidget.handleChange name', name) 
-        console.log('BuyWidget.handleChange value', value)
     }
 
     render(){
