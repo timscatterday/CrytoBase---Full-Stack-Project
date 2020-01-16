@@ -136,8 +136,7 @@ class Home extends React.Component {
                         <div className='line2'></div>
                     </div>
             </div>
-
-            <div><link href="https://nomics.com"/>Crypto Market Cap & Pricing Data Provided By Nomics</div> 
+            <div><a href="https://nomics.com">Crypto Market Cap & Pricing Data Provided By Nomics</a></div> 
         </div>
       )
 

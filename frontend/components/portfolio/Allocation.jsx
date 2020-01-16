@@ -1,6 +1,6 @@
 import React from 'react';
 import { user_portfolio_value, user_ticker_quantity, user_ticker_usd_value, fromStringtoDollar } from '../../util/transactions';
-import { Progress } from 'semantic-ui-react';
+import PBar from './PBar'
 
 class Allocation extends React.Component {
 
@@ -32,7 +32,7 @@ class Allocation extends React.Component {
                     <div className='pic'><img src={img} height='36' width='36' /></div>
                     <div className='crypto_name'>{assetname} <div className='symbol'>{ticker}</div></div></div></td>
                 <td>{(user_ticker_quantity(ticker, transactions)).toFixed(4)} {ticker}</td>
-                <td>%{this.allocation_percentage()}</td>
+                <td><PBar allocation={this.allocation_percentage()} /></td>
             </tr>
         )
     }
