@@ -1708,13 +1708,6 @@ document.addEventListener("DOMContentLoaded", function () {
     store = Object(_store_store_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
   }
 
-  window.store = store;
-  window.fetchConversionRate = _util_crypto_currency_api__WEBPACK_IMPORTED_MODULE_6__["fetchConversionRate"];
-  window.dispatch = store.dispatch;
-  window.fetchAPIAssets = _actions_assets_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAPIAssets"];
-  window.signup = _actions_session_actions__WEBPACK_IMPORTED_MODULE_5__["signup"];
-  window.logout = _actions_session_actions__WEBPACK_IMPORTED_MODULE_5__["logout"];
-  window.login = _actions_session_actions__WEBPACK_IMPORTED_MODULE_5__["login"];
   var root = document.getElementById("root");
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_4__["default"], {
     store: store
