@@ -1,4 +1,3 @@
-
 const INITIAL_USD_AMOUNT = 10000
 
 // create an action creator that fetches our transactions
