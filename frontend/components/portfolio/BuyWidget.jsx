@@ -26,6 +26,7 @@ class BuyWidget extends Component {
 
     handleSubmit(e){
         e.preventDefault();
+        debugger;
         const mode = this.props.mode || "Sell"
         const { amount_usd, amount_crypto } = this.state
         const { conversion_rate, asset_name, ticker, ticker_value, available_usd, ticker_amount } = this.props

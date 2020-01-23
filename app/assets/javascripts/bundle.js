@@ -218,6 +218,7 @@ var fetchTransactions = function fetchTransactions(transactions) {
   };
 };
 var createTransaction = function createTransaction(transaction) {
+  debugger;
   var user_id = window.store ? window.store.getState().session.id : 0;
   return Promise.all([_util_transactions_api__WEBPACK_IMPORTED_MODULE_0__["createTransaction"](user_id, transaction)]).then(function (res) {
     return dispatch(fetchAPITransactions());
@@ -961,6 +962,7 @@ function (_Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
+      debugger;
       var mode = this.props.mode || "Sell";
       var _this$state = this.state,
           amount_usd = _this$state.amount_usd,
@@ -1706,6 +1708,14 @@ document.addEventListener("DOMContentLoaded", function () {
     store = Object(_store_store_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
   }
 
+  ;
+  window.store = store;
+  window.fetchConversionRate = _util_crypto_currency_api__WEBPACK_IMPORTED_MODULE_6__["fetchConversionRate"];
+  window.dispatch = store.dispatch;
+  window.fetchAPIAssets = _actions_assets_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAPIAssets"];
+  window.signup = _actions_session_actions__WEBPACK_IMPORTED_MODULE_5__["signup"];
+  window.logout = _actions_session_actions__WEBPACK_IMPORTED_MODULE_5__["logout"];
+  window.login = _actions_session_actions__WEBPACK_IMPORTED_MODULE_5__["login"];
   var root = document.getElementById("root");
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_4__["default"], {
     store: store
@@ -2242,6 +2252,7 @@ var fetchTransactions = function fetchTransactions(user_id) {
   });
 };
 var createTransaction = function createTransaction(user_id, transaction) {
+  debugger;
   var data = {
     asset: transaction.ticker,
     price: transaction.price,
@@ -57908,7 +57919,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -80161,7 +80172,7 @@ var partitionHTMLProps = function partitionHTMLProps(props) {
 /*!*************************************************************!*\
   !*** ./node_modules/semantic-ui-react/dist/es/lib/index.js ***!
   \*************************************************************/
-/*! exports provided: AutoControlledComponent, ModernAutoControlledComponent, getChildMapping, mergeChildMappings, childrenUtils, useKeyOnly, useKeyOrValueAndKey, useValueAndKey, useMultipleProp, useTextAlignProp, useVerticalAlignProp, useWidthProp, customPropTypes, eventStack, getUnhandledProps, getElementType, htmlInputAttrs, htmlInputEvents, htmlInputProps, htmlImageProps, partitionHTMLProps, isBrowser, doesNodeContainClick, leven, createPaginationItems, SUI, numberToWordMap, numberToWord, normalizeOffset, normalizeTransitionDuration, objectDiff, createShorthand, createShorthandFactory, createHTMLDivision, createHTMLIframe, createHTMLImage, createHTMLInput, createHTMLLabel, createHTMLParagraph */
+/*! exports provided: AutoControlledComponent, ModernAutoControlledComponent, getChildMapping, mergeChildMappings, childrenUtils, useKeyOnly, useKeyOrValueAndKey, useValueAndKey, useMultipleProp, useTextAlignProp, useVerticalAlignProp, useWidthProp, customPropTypes, eventStack, createShorthand, createShorthandFactory, createHTMLDivision, createHTMLIframe, createHTMLImage, createHTMLInput, createHTMLLabel, createHTMLParagraph, getUnhandledProps, getElementType, htmlInputAttrs, htmlInputEvents, htmlInputProps, htmlImageProps, partitionHTMLProps, isBrowser, doesNodeContainClick, leven, createPaginationItems, SUI, numberToWordMap, numberToWord, normalizeOffset, normalizeTransitionDuration, objectDiff */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

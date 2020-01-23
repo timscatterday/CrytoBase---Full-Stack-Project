@@ -21,7 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
         delete window.currentUser;
     } else {
         store = configureStore();
-    }
+    };
+    window.store = store;
+    window.fetchConversionRate = fetchConversionRate;
+    window.dispatch = store.dispatch;
+    window.fetchAPIAssets = fetchAPIAssets;
+    window.signup = signup;
+    window.logout = logout;
+    window.login = login;
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={store} />, root);
 });

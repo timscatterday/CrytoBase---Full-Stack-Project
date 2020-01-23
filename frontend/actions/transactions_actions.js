@@ -8,6 +8,7 @@ export const fetchTransactions = transactions => ({
 
 
 export const createTransaction = transaction => {
+    debugger;
     const user_id = (window.store) ? window.store.getState().session.id : 0;
 
     return (
@@ -21,7 +22,7 @@ export const fetchAPITransactions = () => dispatch => {
     // if store is available get user otherwise return default id
     const user_id = (window.store) ? window.store.getState().session.id : 0;
 
-    return (
+    return(
         Promise.all([APIUtil.fetchTransactions(user_id)])
             .then(res => dispatch(fetchTransactions(res)))
     );

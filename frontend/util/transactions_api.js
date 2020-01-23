@@ -8,6 +8,7 @@ export const fetchTransactions = (user_id) => {
 };
 
 export const createTransaction = (user_id, transaction) => {
+    debugger;
     const data = {
         asset: transaction.ticker,
         price: transaction.price,

@@ -31,7 +31,7 @@ class Portfolio extends React.Component {
             amount: ticker_quantity,
             type: type
         };
-        this.props.createTransaction(transaction)
+        this.props.createTransaction(transaction);
     };
 
 
