@@ -32,7 +32,7 @@ class Allocation extends React.Component {
                     <div className='pic'><img src={img} height='36' width='36' /></div>
                     <div className='crypto_name'>{assetname} <div className='symbol'>{ticker}</div></div></div></td>
                 <td>{(user_ticker_quantity(ticker, transactions)).toFixed(4)} {ticker}</td>
-                <td><PBar allocation={this.allocation_percentage()} /></td>
+                <td>{this.allocation_percentage()} /></td>
             </tr>
         )
     }
