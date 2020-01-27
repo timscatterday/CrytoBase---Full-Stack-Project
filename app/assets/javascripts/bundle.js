@@ -2029,7 +2029,7 @@ var fetchConversionRate = function fetchConversionRate() {
 };
 var fetchGraphPrices = function fetchGraphPrices() {
   return $.ajax({
-    url: "https://api.nomics.com/v1/currencies/sparkline?key=df6b8b65f5d99750855095b6243c05d2&start=".concat(new Date().getFullYear(), "-01-01T00%3A00%3A00Z&end=").concat(new Date().getFullYear(), "-0").concat(new Date().getMonth() + 1, "-0").concat(new Date().getDay(), "T00%3A00%3A00Z&c"),
+    url: "https://api.nomics.com/v1/currencies/sparkline?key=df6b8b65f5d99750855095b6243c05d2&start=2019-01-01T00%3A00%3A00Z&end=2019-30-12T00%3A00%3A00Z&c",
     method: 'GET'
   });
 };
