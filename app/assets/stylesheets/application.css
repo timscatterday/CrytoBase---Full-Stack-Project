@@ -153,8 +153,10 @@ input::-webkit-input-placeholder {
       }
 
 .allocation_table{
-   width: 50%;
-   border-collapse: collapse;
+    width: 45%;
+    border-collapse: collapse;
+    position: relative;
+    left: 15px;
 }
 
 .allocation_table tr{
