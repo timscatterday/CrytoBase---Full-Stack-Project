@@ -394,8 +394,6 @@
             color: blue($color: #000000);
             text-align: left;
             margin-bottom: 6px;
-            margin-left: 9px;
-            margin-right: 9px;
             background-color: orange;
             height: 49px;
             border-radius: 10px;
@@ -406,8 +404,6 @@
             color: white;
             text-align: left;
             margin-bottom: 6px;
-            margin-left: 9px;
-            margin-right: 9px;
             background-color: orange;
             height: 66px;
             border-radius: 10px;
@@ -418,8 +414,6 @@
             color: white;
             text-align: left;
             margin-bottom: 6px;
-            margin-left: 9px;
-            margin-right: 9px;
             background-color: #637eea;
             height: 66px;
             border-radius: 10px;
@@ -431,8 +425,6 @@
             color: white;
             text-align: left;
             margin-bottom: 6px;
-            margin-left: 9px;
-            margin-right: 9px;
             background-color: #98c962;
             height: 66px;
             border-radius: 10px;
@@ -441,11 +433,9 @@
         .LTC_trade{
             background-color: #c7c2c2;
             color: white;
-             padding: 14px;
+            padding: 14px;
             text-align: left;
             margin-bottom: 6px;
-            margin-left: 9px;
-            margin-right: 9px;
             height: 66px;
             border-radius: 10px
         }
@@ -456,8 +446,6 @@
             padding: 14px;
             text-align: left;
             margin-bottom: 6px;
-            margin-left: 9px;
-            margin-right: 9px;
             height: 66px;
             border-radius: 10px;
         }
@@ -534,14 +522,12 @@
     .buy_sell_button_container{
         display: flex;
         padding-bottom: 1px;
-        margin-left: 11px;
-        margin-right: -25px;
     }
 
     .buy_sell_button{
         color: dodgerblue;
-        width: 47%;
-        height: 50px;
+        width: 50%;
+        height: 50%;
         font-size: 27px;
         border-radius: 4px;
     }
