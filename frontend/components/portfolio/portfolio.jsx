@@ -41,7 +41,7 @@ class Portfolio extends React.Component {
         const {mode} = this.state;
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        
+
         return (
 
 
@@ -52,9 +52,9 @@ class Portfolio extends React.Component {
                 <div className='port_value_container'>
                     
                     <div className='USD_amount'>
-                        <div>My Portfolio</div>
-                        <div>
-                            <p>Available USD:</p>
+                        <div className='my_port'>My Portfolio</div>
+                        <div className='available'>
+                            <p className='available_usd'>Available USD:</p>
                             <p>${user_usd_amount(transactions)}</p>
                         </div>
                     </div>

@@ -55,8 +55,12 @@
             left: -21px;
         }
 
+        .header-email{
+            font-size: 14px;
+            margin-right: 33px;
+        }
+
             .logout_button{
-                position: absolute;
                 color: white;
                 right: 21px;
                 font-size: 12px;
@@ -71,7 +75,7 @@
                 left: 301px;
                 font-size: 17px;
                 color: white;
-                top: 47px;
+                top: 27px;
                 text-decoration: none;
             }
 
@@ -104,16 +108,16 @@
     background-color: white;
     margin: auto;
     border-radius: 21px;
-    width: 371px;
+    width: 437px;
     top: -147px;
-    height: 281px;
+    height: 314px;
     text-align: left;
     padding: 16px;
 }
 
 .login-form{
     position: relative;
-    bottom: 18px;
+    bottom: 6px;
 }
 
 .login-input{
@@ -122,6 +126,10 @@
     margin-left: 7px;
     padding: 8px;
     height: 26px;
+}
+
+.email-pass{
+    width: 100%;
 }
 
 .session-submit{
@@ -134,7 +142,7 @@
     font: bold 15px arial, sans-serif;
     text-shadow: none;
     position: relative;
-    left: 64px;
+    left: 76px;
 }
 
 .guest-login{
@@ -147,7 +155,7 @@
     font: bold 15px arial, sans-serif;
     text-shadow: none;
     position: relative;
-    left: 118px;
+    left: 121px
 }
 
 .session_errors{
@@ -309,13 +317,13 @@
 
         .port_title{
             color: black;
-            font-size: 49px;
+            font-size: 35px;
         }
 
         .port_value_container{
             width: 33%;
             text-align: center;
-            height: 458px;
+            height: 410px;
             position: relative;
             border: solid;
             z-index: 1;
@@ -323,12 +331,10 @@
         }
 
         .USD_amount{
-            border-bottom: #000000;
             border-bottom: solid;
-            align-items: center;
             display: flex;
             justify-content: space-around;
-            height: 57px;
+            flex-direction: row;
         }
 
         .port_value{
@@ -336,14 +342,29 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            top: 81px;
+            top: 72px;
         }
 
         .port_amount{
             color: black;
-            font-size: 78px;
+            font-size: 58px;
             position: relative;
             top: 32px;
+        }
+
+        .my_port{
+            position: relative;
+            top: 6px;
+        }
+
+        .available{
+            display: flex;
+            position: relative;
+            top: 6px;
+        }
+
+        .available_usd{
+            margin-right: 16px;
         }
 
         .buy_and_sell{
@@ -388,7 +409,7 @@
             margin-left: 9px;
             margin-right: 9px;
             background-color: orange;
-            height: 49px;
+            height: 66px;
             border-radius: 10px;
         }
 
@@ -400,7 +421,7 @@
             margin-left: 9px;
             margin-right: 9px;
             background-color: #637eea;
-            height: 49px;
+            height: 66px;
             border-radius: 10px;
         }
 
@@ -413,7 +434,7 @@
             margin-left: 9px;
             margin-right: 9px;
             background-color: #98c962;
-            height: 49px;
+            height: 66px;
             border-radius: 10px;
         }
 
@@ -425,7 +446,7 @@
             margin-bottom: 6px;
             margin-left: 9px;
             margin-right: 9px;
-            height: 49px;
+            height: 66px;
             border-radius: 10px
         }
 
@@ -437,7 +458,7 @@
             margin-bottom: 6px;
             margin-left: 9px;
             margin-right: 9px;
-            height: 49px;
+            height: px;
             border-radius: 10px;
         }
 
@@ -451,7 +472,7 @@
                 float: left;
                 width: 100px;
                 position: relative;
-                top: 10px;
+                top: 4px;
                 font-weight: 600;
             }
 
@@ -531,30 +552,39 @@
         .mode_button{
             color: dodgerblue;
             width: 82%;
+            border-radius: 8px;
+            height: 27px;
+            position: relative;
+            top: -5px;
         }
 
         #third{
-            height: 20px;;
+            height: 20px;
         }
 
 .progress_BTC .progress .progress-bar {
     background-color: #f79319 !important;
+    font-weight: 400
 };
 
 .progress_ETH .progress .progress-bar {
     background-color: #7885cb !important;
+    font-weight: 400
 };
 
 .progress_BCH .progress .progress-bar {
     background-color: #98c962!important;
+    font-weight: 400
 };
 
 .progress_LTC .progress .progress-bar {
     background-color: #c2c2c2 !important;
+    font-weight: 400
 };
 
 .progress_EOS .progress .progress-bar {
     background-color: #000000 !important;
+    font-weight: 400
 };
 
        

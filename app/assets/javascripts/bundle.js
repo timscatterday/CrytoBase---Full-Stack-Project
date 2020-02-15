@@ -332,7 +332,7 @@ var Greeting = function Greeting(_ref) {
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       className: "portfolio_button",
       to: "/portfolio"
-    }, "Portfolio")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hgroup", {
+    }, "Portfolio")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "header"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
       className: "header-email"
@@ -1180,7 +1180,13 @@ function (_React$Component) {
         className: "port_value_container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "USD_amount"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "My Portfolio"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Available USD:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$", Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_usd_amount"])(transactions)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "my_port"
+      }, "My Portfolio"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "available"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "available_usd"
+      }, "Available USD:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$", Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_usd_amount"])(transactions)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "port_value"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "port_title"
@@ -1537,13 +1543,17 @@ function (_React$Component) {
         className: "login-form-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "email-pass"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         placeholder: "Email",
         value: this.state.email,
         onChange: this.update('email'),
         className: "login-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "email-pass"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         placeholder: "Password",
         value: this.state.password,

@@ -14,10 +14,10 @@ const Greeting = ({currentUser, logout}) => {
             <div className='portfolio_link' >
                 <Link className='portfolio_button' to={`/portfolio`}>Portfolio</Link>
             </div>
-            <hgroup className="header">
+            <div className="header">
                 <h2 className='header-email'>{currentUser.email}</h2>
                 <button className='logout_button' onClick={logout}>Logout</button>
-            </hgroup>
+            </div>
         </div>
     );
 

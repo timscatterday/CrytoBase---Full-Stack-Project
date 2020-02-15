@@ -70,7 +70,7 @@ class SessionForm extends React.Component {
               <form onSubmit={this.handleSubmit} className='login-form-box'>
                 <div className="login-form">
                     <br/>
-                    <label><br/>
+                    <label className='email-pass'><br/>
                         <input type="text"
                             placeholder='Email'
                             value={this.state.email}
@@ -79,7 +79,7 @@ class SessionForm extends React.Component {
                         />
                     </label>
                     <br/>
-                    <label><br/>
+                    <label className='email-pass'><br/>
                         <input type="password"
                             placeholder="Password"
                             value={this.state.password}
