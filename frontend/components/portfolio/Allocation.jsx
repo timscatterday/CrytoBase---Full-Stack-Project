@@ -40,13 +40,3 @@ class Allocation extends React.Component {
 };
 
 export default Allocation;
-
-
-{/* <tr className='table_body'>
-    <td className="first_row">
-        <div className={`${assetname}Logo`}>
-            <div className='pic'><img src={img} height='36' width='36' /></div>
-            <div className='crypto_name'>{assetname} <div className='symbol'>{ticker}</div></div></div></td>
-    <td>{(user_ticker_quantity(ticker, transactions)).toFixed(4)} {ticker}</td>
-    <td>%{this.allocation_percentage()}</td>
-</tr> */}
