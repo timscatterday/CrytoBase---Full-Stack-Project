@@ -7,7 +7,6 @@ import {login, signup, logout} from './actions/session_actions';
 import {fetchConversionRate} from './util/crypto_currency_api'
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
     let store;
     if (window.currentUser) {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { user_portfolio_value, user_ticker_quantity, user_ticker_usd_value, fromStringtoDollar } from '../../util/transactions';
+import {ProgressBar} from 'react-bootstrap';
 
 class Allocation extends React.Component {
 
@@ -30,7 +31,7 @@ class Allocation extends React.Component {
                 <div className='crypto_name'>{assetname} <div className='symbol'>{ticker}</div></div>
             </td>
             <td>{(user_ticker_quantity(ticker, transactions)).toFixed(4)} {ticker}</td>
-            <td>%{this.allocation_percentage()}</td>
+            <td className={`progress_${ticker}`}><ProgressBar now={this.allocation_percentage()} label={`${this.allocation_percentage()}%`} /></td>
         </tr>
         )
     }

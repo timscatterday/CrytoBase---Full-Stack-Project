@@ -441,9 +441,6 @@
             border-radius: 10px;
         }
 
-
-        
-
         .inputs{
            width: 100%;
            text-align: center;
@@ -540,5 +537,24 @@
             height: 20px;;
         }
 
+.progress_BTC .progress .progress-bar {
+    background-color: #f79319 !important;
+};
+
+.progress_ETH .progress .progress-bar {
+    background-color: #7885cb !important;
+};
+
+.progress_BCH .progress .progress-bar {
+    background-color: #98c962!important;
+};
+
+.progress_LTC .progress .progress-bar {
+    background-color: #c2c2c2 !important;
+};
+
+.progress_EOS .progress .progress-bar {
+    background-color: #000000 !important;
+};
 
        

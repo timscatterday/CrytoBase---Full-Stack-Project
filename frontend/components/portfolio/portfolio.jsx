@@ -41,7 +41,7 @@ class Portfolio extends React.Component {
         const {mode} = this.state;
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
+        
         return (
 
 
@@ -140,7 +140,6 @@ class Portfolio extends React.Component {
             <th className='table_header'>
                 <th>Your Assets</th>
             </th>
-
 
             <Allocation assets={assets} 
                 transactions={transactions}  
