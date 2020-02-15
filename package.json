@@ -16,6 +16,7 @@
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
     "react-sparklines": "^1.7.0",
+    "react-table": "^7.0.0-rc.15",
     "recharts": "^1.8.5",
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",

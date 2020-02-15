@@ -1,6 +1,5 @@
 import React from 'react';
 import { user_portfolio_value, user_ticker_quantity, user_ticker_usd_value, fromStringtoDollar } from '../../util/transactions';
-import PBar from './PBar'
 
 class Allocation extends React.Component {
 
@@ -25,15 +24,14 @@ class Allocation extends React.Component {
         const { assets, ticker, img, assetname, lower_ticker, transactions} = this.props;
 
         return (
-            
-            <tr className='table_body'>
-                <td className="first_row">
-                    <div className={`${assetname}Logo`}>
-                    <div className='pic'><img src={img} height='36' width='36' /></div>
-                    <div className='crypto_name'>{assetname} <div className='symbol'>{ticker}</div></div></div></td>
-                <td>{(user_ticker_quantity(ticker, transactions)).toFixed(4)} {ticker}</td>
-                <td>%{this.allocation_percentage()}</td>
-            </tr>
+         <tr>
+             <td className='first_col'>
+                <div className='pic'><img src={img} height='36' width='36' /></div>
+                <div className='crypto_name'>{assetname} <div className='symbol'>{ticker}</div></div>
+            </td>
+            <td>{(user_ticker_quantity(ticker, transactions)).toFixed(4)} {ticker}</td>
+            <td>%{this.allocation_percentage()}</td>
+        </tr>
         )
     }
 
@@ -41,3 +39,13 @@ class Allocation extends React.Component {
 };
 
 export default Allocation;
+
+
+{/* <tr className='table_body'>
+    <td className="first_row">
+        <div className={`${assetname}Logo`}>
+            <div className='pic'><img src={img} height='36' width='36' /></div>
+            <div className='crypto_name'>{assetname} <div className='symbol'>{ticker}</div></div></div></td>
+    <td>{(user_ticker_quantity(ticker, transactions)).toFixed(4)} {ticker}</td>
+    <td>%{this.allocation_percentage()}</td>
+</tr> */}

@@ -152,6 +152,26 @@ input::-webkit-input-placeholder {
          left: 60px;
       }
 
+.allocation_table{
+   width: 50%;
+   border-collapse: collapse;
+}
+
+.allocation_table tr{
+   border: solid lightgray;
+}
+
+.first_col{
+   width: 44%;
+}
+
+.table_header{
+    color: royalblue;
+    border: none;
+    padding-top: 22px;
+    padding-bottom: 23px;
+}
+
 
 
 

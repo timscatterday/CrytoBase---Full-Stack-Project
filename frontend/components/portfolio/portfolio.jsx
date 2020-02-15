@@ -136,10 +136,10 @@ class Portfolio extends React.Component {
             </div>
 
                 
-        <table className='table_container'>
-            <tr className='table_header' rowSpan='3'>
+        <table className='allocation_table'>
+            <th className='table_header'>
                 <th>Your Assets</th>
-            </tr>
+            </th>
 
 
             <Allocation assets={assets} 

@@ -77,7 +77,7 @@ class BuyWidget extends Component {
                                         type="number" 
                                         placeholder='USD' 
                                         onChange={this.handleChange} 
-                                        value={amount_usd} 
+                                        value={amount_usd}
                                         name="amount_usd"
                                     />
                                     <input 
