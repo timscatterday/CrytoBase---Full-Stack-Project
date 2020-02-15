@@ -72,39 +72,51 @@ class BuyWidget extends Component {
                         <div className='exchange_btn'>
                             { mode === "Buy" && 
                                 <>
-                                    <input 
-                                        className='buy_btn' 
-                                        type="number" 
-                                        placeholder='USD' 
-                                        onChange={this.handleChange} 
-                                        value={amount_usd}
-                                        name="amount_usd"
-                                    />
-                                    <input 
-                                        className='buy_btn' 
-                                        id='crypto_exc' 
-                                        type="number"
-                                        value={fromUSDtoCrypto(amount_usd, conversion_rate) === "0.000000" ? conversion_rate : fromUSDtoCrypto(amount_usd, conversion_rate)}
-                                    />
+                                    <div className='input1'>
+                                        <input
+                                            className='buy_btn'
+                                            type="number"
+                                            placeholder='USD'
+                                            onChange={this.handleChange}
+                                            value={amount_usd}
+                                            name="amount_usd"
+                                        />
+                                        <div className='labels'>USD ($)</div>
+                                    </div>
+                                    <div className='input2'>
+                                        <input
+                                            className='buy_btn'
+                                            id='crypto_exc'
+                                            type="number"
+                                            value={fromUSDtoCrypto(amount_usd, conversion_rate) === "0.000000" ? conversion_rate : fromUSDtoCrypto(amount_usd, conversion_rate)}
+                                        />
+                                        <div className='labels'>{ticker}</div>
+                                    </div>
                                 </>
                             }
 
                             {mode === "Sell" &&
                                 <>
-                                    <input
-                                        className='buy_btn'
-                                        type="number"
-                                        placeholder="0"
-                                        onChange={this.handleChange}
-                                        value={amount_crypto}
-                                        name="amount_crypto"
-                                    />
-                                    <input
-                                        className='buy_btn'
-                                        id='crypto_exc'
-                                        type="number"
-                                        value={fromCryptoUSD(amount_crypto, ticker_value) === 0 ? ticker_value : parseFloat(fromCryptoUSD(amount_crypto, ticker_value)).toFixed(2)}
-                                    />
+                                    <div className='input1'>
+                                        <input
+                                            className='buy_btn'
+                                            type="number"
+                                            placeholder="0"
+                                            onChange={this.handleChange}
+                                            value={amount_crypto}
+                                            name="amount_crypto"
+                                        />
+                                        <div className='labels'>{ticker}</div>
+                                    </div>
+                                    <div className='input=2'>
+                                        <input
+                                            className='buy_btn'
+                                            id='crypto_exc'
+                                            type="number"
+                                            value={fromCryptoUSD(amount_crypto, ticker_value) === 0 ? ticker_value : parseFloat(fromCryptoUSD(amount_crypto, ticker_value)).toFixed(2)}
+                                        />
+                                        <div className='labels'>USD ($)</div>
+                                    </div>
                                 </>
                             }
                         </div>

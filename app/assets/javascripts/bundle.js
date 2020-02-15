@@ -1037,31 +1037,47 @@ function (_Component) {
         id: "second"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "exchange_btn"
-      }, mode === "Buy" && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, mode === "Buy" && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "buy_btn",
         type: "number",
         placeholder: "USD",
         onChange: this.handleChange,
         value: amount_usd,
         name: "amount_usd"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "labels"
+      }, "USD ($)")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "buy_btn",
         id: "crypto_exc",
         type: "number",
         value: fromUSDtoCrypto(amount_usd, conversion_rate) === "0.000000" ? conversion_rate : fromUSDtoCrypto(amount_usd, conversion_rate)
-      })), mode === "Sell" && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "labels"
+      }, ticker))), mode === "Sell" && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "buy_btn",
         type: "number",
         placeholder: "0",
         onChange: this.handleChange,
         value: amount_crypto,
         name: "amount_crypto"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "labels"
+      }, ticker)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input=2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "buy_btn",
         id: "crypto_exc",
         type: "number",
         value: fromCryptoUSD(amount_crypto, ticker_value) === 0 ? ticker_value : parseFloat(fromCryptoUSD(amount_crypto, ticker_value)).toFixed(2)
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "labels"
+      }, "USD ($)"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "third"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "mode_button",
