@@ -10,6 +10,7 @@ class Allocation extends React.Component {
         this.allocation_percentage = this.allocation_percentage.bind(this);
     };
 
+
     allocation_percentage(){
         const {ticker, transactions, assets} = this.props;
         const ticker_value = user_ticker_usd_value(ticker, transactions, assets[ticker]['USD']['PRICE']);
@@ -22,7 +23,7 @@ class Allocation extends React.Component {
     };
 
     render(){
-        const { assets, ticker, img, assetname, lower_ticker, transactions} = this.props;
+        const { assets, ticker, img, assetname, lower_ticker, transactions, pieChart} = this.props;
 
         return (
          <tr>

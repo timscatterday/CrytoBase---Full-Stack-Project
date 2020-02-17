@@ -866,7 +866,8 @@ function (_React$Component) {
           img = _this$props2.img,
           assetname = _this$props2.assetname,
           lower_ticker = _this$props2.lower_ticker,
-          transactions = _this$props2.transactions;
+          transactions = _this$props2.transactions,
+          pieChart = _this$props2.pieChart;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "first_col"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1143,7 +1144,8 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Portfolio).call(this, props));
     _this.state = {
-      mode: 'Buy'
+      mode: 'Buy',
+      data: []
     };
     return _this;
   }
@@ -1273,35 +1275,40 @@ function (_React$Component) {
         assetname: "Bitcoin",
         ticker: "BTC",
         lower_ticker: "btc",
-        img: "http://www.thecoinface.com/assets/btc-8022fd53c251f18cb39cefede445f1c78a3b265989232f0bb46b9c4622e55a9e.png"
+        img: "http://www.thecoinface.com/assets/btc-8022fd53c251f18cb39cefede445f1c78a3b265989232f0bb46b9c4622e55a9e.png",
+        pieChart: this.state.data
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         transactions: transactions,
         assetname: "Ethereum",
         ticker: "ETH",
         lower_ticker: "btc",
-        img: "http://www.thecoinface.com/assets/eth-99bf2102cc13a51bb226f931b8d0fa4c5b3ca9dc4179167e89d7ee3f677c3fdb.png"
+        img: "http://www.thecoinface.com/assets/eth-99bf2102cc13a51bb226f931b8d0fa4c5b3ca9dc4179167e89d7ee3f677c3fdb.png",
+        pieChart: this.state.data
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         transactions: transactions,
         assetname: "BitcoinCash",
         ticker: "BCH",
         lower_ticker: "bch",
-        img: "http://www.thecoinface.com/assets/bch-03a53cc37436a99ba854e42df693fa52d92d88cbbce362fa217efd0e85be5e1f.png"
+        img: "http://www.thecoinface.com/assets/bch-03a53cc37436a99ba854e42df693fa52d92d88cbbce362fa217efd0e85be5e1f.png",
+        pieChart: this.state.data
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         transactions: transactions,
         assetname: "Litecoin",
         ticker: "LTC",
         lower_ticker: "ltc",
-        img: "http://www.thecoinface.com/assets/ltc-7160750bcbc115ac8a3229bc1120fb59e96a737d607a57b42fa8e2b092a14159.png"
+        img: "http://www.thecoinface.com/assets/ltc-7160750bcbc115ac8a3229bc1120fb59e96a737d607a57b42fa8e2b092a14159.png",
+        pieChart: this.state.data
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         transactions: transactions,
         assetname: "EOS",
         ticker: "EOS",
         lower_ticker: "eos",
-        img: "https://dynamic-assets.coinbase.com/deaca3d47b10ed4a91a872e9618706eec34081127762d88f2476ac8e99ada4b48525a9565cf2206d18c04053f278f693434af4d4629ca084a9d01b7a286a7e26/asset_icons/1f8489bb280fb0a0fd643c1161312ba49655040e9aaaced5f9ad3eeaf868eadc.png"
+        img: "https://dynamic-assets.coinbase.com/deaca3d47b10ed4a91a872e9618706eec34081127762d88f2476ac8e99ada4b48525a9565cf2206d18c04053f278f693434af4d4629ca084a9d01b7a286a7e26/asset_icons/1f8489bb280fb0a0fd643c1161312ba49655040e9aaaced5f9ad3eeaf868eadc.png",
+        pieChart: this.state.data
       })));
     }
   }]);
@@ -2216,7 +2223,6 @@ var fetchTransactions = function fetchTransactions(user_id) {
   });
 };
 var createTransaction = function createTransaction(user_id, transaction) {
-  debugger;
   var data = {
     asset: transaction.ticker,
     price: transaction.price,
