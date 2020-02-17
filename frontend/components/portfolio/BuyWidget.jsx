@@ -16,8 +16,8 @@ class BuyWidget extends Component {
         super(props);
 
         this.state = {
-            amount_usd: 0,
-            amount_crypto: 0
+            amount_usd: 1,
+            amount_crypto: 1
         },
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -101,7 +101,7 @@ class BuyWidget extends Component {
                                         <input
                                             className='buy_btn'
                                             type="number"
-                                            placeholder="0"
+                                            placeholder="1"
                                             onChange={this.handleChange}
                                             value={amount_crypto}
                                             name="amount_crypto"

@@ -953,8 +953,8 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(BuyWidget).call(this, props));
     _this.state = {
-      amount_usd: 0,
-      amount_crypto: 0
+      amount_usd: 1,
+      amount_crypto: 1
     }, _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
@@ -1053,7 +1053,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "buy_btn",
         type: "number",
-        placeholder: "0",
+        placeholder: "1",
         onChange: this.handleChange,
         value: amount_crypto,
         name: "amount_crypto"
