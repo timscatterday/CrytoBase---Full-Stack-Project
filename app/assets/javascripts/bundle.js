@@ -218,7 +218,6 @@ var fetchTransactions = function fetchTransactions(transactions) {
   };
 };
 var createTransaction = function createTransaction(transaction) {
-  debugger;
   var user_id = window.store ? window.store.getState().session.id : 0;
   return Promise.all([_util_transactions_api__WEBPACK_IMPORTED_MODULE_0__["createTransaction"](user_id, transaction)]).then(function (res) {
     return dispatch(fetchAPITransactions());
@@ -964,7 +963,6 @@ function (_Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      debugger;
       var mode = this.props.mode || "Sell";
       var _this$state = this.state,
           amount_usd = _this$state.amount_usd,

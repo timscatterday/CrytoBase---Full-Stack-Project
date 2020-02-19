@@ -8,7 +8,6 @@ export const fetchTransactions = transactions => ({
 
 
 export const createTransaction = transaction => {
-    debugger;
     const user_id = (window.store) ? window.store.getState().session.id : 0;
 
     return (
