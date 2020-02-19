@@ -43,3 +43,4 @@ https://cryptobase-1.herokuapp.com/#/
 * Users are able to buy and sell cryptocurrency assets at current exchange rates.
 * Created Transaction API endpoint to persist user's buy and sell transactions to database, creating historical record of all users transactions
 * Portfolio's real time value is calculated through historical transaction records from database upon user login to display current value of portfolio and individual holdings.
+* Allocation Chart displays percent of each cryptocurrency asset holding relative to total amount of cryptocurrency in user portfolio 
