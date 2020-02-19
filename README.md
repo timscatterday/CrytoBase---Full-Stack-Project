@@ -35,9 +35,9 @@ https://cryptobase-1.herokuapp.com/#/
 
 ### Portfolio Page
 
-<img width="1902" alt="Screen Shot 2019-12-19 at 1 56 31 PM" src="https://user-images.githubusercontent.com/46978514/71213037-72219200-2267-11ea-8e0b-d2346d8d83ae.png">
+<img width="849" alt="Screen Shot 2020-02-19 at 9 53 00 AM" src="https://user-images.githubusercontent.com/46978514/74860579-c1368280-52fd-11ea-8eb0-425ccc26eaf2.png">
 
-<img width="849" alt="Screen Shot 2020-02-19 at 9 48 11 AM" src="https://user-images.githubusercontent.com/46978514/74860227-2473e500-52fd-11ea-8475-5d2a40f6da28.png">
+<img width="849" alt="Screen Shot 2020-02-19 at 9 53 45 AM" src="https://user-images.githubusercontent.com/46978514/74860583-c267af80-52fd-11ea-8703-5691ae78bf73.png">
 
 
 * Users are able to buy and sell cryptocurrency assets at current exchange rates.
