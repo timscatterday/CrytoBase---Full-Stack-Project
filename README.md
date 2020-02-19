@@ -35,6 +35,8 @@ https://cryptobase-1.herokuapp.com/#/
 
 ### Portfolio Page
 
+<img width="1723" alt="Screen Shot 2020-02-19 at 10 04 03 AM" src="https://user-images.githubusercontent.com/46978514/74861432-3060a680-52ff-11ea-9fe5-6a3d42a6e5f3.png">
+
 <img width="849" alt="Screen Shot 2020-02-19 at 9 53 00 AM" src="https://user-images.githubusercontent.com/46978514/74860579-c1368280-52fd-11ea-8eb0-425ccc26eaf2.png">
 
 <img width="849" alt="Screen Shot 2020-02-19 at 9 53 45 AM" src="https://user-images.githubusercontent.com/46978514/74860583-c267af80-52fd-11ea-8703-5691ae78bf73.png">
