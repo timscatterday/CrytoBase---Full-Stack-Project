@@ -2,7 +2,7 @@
 
 ## CryptoBase
 
-Cryptobase is a clone of the web application Coinbase. Cryptobase allows users to buy and sell cryptocurrencies at real time prices.
+Cryptobase is a clone of the web application Coinbase. Cryptobase enables users to create portfolios to buy and sell cryptocurrencies at real time prices.
 
 ## Link
 
