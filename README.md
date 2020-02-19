@@ -39,6 +39,8 @@ https://cryptobase-1.herokuapp.com/#/
 
 <img width="849" alt="Screen Shot 2020-02-19 at 9 53 45 AM" src="https://user-images.githubusercontent.com/46978514/74860583-c267af80-52fd-11ea-8703-5691ae78bf73.png">
 
+<img width="849" alt="Screen Shot 2020-02-19 at 9 48 11 AM" src="https://user-images.githubusercontent.com/46978514/74860227-2473e500-52fd-11ea-8475-5d2a40f6da28.png">
+
 
 * Users are able to buy and sell cryptocurrency assets at real-time exchange rates
 * Created Transaction API endpoint to persist user's buy and sell transactions to database, creating historical record of all users transactions
