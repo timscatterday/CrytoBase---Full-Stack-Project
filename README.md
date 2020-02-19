@@ -40,7 +40,7 @@ https://cryptobase-1.herokuapp.com/#/
 <img width="849" alt="Screen Shot 2020-02-19 at 9 53 45 AM" src="https://user-images.githubusercontent.com/46978514/74860583-c267af80-52fd-11ea-8703-5691ae78bf73.png">
 
 
-* Users are able to buy and sell cryptocurrency assets at current exchange rates.
+* Users are able to buy and sell cryptocurrency assets at real-time exchange rates
 * Created Transaction API endpoint to persist user's buy and sell transactions to database, creating historical record of all users transactions
-* Portfolio's real time value is calculated through historical transaction records from database upon user login to display current value of portfolio and individual holdings.
-* Allocation Chart displays percent of each cryptocurrency asset holding relative to total amount of cryptocurrency in user portfolio 
+* Created functions that calculate user's current total portfolio value upon login. Functions calculate how much of each cryptocurrency asset has been bought from historical transacactions database. Once amount of each cryptocurrency asset in portfolio has been calculated multiply each cryptocurrency holding by the exchange rate to calculate USD ($) value per cryptocurrency in portfolio. Sum each of these individual values up to determine total portfolio value in USD ($)
+* Allocation Chart displays how much of each cryptocurrency asset is in portfolio, as well as percent of each cryptocurrency asset holding relative to total amount of cryptocurrency in user portfolio 
