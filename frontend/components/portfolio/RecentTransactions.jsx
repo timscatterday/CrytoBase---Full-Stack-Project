@@ -76,7 +76,8 @@ class RecentTransactions extends React.Component {
         };
 
         function convertAmount(transaction){
-            if(parseInt(transaction.amount) > 0){
+            debugger;
+            if(transaction.tx_type === 'Buy'){
                 return '+ ' + transaction.amount; 
             } else {
                 return '- ' + transaction.amount;
