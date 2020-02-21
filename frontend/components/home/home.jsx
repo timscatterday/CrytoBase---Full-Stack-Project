@@ -136,7 +136,20 @@ class Home extends React.Component {
                         <div className='line2'></div>
                     </div>
             </div>
-            <div><a href="https://nomics.com">Crypto Market Cap & Pricing Data Provided By Nomics</a></div> 
+            
+
+            <div className='Footer'>
+                <div>
+                    <a href="https://github.com/"></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                </div>
+                <div className='copyrightandnomics'>
+                    <p class="copyright"> © 2020 CryptoBase </p>
+                    <div className='nomics'><a href="https://nomics.com">Crypto Market Cap & Pricing Data Provided By Nomics</a></div>
+                </div>
+            </div>
+
         </div>
       )
 

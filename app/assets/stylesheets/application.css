@@ -24,6 +24,31 @@
     flex-direction: column;
  }
 
+ .Footer{
+    color: #1652f0;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 100%;
+    background-color: #1652f0;
+    justify-content: flex-end;
+ }
+
+ .nomics{
+    text-align: left;
+ }
+
+ .copyrightandnomics{
+    text-align: left;
+ }
+
+ .copyright{
+   color: white;
+    font-size: 12px;
+    margin-bottom: 15px;
+    cursor: pointer;
+ }
+
  .main_line{
     font-size: 48px;
     font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;

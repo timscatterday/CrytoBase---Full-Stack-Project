@@ -742,9 +742,23 @@ function (_React$Component) {
         className: "line"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "line2"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "Footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://github.com/"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "copyrightandnomics"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        "class": "copyright"
+      }, " \xA9 2020 CryptoBase "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nomics"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://nomics.com"
-      }, "Crypto Market Cap & Pricing Data Provided By Nomics")));
+      }, "Crypto Market Cap & Pricing Data Provided By Nomics")))));
     }
   }]);
 
@@ -1512,7 +1526,23 @@ function (_React$Component) {
         transaction: transactions[transactions.length - 4]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RecentTransactions__WEBPACK_IMPORTED_MODULE_3__["default"], {
         transaction: transactions[transactions.length - 5]
-      }))));
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "Footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://github.com/"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "copyrightandnomics"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        "class": "copyright"
+      }, " \xA9 2020 CryptoBase "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nomics"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://nomics.com"
+      }, "Crypto Market Cap & Pricing Data Provided By Nomics")))));
     }
   }]);
 
