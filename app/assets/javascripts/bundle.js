@@ -1247,7 +1247,11 @@ function (_React$Component) {
         className: "second_col3"
       }, convertCoin(transaction))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "col_4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, convertAmount(transaction) + '  ' + transaction.asset), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, '$' + '  ' + transaction.amount_usd)));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col_4_amount"
+      }, convertAmount(transaction) + '  ' + transaction.asset), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col_4_usd"
+      }, '$' + '  ' + transaction.amount_usd)));
     }
   }]);
 

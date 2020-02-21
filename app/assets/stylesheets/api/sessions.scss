@@ -533,10 +533,18 @@
         display: flex;
     }
 
-    .col_4{
-        width: 20%;
+    .col_4_amount{
         font-size: 18px;
         color: #4e5c6e;
+        text-align: right;
+        margin-right: 15px;
+    }
+
+    .col_4_usd{
+        color: #9ba6b2;
+        font-size: 14px;
+        text-align: right;
+        margin-right: 15px;
     }
 
     .first_col3{
