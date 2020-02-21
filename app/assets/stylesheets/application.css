@@ -165,7 +165,11 @@ input::-webkit-input-placeholder {
 }
 
 .first_col{
-   width: 44%;
+   width: 33%;
+}
+
+.fourth_col{
+   width: 8%;
 }
 
 .table_header{

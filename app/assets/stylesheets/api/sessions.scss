@@ -614,30 +614,52 @@
         width: 10%
     }
 
+    .ticker_usd{
+        text-align: center;
+        margin-right: 10px;
+        color: #9ba6b2;
+        width: 80px;
+    }
+
+.progress_BTC{
+    width: 99px;
+}    
+
 .progress_BTC .progress .progress-bar {
     background-color: #f79319 !important;
-    font-weight: 400
+    font-weight: 400;
+    width: 99px;
+    display: flex;
 };
 
 .progress_ETH .progress .progress-bar {
     background-color: #7885cb !important;
-    font-weight: 400
+    font-weight: 400;
+    width: 12%
 };
 
 .progress_BCH .progress .progress-bar {
     background-color: #98c962!important;
-    font-weight: 400
+    font-weight: 400;
+    width: 99px;
+    width: 12%
 };
 
 .progress_LTC .progress .progress-bar {
     background-color: #c2c2c2 !important;
-    font-weight: 400
+    font-weight: 400;
+    width: 12%
 };
 
 .progress_EOS .progress .progress-bar {
     background-color: #000000 !important;
-    font-weight: 400
+    font-weight: 400;
+    width: 12%
 };
+
+.ticker_quant{
+ text-align: center
+}
 
 .input1{
     display: flex;

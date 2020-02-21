@@ -879,12 +879,19 @@ function (_React$Component) {
         className: "crypto_name"
       }, assetname, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "symbol"
-      }, ticker))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, Object(_util_transactions__WEBPACK_IMPORTED_MODULE_1__["user_ticker_quantity"])(ticker, transactions).toFixed(4), " ", ticker), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      }, ticker))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "progress_".concat(ticker)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ProgressBar"], {
-        now: this.allocation_percentage(),
-        label: "".concat(this.allocation_percentage(), "%")
-      })));
+        now: this.allocation_percentage()
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "fourth_col"
+      }, this.allocation_percentage() + ' %'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "ticker_quant"
+      }, Object(_util_transactions__WEBPACK_IMPORTED_MODULE_1__["user_ticker_quantity"])(ticker, transactions).toFixed(4), " ", ticker), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "ticker_usd"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "ticker_usd_val"
+      }, '$ ' + Object(_util_transactions__WEBPACK_IMPORTED_MODULE_1__["user_ticker_usd_value"])(ticker, transactions, assets[ticker]['USD']['PRICE']).toFixed(2))));
     }
   }]);
 
