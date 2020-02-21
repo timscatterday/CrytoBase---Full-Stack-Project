@@ -1121,15 +1121,54 @@ function (_React$Component) {
   _inherits(RecentTransactions, _React$Component);
 
   function RecentTransactions(props) {
+    var _this;
+
     _classCallCheck(this, RecentTransactions);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(RecentTransactions).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(RecentTransactions).call(this, props));
+    _this.state = {
+      date: []
+    };
+    return _this;
   }
 
   _createClass(RecentTransactions, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null);
+      var transaction = this.props.transaction;
+      console.log(transaction);
+
+      if (!transaction) {
+        return null;
+      }
+
+      ;
+      var months = {
+        '01': "Jan",
+        '02': "Feb",
+        '03': "Mar",
+        '04': "Apr",
+        '05': 'May',
+        '06': 'Jun',
+        '07': 'Jul',
+        '08': 'Aug',
+        '09': 'Sep',
+        '10': 'Oct',
+        '11': 'Nov',
+        '12': 'Dec'
+      };
+
+      function convertDate(date) {
+        var result = [];
+        result.push(months[date.split('T')[0].split('-')[1]]);
+        result.push(date.split('T')[0].split('-')[2]);
+        return result;
+      }
+
+      ;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "recent_date"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, convertDate(transaction.created_at)[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, convertDate(transaction.created_at)[1])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null));
     }
   }]);
 
@@ -1322,7 +1361,9 @@ function (_React$Component) {
         conversion_rate: parseFloat(assets['EOS']['conversion']).toFixed(6),
         asset_name: "EOS",
         ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_4__["fromStringtoDollar"])(assets['EOS']['USD']['PRICE'])
-      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "assets_recenttransactions_container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "allocation_table"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
         className: "table_header"
@@ -1367,8 +1408,21 @@ function (_React$Component) {
         img: "https://dynamic-assets.coinbase.com/deaca3d47b10ed4a91a872e9618706eec34081127762d88f2476ac8e99ada4b48525a9565cf2206d18c04053f278f693434af4d4629ca084a9d01b7a286a7e26/asset_icons/1f8489bb280fb0a0fd643c1161312ba49655040e9aaaced5f9ad3eeaf868eadc.png",
         pieChart: this.state.data
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
-        className: "allocation_table"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Recent Transactions"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RecentTransactions__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
+        className: "allocation_table",
+        id: "recenttransactions"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        className: "table_header recentTitle"
+      }, "Recent Transactions"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RecentTransactions__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        transaction: transactions[transactions.length - 1]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RecentTransactions__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        transaction: transactions[transactions.length - 2]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RecentTransactions__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        transaction: transactions[transactions.length - 3]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RecentTransactions__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        transaction: transactions[transactions.length - 4]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RecentTransactions__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        transaction: transactions[transactions.length - 5]
+      }))));
     }
   }]);
 

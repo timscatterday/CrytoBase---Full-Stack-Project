@@ -547,7 +547,21 @@
 
         #third{
             height: 20px;
-        }
+        };
+
+.assets_recenttransactions_container{
+    display: flex;
+};
+
+    #recenttransactions{
+        margin-left: 60px;
+    }
+
+    .recent_date{
+        display: flex;
+        flex-direction: column;
+        margin-left: 18px;
+    }
 
 .progress_BTC .progress .progress-bar {
     background-color: #f79319 !important;
