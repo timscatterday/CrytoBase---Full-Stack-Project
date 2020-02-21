@@ -1,6 +1,7 @@
 import React from 'react';
 import BuyWidget  from './BuyWidget';
 import Allocation from './Allocation';
+import RecentTransactions from './RecentTransactions'
 import { user_portfolio_value, fromStringtoDollar, user_usd_amount, user_ticker_quantity} from '../../util/transactions';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 import ls from 'local-storage'
@@ -186,7 +187,14 @@ class Portfolio extends React.Component {
 
         </table>
 
+        <table className='allocation_table'>
+            <th>
+                Recent Transactions
+            </th>
 
+            <RecentTransactions />
+
+        </table>
 
     </div>
 
