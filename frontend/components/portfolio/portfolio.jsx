@@ -201,7 +201,7 @@ class Portfolio extends React.Component {
         </div>
 
         <div className='Footer'>
-                <div>
+            <div>
                 <a href="https://github.com/"></a>
                 <a href=""></a>
                 <a href=""></a>
