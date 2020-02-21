@@ -188,7 +188,7 @@ class Portfolio extends React.Component {
                     </table>
 
                     <table className='allocation_table' id='recenttransactions'>
-                        <th className='table_header recentTitle'>
+                        <th className='table_header_recent'>
                             Recent Transactions
                         </th>
                         <RecentTransactions transaction={transactions[transactions.length - 1]} />

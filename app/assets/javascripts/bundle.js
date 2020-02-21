@@ -1143,6 +1143,17 @@ function (_React$Component) {
       }
 
       ;
+      var type = {
+        'Buy': 'Bought',
+        'Sell': 'Sold'
+      };
+      var coin = {
+        'BTC': 'Bitcoin',
+        'ETH': 'Ethereum',
+        'BCH': 'Bitcoin Cash',
+        'LTC': 'Litecoin',
+        'EOS': 'EOS'
+      };
       var months = {
         '01': "Jan",
         '02': "Feb",
@@ -1166,9 +1177,77 @@ function (_React$Component) {
       }
 
       ;
+
+      function convertTransaction(transaction) {
+        if (transaction.tx_type === 'Buy') {
+          return 'Bought';
+        } else {
+          return 'Sold';
+        }
+      }
+
+      ;
+
+      function convertCoin(transaction) {
+        if (transaction.asset === 'BTC') {
+          return 'Bitcoin';
+        } else if (transaction.asset === 'ETH') {
+          return 'Ethereum';
+        } else if (transaction.asset === 'BCH') {
+          return 'Bitcoin Cash';
+        } else if (transaction.asset === 'LTC') {
+          return 'Litecoin';
+        } else {
+          return 'EOS';
+        }
+      }
+
+      ;
+
+      function convertAmount(transaction) {
+        if (parseInt(transaction.amount) > 0) {
+          return '+ ' + transaction.amount;
+        } else {
+          return '- ' + transaction.amount;
+        }
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "recent_date"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, convertDate(transaction.created_at)[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, convertDate(transaction.created_at)[1])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "date_month"
+      }, convertDate(transaction.created_at)[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "date_day"
+      }, convertDate(transaction.created_at)[1])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "col2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        stroke: "rgb(247, 147, 26)",
+        "class": "recentActivitySVG",
+        xmlns: "http://www.w3.org/2000/svg",
+        width: "32",
+        height: "32",
+        viewBox: "0 0 32 32"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        fill: "none",
+        "fill-rule": "evenodd",
+        "stroke-linecap": "round",
+        "stroke-linejoin": "round",
+        transform: "translate(1 1)"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+        cx: "15",
+        cy: "15",
+        r: "15"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M23.684 17.368H7.895l5.526 5.527M6.316 12.632h15.789l-5.526-5.527"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "col3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "first_col3"
+      }, convertTransaction(transaction)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "second_col3"
+      }, convertCoin(transaction))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "col_4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, convertAmount(transaction) + '  ' + transaction.asset), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, '$' + '  ' + transaction.amount_usd)));
     }
   }]);
 
@@ -1411,7 +1490,7 @@ function (_React$Component) {
         className: "allocation_table",
         id: "recenttransactions"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-        className: "table_header recentTitle"
+        className: "table_header_recent"
       }, "Recent Transactions"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RecentTransactions__WEBPACK_IMPORTED_MODULE_3__["default"], {
         transaction: transactions[transactions.length - 1]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RecentTransactions__WEBPACK_IMPORTED_MODULE_3__["default"], {

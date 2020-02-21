@@ -511,6 +511,49 @@
         top: 35px;
     }
 
+    .date_month{
+        color: #4e5c6e;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        margin-left: 20px;
+    }
+
+    .date_day{
+        color: #9ba6b2;
+        font-size: 22px;
+        margin-left: 20px;
+    }
+
+    .col2{
+        width: 10%;
+    }
+
+    .col3{
+        display: flex;
+    }
+
+    .col_4{
+        width: 20%;
+        font-size: 18px;
+        color: #4e5c6e;
+    }
+
+    .first_col3{
+       margin-right: 9px;
+       color: #4e5c6e;
+       font-size: 18px;
+       font-weight: 500;
+       padding-top: 13px;
+    }
+
+    .second_col3{
+        color: #4e5c6e;
+        font-size: 18px;
+        font-weight: 500;
+        padding-top: 13px;
+    }
+
 
     .filler {
         background: #1DA598;
@@ -551,6 +594,8 @@
 
 .assets_recenttransactions_container{
     display: flex;
+    width: 98%;
+    justify-content: center;
 };
 
     #recenttransactions{
@@ -558,9 +603,7 @@
     }
 
     .recent_date{
-        display: flex;
-        flex-direction: column;
-        margin-left: 18px;
+        width: 10%
     }
 
 .progress_BTC .progress .progress-bar {
