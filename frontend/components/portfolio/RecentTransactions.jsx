@@ -111,7 +111,7 @@ class RecentTransactions extends React.Component {
                </td>
                <td className='col_4'>
                    <div className='col_4_amount'>{convertAmount(transaction) + '  ' + transaction.asset}</div>
-                   <div className='col_4_usd'>{'$' + '  ' + transaction.amount_usd}</div>
+                   <div className='col_4_usd'>{'$' + '  ' + parseInt(transaction.amount_usd).toFixed(2)}</div>
                </td>
             </tr>
         );

@@ -1251,7 +1251,7 @@ function (_React$Component) {
         className: "col_4_amount"
       }, convertAmount(transaction) + '  ' + transaction.asset), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col_4_usd"
-      }, '$' + '  ' + transaction.amount_usd)));
+      }, '$' + '  ' + parseInt(transaction.amount_usd).toFixed(2))));
     }
   }]);
 
