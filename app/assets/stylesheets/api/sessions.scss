@@ -491,7 +491,7 @@
                     width: 118px;
                     margin: 6px;
                     height: 22px;
-                }
+                };
 
             #third{
                 float: right;
@@ -499,6 +499,55 @@
                 position: relative;
                 top: 9px;
             }
+
+     .Box_container{
+      display: flex;
+      justify-content: center;  
+    }
+
+     .Five_Boxes{
+        display: flex;
+        flex-direction: row;
+     };
+     
+     .box{
+        border: 2px solid black;
+        height: 250px;
+        width: 250px;
+        position: relative;
+        bottom: 106px;
+        z-index: 1;
+        background-color: white;
+        margin-right: 34px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+     };
+
+     .top{
+         display: flex;
+         flex-direction: row;
+     }
+
+     .top_name{
+         display: flex;
+         flex-direction: row;
+     }
+
+     .top_img{
+        margin-right: 11px;
+        margin-left: 12px;
+     }
+
+     .middle{
+         display: flex;
+         flex-direction: row;
+     }
+
+     .middle_price{
+        margin-right: 18px;
+        margin-left: 53px;
+     }
 
        
     .allocation_title{
@@ -614,7 +663,6 @@
     width: 98%;
     justify-content: center;
     padding-bottom: 182px;
-    padding-top: 82px;
 };
 
     #recenttransactions{

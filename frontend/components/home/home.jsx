@@ -145,7 +145,7 @@ class Home extends React.Component {
                     <a href=""></a>
                 </div>
                 <div className='copyrightandnomics'>
-                    <p class="copyright"> © 2020 CryptoBase </p>
+                    <p class="copyright"> © 2020 CryptoBase by Tim Scatterday</p>
                     <div className='nomics'><a href="https://nomics.com">Crypto Market Cap & Pricing Data Provided By Nomics</a></div>
                 </div>
             </div>

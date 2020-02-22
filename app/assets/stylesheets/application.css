@@ -109,6 +109,8 @@ input::-webkit-input-placeholder {
     justify-content: center;
 }
 
+
+
    .bar_stats {
       color: white;
       width: 79%;
@@ -194,7 +196,7 @@ input::-webkit-input-placeholder {
 }
 
 .fourth_col{
-   width: 8%;
+   width: 10%;
 }
 
 .table_header{
