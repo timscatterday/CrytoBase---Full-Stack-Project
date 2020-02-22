@@ -35,7 +35,7 @@ class Box extends React.Component {
                 </div>
                 <div className='bottom'>
                     <Sparklines data={Object.values(this.props.assets[`${assetname}`].prices)} width={100} height={50} margin={5}>
-                        <SparklinesLine color={chart_color} />
+                        <SparklinesLine style={{ fill: "none" }} color={chart_color} />
                     </Sparklines>
                 </div>
             </div>

@@ -23,7 +23,7 @@ class Dashboard extends React.Component {
                 <td>
                     <div className='graph'>
                         <Sparklines data={Object.values(this.props.assets[`${ticker}`].prices)} width={100} height={50} margin={5}>
-                            <SparklinesLine color={chart_color} />
+                            <SparklinesLine style={{ fill: "none" }} color={chart_color} />
                         </Sparklines>
                     </div>
                 </td>

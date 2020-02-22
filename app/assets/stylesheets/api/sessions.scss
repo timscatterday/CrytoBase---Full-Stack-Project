@@ -508,12 +508,14 @@
      .Five_Boxes{
         display: flex;
         flex-direction: row;
+        width: 93%;
+        justify-content: center;
      };
      
      .box{
         border: 2px solid black;
-        height: 250px;
-        width: 250px;
+        height: 235px;
+        width: 214px;
         position: relative;
         bottom: 106px;
         z-index: 1;
@@ -669,6 +671,8 @@
     width: 98%;
     justify-content: center;
     padding-bottom: 182px;
+    position: relative;
+    bottom: 45px;
 };
 
     #recenttransactions{
