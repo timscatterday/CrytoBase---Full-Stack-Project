@@ -29,7 +29,7 @@ class Box extends React.Component {
                     <div className='middle_price'>
                         {assets[`${assetname}`]['USD']['PRICE']}
                     </div>
-                    <div style={{ color: assets[`${assetname}`]['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red' }}>
+                    <div className='middle_percent' style={{ color: assets[`${assetname}`]['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red' }}>
                         {'% ' + assets[`${assetname}`]['USD']['CHANGEPCT24HOUR']}
                     </div>
                 </div>

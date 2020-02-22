@@ -1121,6 +1121,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle_price"
       }, assets["".concat(assetname)]['USD']['PRICE']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "middle_percent",
         style: {
           color: assets["".concat(assetname)]['USD']['CHANGEPCT24HOUR'] > 0 ? 'green' : 'red'
         }
