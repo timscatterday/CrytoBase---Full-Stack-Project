@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
+import { withRouter } from 'react-router';
 
 class Box extends React.Component {
     constructor(props){
@@ -14,7 +15,7 @@ class Box extends React.Component {
         }
 
         return(
-            <div className='box'>
+            <div className='box' onClick={() => this.props.history.push('/trade')}>
                 <div className='top'>
                     <div className='top_name'>
                         <img className='top_img' src={img} height='18' width='18' />
@@ -42,4 +43,4 @@ class Box extends React.Component {
     }
 };
 
-export default Box;
+export default withRouter(Box);
