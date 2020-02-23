@@ -456,7 +456,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "allocation_table_trade"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-        className: "table_header"
+        className: "table_header_trade"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Your Assets")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         transactions: transactions,
@@ -497,7 +497,23 @@ function (_React$Component) {
         lower_ticker: "eos",
         img: "https://dynamic-assets.coinbase.com/deaca3d47b10ed4a91a872e9618706eec34081127762d88f2476ac8e99ada4b48525a9565cf2206d18c04053f278f693434af4d4629ca084a9d01b7a286a7e26/asset_icons/1f8489bb280fb0a0fd643c1161312ba49655040e9aaaced5f9ad3eeaf868eadc.png",
         pieChart: this.state.data
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+        className: "usd_row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "first_col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "pic"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://dynamic-assets.coinbase.com/3c15df5e2ac7d4abbe9499ed9335041f00c620f28e8de2f93474a9f432058742cdf4674bd43f309e69778a26969372310135be97eb183d91c492154176d455b8/asset_icons/9d67b728b6c8f457717154b3a35f9ddc702eae7e76c4684ee39302c4d7fd0bb8.png",
+        height: "36",
+        width: "36"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "crypto_name"
+      }, "US Dollar", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "symbol"
+      }, "USD"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "ticker_quant"
+      }, '$ ' + parseFloat(Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_usd_amount"])(transactions)).toFixed(2)))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "FooterTrade"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "title_footer",
@@ -1187,7 +1203,7 @@ function (_React$Component) {
         now: this.allocation_percentage()
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "fourth_col"
-      }, this.allocation_percentage() + ' %'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      }, '  ' + this.allocation_percentage() + ' %'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "ticker_quant"
       }, Object(_util_transactions__WEBPACK_IMPORTED_MODULE_1__["user_ticker_quantity"])(ticker, transactions).toFixed(4), " ", ticker), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "ticker_usd"
@@ -1770,6 +1786,7 @@ function (_React$Component) {
         type: type
       };
       this.props.createTransaction(transaction);
+      this.allocation_percentage = this.allocation_percentage.bind(this);
     }
   }, {
     key: "render",
@@ -1834,47 +1851,58 @@ function (_React$Component) {
         className: "allocation_table"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
         className: "table_header"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Your Assets")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Your Assets")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         transactions: transactions,
         assetname: "Bitcoin",
         ticker: "BTC",
         lower_ticker: "btc",
-        img: "http://www.thecoinface.com/assets/btc-8022fd53c251f18cb39cefede445f1c78a3b265989232f0bb46b9c4622e55a9e.png",
-        pieChart: this.state.data
+        img: "http://www.thecoinface.com/assets/btc-8022fd53c251f18cb39cefede445f1c78a3b265989232f0bb46b9c4622e55a9e.png"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         transactions: transactions,
         assetname: "Ethereum",
         ticker: "ETH",
         lower_ticker: "btc",
-        img: "http://www.thecoinface.com/assets/eth-99bf2102cc13a51bb226f931b8d0fa4c5b3ca9dc4179167e89d7ee3f677c3fdb.png",
-        pieChart: this.state.data
+        img: "http://www.thecoinface.com/assets/eth-99bf2102cc13a51bb226f931b8d0fa4c5b3ca9dc4179167e89d7ee3f677c3fdb.png"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         transactions: transactions,
         assetname: "BitcoinCash",
         ticker: "BCH",
         lower_ticker: "bch",
-        img: "http://www.thecoinface.com/assets/bch-03a53cc37436a99ba854e42df693fa52d92d88cbbce362fa217efd0e85be5e1f.png",
-        pieChart: this.state.data
+        img: "http://www.thecoinface.com/assets/bch-03a53cc37436a99ba854e42df693fa52d92d88cbbce362fa217efd0e85be5e1f.png"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         transactions: transactions,
         assetname: "Litecoin",
         ticker: "LTC",
         lower_ticker: "ltc",
-        img: "http://www.thecoinface.com/assets/ltc-7160750bcbc115ac8a3229bc1120fb59e96a737d607a57b42fa8e2b092a14159.png",
-        pieChart: this.state.data
+        img: "http://www.thecoinface.com/assets/ltc-7160750bcbc115ac8a3229bc1120fb59e96a737d607a57b42fa8e2b092a14159.png"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         assets: assets,
         transactions: transactions,
         assetname: "EOS",
         ticker: "EOS",
         lower_ticker: "eos",
-        img: "https://dynamic-assets.coinbase.com/deaca3d47b10ed4a91a872e9618706eec34081127762d88f2476ac8e99ada4b48525a9565cf2206d18c04053f278f693434af4d4629ca084a9d01b7a286a7e26/asset_icons/1f8489bb280fb0a0fd643c1161312ba49655040e9aaaced5f9ad3eeaf868eadc.png",
-        pieChart: this.state.data
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        img: "https://dynamic-assets.coinbase.com/deaca3d47b10ed4a91a872e9618706eec34081127762d88f2476ac8e99ada4b48525a9565cf2206d18c04053f278f693434af4d4629ca084a9d01b7a286a7e26/asset_icons/1f8489bb280fb0a0fd643c1161312ba49655040e9aaaced5f9ad3eeaf868eadc.png"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+        id: "usd_row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "first_col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "pic"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://dynamic-assets.coinbase.com/3c15df5e2ac7d4abbe9499ed9335041f00c620f28e8de2f93474a9f432058742cdf4674bd43f309e69778a26969372310135be97eb183d91c492154176d455b8/asset_icons/9d67b728b6c8f457717154b3a35f9ddc702eae7e76c4684ee39302c4d7fd0bb8.png",
+        height: "36",
+        width: "36"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "crypto_name"
+      }, "US Dollar", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "symbol"
+      }, "USD"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "ticker_quant"
+      }, '$ ' + parseFloat(Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["user_usd_amount"])(transactions)).toFixed(2)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "allocation_table",
         id: "recenttransactions"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {

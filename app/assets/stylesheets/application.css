@@ -243,7 +243,7 @@ input::-webkit-input-placeholder {
 }
 
 .first_col{
-   width: 33%;
+   width: 37%;
 }
 
 .fourth_col{
@@ -255,6 +255,12 @@ input::-webkit-input-placeholder {
     border: none;
     padding-top: 22px;
     padding-bottom: 23px;
+}
+
+.table_header_trade{
+    color: royalblue;
+    border: none;
+    padding-top: 49px;
 }
 
 

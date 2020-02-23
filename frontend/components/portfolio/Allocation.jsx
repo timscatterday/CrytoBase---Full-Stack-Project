@@ -35,7 +35,7 @@ class Allocation extends React.Component {
                 <ProgressBar now={this.allocation_percentage()} />
             </td>
             <td className='fourth_col'>
-                {this.allocation_percentage() + ' %'}
+                {'  ' + this.allocation_percentage() + ' %'}
             </td>
             <td className='ticker_quant'>{(user_ticker_quantity(ticker, transactions)).toFixed(4)} {ticker}</td>
             <td className='ticker_usd'>

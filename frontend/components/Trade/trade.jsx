@@ -108,10 +108,11 @@ class Trade extends React.Component {
 
                     <div className='allocation_table_container_trade'>
                         <table className='allocation_table_trade'>
-                            <th className='table_header'>
+                            <th className='table_header_trade'>
                                 <th>Your Assets</th>
                             </th>
-
+                        
+                            
                             <Allocation assets={assets}
                                 transactions={transactions}
                                 assetname='Bitcoin'
@@ -155,6 +156,14 @@ class Trade extends React.Component {
                                 img='https://dynamic-assets.coinbase.com/deaca3d47b10ed4a91a872e9618706eec34081127762d88f2476ac8e99ada4b48525a9565cf2206d18c04053f278f693434af4d4629ca084a9d01b7a286a7e26/asset_icons/1f8489bb280fb0a0fd643c1161312ba49655040e9aaaced5f9ad3eeaf868eadc.png'
                                 pieChart={this.state.data}
                             />
+
+                            <tr className='usd_row'>
+                                <td className='first_col'>
+                                    <div className='pic'><img src={`https://dynamic-assets.coinbase.com/3c15df5e2ac7d4abbe9499ed9335041f00c620f28e8de2f93474a9f432058742cdf4674bd43f309e69778a26969372310135be97eb183d91c492154176d455b8/asset_icons/9d67b728b6c8f457717154b3a35f9ddc702eae7e76c4684ee39302c4d7fd0bb8.png`} height='36' width='36' /></div>
+                                    <div className='crypto_name'>{`US Dollar`} <div className='symbol'>{`USD`}</div></div>
+                                </td>
+                                <td className='ticker_quant'>{'$ ' + parseFloat((user_usd_amount(transactions))).toFixed(2)}</td>
+                            </tr>
 
                         </table>
                     </div>
