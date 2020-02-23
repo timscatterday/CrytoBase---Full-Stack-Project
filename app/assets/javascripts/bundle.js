@@ -341,15 +341,107 @@ function (_React$Component) {
   _inherits(Trade, _React$Component);
 
   function Trade(props) {
+    var _this;
+
     _classCallCheck(this, Trade);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Trade).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Trade).call(this, props));
+    _this.state = {
+      mode: 'Buy'
+    };
+    return _this;
   }
 
   _createClass(Trade, [{
+    key: "BuyorSellCrypto",
+    value: function BuyorSellCrypto(ticker, amount_usd, exc_rate, ticker_quantity, type) {
+      var transaction = {
+        ticker: ticker,
+        price: exc_rate,
+        amount: ticker_quantity,
+        type: type
+      };
+      this.props.createTransaction(transaction);
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      var _this2 = this;
+
+      var _this$props = this.props,
+          assets = _this$props.assets,
+          transactions = _this$props.transactions;
+      var mode = this.state.mode;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "buy_and_sell_container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "buy_widget_container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "buy_and_sell"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "buy_sell_button_container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "buy_sell_button",
+        onClick: function onClick() {
+          _this2.setState({
+            mode: "Buy"
+          });
+        }
+      }, "Buy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "buy_sell_button",
+        onClick: function onClick() {
+          return _this2.setState({
+            mode: "Sell"
+          });
+        }
+      }, "Sell")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "crypto_list"
+      }, assets['BTC'] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        mode: mode,
+        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_usd_amount"])(transactions),
+        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_ticker_quantity"])("BTC", transactions),
+        BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
+        ticker: "BTC",
+        conversion_rate: parseFloat(assets['BTC']['conversion']).toFixed(6),
+        asset_name: "Bitcoin",
+        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["fromStringtoDollar"])(assets['BTC']['USD']['PRICE'])
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        mode: mode,
+        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_usd_amount"])(transactions),
+        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_ticker_quantity"])("ETH", transactions),
+        BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
+        ticker: "ETH",
+        conversion_rate: parseFloat(assets['ETH']['conversion']).toFixed(6),
+        asset_name: "Ethereum",
+        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["fromStringtoDollar"])(assets['ETH']['USD']['PRICE'])
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        mode: mode,
+        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_usd_amount"])(transactions),
+        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_ticker_quantity"])("BCH", transactions),
+        BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
+        ticker: "BCH",
+        conversion_rate: parseFloat(assets['BCH']['conversion']).toFixed(6),
+        asset_name: "Bitcoin Cash",
+        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["fromStringtoDollar"])(assets['BCH']['USD']['PRICE'])
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        mode: mode,
+        BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
+        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_usd_amount"])(transactions),
+        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_ticker_quantity"])("LTC", transactions),
+        ticker: "LTC",
+        conversion_rate: parseFloat(assets['LTC']['conversion']).toFixed(6),
+        asset_name: "Litecoin",
+        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["fromStringtoDollar"])(assets['LTC']['USD']['PRICE'])
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        mode: mode,
+        BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
+        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_usd_amount"])(transactions),
+        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_ticker_quantity"])("EOS", transactions),
+        ticker: "EOS",
+        conversion_rate: parseFloat(assets['EOS']['conversion']).toFixed(6),
+        asset_name: "EOS",
+        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["fromStringtoDollar"])(assets['EOS']['USD']['PRICE'])
+      }))))));
     }
   }]);
 
@@ -372,6 +464,8 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _trade__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./trade */ "./frontend/components/Trade/trade.jsx");
+/* harmony import */ var _actions_transactions_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/transactions_actions */ "./frontend/actions/transactions_actions.js");
+
 
 
 
@@ -390,19 +484,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     fetchTransactions: function fetchTransactions() {
       return dispatch(fetchAPITransactions());
     },
-    createTransaction: function (_createTransaction) {
-      function createTransaction(_x) {
-        return _createTransaction.apply(this, arguments);
-      }
-
-      createTransaction.toString = function () {
-        return _createTransaction.toString();
-      };
-
-      return createTransaction;
-    }(function (transaction) {
-      return dispatch(createTransaction(transaction));
-    })
+    createTransaction: function createTransaction(transaction) {
+      return dispatch(Object(_actions_transactions_actions__WEBPACK_IMPORTED_MODULE_2__["createTransaction"])(transaction));
+    }
   };
 };
 
@@ -768,7 +852,7 @@ function (_React$Component) {
           assets = _this$props.assets,
           getAssets = _this$props.getAssets;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "top_main"
+        className: "top_main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "main_line"
       }, "Buy and sell digital currency"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -1134,7 +1218,8 @@ function (_React$Component) {
         margin: 5
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sparklines__WEBPACK_IMPORTED_MODULE_1__["SparklinesLine"], {
         style: {
-          fill: "none"
+          fill: "none",
+          strokeWidth: 2
         },
         color: chart_color
       }))));
@@ -1389,7 +1474,6 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var transaction = this.props.transaction;
-      console.log(transaction);
 
       if (!transaction) {
         return null;
@@ -1604,8 +1688,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       var _this$props = this.props,
           getAssets = _this$props.getAssets,
           assets = _this$props.assets,
@@ -1621,85 +1703,12 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "port_value_container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "USD_amount"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "my_port"
-      }, "My Portfolio"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "available"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "available_usd"
-      }, "Available USD:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$", Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["user_usd_amount"])(transactions)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "port_value"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "port_title"
       }, "Portfolio Value"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "port_amount"
-      }, "$", parseFloat(Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["user_portfolio_value"])(transactions, assets)).toFixed(2)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "buy_and_sell"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "buy_sell_button_container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "buy_sell_button",
-        onClick: function onClick() {
-          _this2.setState({
-            mode: "Buy"
-          });
-        }
-      }, "Buy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "buy_sell_button",
-        onClick: function onClick() {
-          return _this2.setState({
-            mode: "Sell"
-          });
-        }
-      }, "Sell")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "crypto_list"
-      }, assets['BTC'] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        mode: mode,
-        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["user_usd_amount"])(transactions),
-        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["user_ticker_quantity"])("BTC", transactions),
-        BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
-        ticker: "BTC",
-        conversion_rate: parseFloat(assets['BTC']['conversion']).toFixed(6),
-        asset_name: "Bitcoin",
-        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["fromStringtoDollar"])(assets['BTC']['USD']['PRICE'])
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        mode: mode,
-        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["user_usd_amount"])(transactions),
-        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["user_ticker_quantity"])("ETH", transactions),
-        BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
-        ticker: "ETH",
-        conversion_rate: parseFloat(assets['ETH']['conversion']).toFixed(6),
-        asset_name: "Ethereum",
-        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["fromStringtoDollar"])(assets['ETH']['USD']['PRICE'])
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        mode: mode,
-        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["user_usd_amount"])(transactions),
-        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["user_ticker_quantity"])("BCH", transactions),
-        BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
-        ticker: "BCH",
-        conversion_rate: parseFloat(assets['BCH']['conversion']).toFixed(6),
-        asset_name: "Bitcoin Cash",
-        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["fromStringtoDollar"])(assets['BCH']['USD']['PRICE'])
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        mode: mode,
-        BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
-        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["user_usd_amount"])(transactions),
-        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["user_ticker_quantity"])("LTC", transactions),
-        ticker: "LTC",
-        conversion_rate: parseFloat(assets['LTC']['conversion']).toFixed(6),
-        asset_name: "Litecoin",
-        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["fromStringtoDollar"])(assets['LTC']['USD']['PRICE'])
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        mode: mode,
-        BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
-        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["user_usd_amount"])(transactions),
-        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["user_ticker_quantity"])("EOS", transactions),
-        ticker: "EOS",
-        conversion_rate: parseFloat(assets['EOS']['conversion']).toFixed(6),
-        asset_name: "EOS",
-        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["fromStringtoDollar"])(assets['EOS']['USD']['PRICE'])
-      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "$", parseFloat(Object(_util_transactions__WEBPACK_IMPORTED_MODULE_5__["user_portfolio_value"])(transactions, assets)).toFixed(2))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Box_container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Five_Boxes"

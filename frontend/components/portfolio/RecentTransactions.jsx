@@ -12,7 +12,6 @@ class RecentTransactions extends React.Component {
     render(){
        
         const {transaction} = this.props;
-        console.log(transaction);
 
         if(!transaction){
             return null

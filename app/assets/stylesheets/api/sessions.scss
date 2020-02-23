@@ -325,7 +325,7 @@
     }
 
         .port_title{
-            color: black;
+            color: white;
             font-size: 35px;
         }
 
@@ -334,9 +334,7 @@
             text-align: center;
             height: 410px;
             position: relative;
-            border: solid;
             z-index: 1;
-            background-color: white;
         }
 
         .USD_amount{
@@ -355,10 +353,11 @@
         }
 
         .port_amount{
-            color: black;
-            font-size: 58px;
+            color: white;
             position: relative;
             top: 32px;
+            font-size: 60px;
+            font-weight: 400;
         }
 
         .my_port{
@@ -377,15 +376,21 @@
         }
 
         .buy_and_sell{
-            width: 40%;
             text-align: center;
+            display: flex;
             height: 500px;
-            border-radius: 8px;
+            flex-direction: column;
+            width: 72%;
+            position: relative;
+            top: 49px;
+            left: 50px;
+            border: lightgray solid 2px;
         }
 
         .crypto_list{
             display: flex;
             flex-direction: column;
+            padding-top: 21px;
         }
 
         .trade{
@@ -411,52 +416,52 @@
         .BTC_trade{
             padding: 14px;
             color: white;
-            text-align: left;
-            margin-bottom: 6px;
+            margin-bottom: 17px;
             background-color: orange;
-            height: 66px;
-            border-radius: 10px;
+            display: flex;
+            width: 80%;
+            margin-left: 9%;
         }
 
         .ETH_trade{
             padding: 14px;
             color: white;
-            text-align: left;
-            margin-bottom: 6px;
+            margin-bottom: 17px;
             background-color: #637eea;
-            height: 66px;
-            border-radius: 10px;
+            display: flex;
+            width: 80%;
+            margin-left: 9%;
         }
 
 
         .BCH_trade{
             padding: 14px;
             color: white;
-            text-align: left;
-            margin-bottom: 6px;
+            margin-bottom: 17px;
             background-color: #98c962;
-            height: 66px;
-            border-radius: 10px;
+            display: flex;
+            width: 80%;
+            margin-left: 9%;
         }
 
         .LTC_trade{
             background-color: #c7c2c2;
             color: white;
             padding: 14px;
-            text-align: left;
-            margin-bottom: 6px;
-            height: 66px;
-            border-radius: 10px
+            margin-bottom: 17px;
+            display: flex;
+            width: 80%;
+            margin-left: 9%;
         }
 
         .EOS_trade{
             background-color: #000000;
             color: white;
             padding: 14px;
-            text-align: left;
-            margin-bottom: 6px;
-            height: 66px;
-            border-radius: 10px;
+            margin-bottom: 17px;
+            display: flex;
+            width: 80%;
+            margin-left: 9%;
         }
 
         .inputs{
@@ -471,6 +476,7 @@
                 position: relative;
                 top: 4px;
                 font-weight: 600;
+                font-family: "Avenir Next", -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
             }
 
             #second{
@@ -644,6 +650,16 @@
         transition: width .2s ease-in;
     }
 
+    .buy_and_sell_container{
+        display: flex;
+        width: 100%;
+    }
+
+    .buy_widget_container{
+        display: flex;
+        width: 50%;
+    }
+
     .buy_sell_button_container{
         display: flex;
         padding-bottom: 1px;
@@ -651,10 +667,11 @@
 
     .buy_sell_button{
         color: dodgerblue;
-        width: 50%;
-        height: 50%;
+        width: 100%;
+        height: 100%;
         font-size: 27px;
         border-radius: 4px;
+        border-bottom: none;
     }
 
         .buy_sell_button:hover{

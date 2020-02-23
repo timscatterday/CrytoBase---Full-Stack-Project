@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Trade from './trade';
+import { createTransaction } from '../../actions/transactions_actions';
 
 const mapStateToProps = state => {
     return {

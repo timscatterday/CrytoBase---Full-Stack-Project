@@ -6,7 +6,7 @@ class Allocation extends React.Component {
 
     constructor(props){
         super(props)
-
+        
         this.allocation_percentage = this.allocation_percentage.bind(this);
     };
 

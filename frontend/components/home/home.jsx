@@ -36,7 +36,7 @@ class Home extends React.Component {
 
         return(
         <div>
-            <div class='top_main'>
+            <div className='top_main'>
                 <p className='main_line'>Buy and sell digital currency</p>
                 <p className='sub_line'>Cryptobase is the easiest place to buy, sell, and manage your digital currencies</p>
 

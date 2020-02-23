@@ -51,87 +51,11 @@ class Portfolio extends React.Component {
             <div className='user_portfolio'>
                 
                 <div className='port_value_container'>
-                    
-                    <div className='USD_amount'>
-                        <div className='my_port'>My Portfolio</div>
-                        <div className='available'>
-                            <p className='available_usd'>Available USD:</p>
-                            <p>${user_usd_amount(transactions)}</p>
-                        </div>
-                    </div>
-                    
                     <div className='port_value'>
                         <div className='port_title'>Portfolio Value</div>
                         <div className='port_amount'>${parseFloat(user_portfolio_value(transactions, assets)).toFixed(2)}</div>
                     </div>
 
-                </div>
-
-        
-                <div className='buy_and_sell'>
-                    <div className='buy_sell_button_container'>
-                        <button className='buy_sell_button' onClick={() => { this.setState({ mode: "Buy" }) }}>Buy</button>
-                        <button className='buy_sell_button' onClick={() => this.setState({ mode: "Sell" })}>Sell</button>
-                    </div>
-                
-                    <div className='crypto_list'>
-                        {assets['BTC'] && 
-                          <>
-                                <BuyWidget
-                                    mode={mode}
-                                    available_usd={user_usd_amount(transactions)}
-                                    ticker_amount={user_ticker_quantity("BTC", transactions)}
-                                    BuyorSellCrypto={this.BuyorSellCrypto.bind(this)}
-                                    ticker='BTC'
-                                    conversion_rate={parseFloat(assets['BTC']['conversion']).toFixed(6)}
-                                    asset_name="Bitcoin"
-                                    ticker_value = {fromStringtoDollar(assets['BTC']['USD']['PRICE'])}
-                                />
-                                <BuyWidget
-                                    mode={mode}
-                                    available_usd={user_usd_amount(transactions)}
-                                    ticker_amount={user_ticker_quantity("ETH", transactions)}
-                                    BuyorSellCrypto={this.BuyorSellCrypto.bind(this)}
-                                    ticker='ETH'
-                                    conversion_rate={parseFloat(assets['ETH']['conversion']).toFixed(6)}
-                                    asset_name="Ethereum"
-                                    ticker_value={fromStringtoDollar(assets['ETH']['USD']['PRICE'])}
-                                />
-                                <BuyWidget
-                                    mode={mode}
-                                    available_usd={user_usd_amount(transactions)}
-                                    ticker_amount={user_ticker_quantity("BCH", transactions)}
-                                    BuyorSellCrypto={this.BuyorSellCrypto.bind(this)}
-                                    ticker='BCH'
-                                    conversion_rate={parseFloat(assets['BCH']['conversion']).toFixed(6)}
-                                    asset_name="Bitcoin Cash"
-                                    ticker_value={fromStringtoDollar(assets['BCH']['USD']['PRICE'])}
-                                />
-                                <BuyWidget
-                                    mode={mode}
-                                    BuyorSellCrypto={this.BuyorSellCrypto.bind(this)}
-                                    available_usd={user_usd_amount(transactions)}
-                                    ticker_amount={user_ticker_quantity("LTC", transactions)}
-                                    ticker='LTC'
-                                    conversion_rate={parseFloat(assets['LTC']['conversion']).toFixed(6)}
-                                    asset_name="Litecoin"
-                                    ticker_value={fromStringtoDollar(assets['LTC']['USD']['PRICE'])}
-                                />
-                                <BuyWidget
-                                    mode={mode}
-                                    BuyorSellCrypto={this.BuyorSellCrypto.bind(this)}
-                                    available_usd={user_usd_amount(transactions)}
-                                    ticker_amount={user_ticker_quantity("EOS", transactions)}
-                                    ticker='EOS'
-                                    conversion_rate={parseFloat(assets['EOS']['conversion']).toFixed(6)}
-                                    asset_name="EOS"
-                                    ticker_value={fromStringtoDollar(assets['EOS']['USD']['PRICE'])}
-                                />
-
-                          </>
-                        }
-                    
-                    </div>
                 </div>
 
             </div>
