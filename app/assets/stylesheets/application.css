@@ -28,7 +28,7 @@
     color: #1652f0;
     display: flex;
     flex-direction: column;
-    height: 250px;
+    height: 200px;
     width: 100%;
     background-color: #1652f0;
     justify-content: flex-end;
@@ -38,11 +38,40 @@
     color: #1652f0;
     display: flex;
     flex-direction: column;
-    height: 250px;
+    height: 209px;
     width: 100%;
     background-color: #1652f0;
     justify-content: flex-end;
     margin-top: 176px;
+  }
+
+  .Git{
+   margin-right: 200px;
+   color: white;
+   font-size: 26px;
+  }
+
+  .LinkedIn{
+     color: white;
+     font-size: 26px;
+  }
+
+  .websites{
+     display: flex;
+     flex-direction: row;
+     color: white;
+     justify-content: center;
+     position: relative;
+     bottom: 16px;
+  }
+
+  .title_footer{
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    left: 11px;
+    bottom: 64px;
   }
 
  .nomics{
@@ -51,6 +80,7 @@
 
  .copyrightandnomics{
     text-align: left;
+    margin-left: 13px;
  }
 
  .copyright{

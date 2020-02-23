@@ -376,7 +376,7 @@
         .buy_and_sell{
             text-align: center;
             display: flex;
-            height: 500px;
+            height: 522px;
             flex-direction: column;
             width: 84%;
             position: relative;
@@ -415,7 +415,7 @@
         .BTC_trade{
             padding: 14px;
             color: white;
-            margin-bottom: 17px;
+            margin-bottom: 12px;
             background-color: orange;
             display: flex;
             width: 88%;
@@ -425,7 +425,7 @@
         .ETH_trade{
             padding: 14px;
             color: white;
-            margin-bottom: 17px;
+            margin-bottom: 12px;
             background-color: #637eea;
             display: flex;
             justify-content: space-between;
@@ -437,7 +437,7 @@
         .BCH_trade{
             padding: 14px;
             color: white;
-            margin-bottom: 17px;
+            margin-bottom: 12px;
             background-color: #98c962;
             display: flex;
             justify-content: space-between;
@@ -449,7 +449,7 @@
             background-color: #c7c2c2;
             color: white;
             padding: 14px;
-            margin-bottom: 17px;
+            margin-bottom: 12px;
             display: flex;
             justify-content: space-between;
             width: 88%;
@@ -460,7 +460,7 @@
             background-color: #000000;
             color: white;
             padding: 14px;
-            margin-bottom: 17px;
+            margin-bottom: 12px;
             display: flex;
             justify-content: space-between;
             width: 88%;
@@ -481,6 +481,10 @@
                 font-family: "Avenir Next", -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
             }
 
+            .first_ticker{
+                font-weight: 100;
+            }
+
             #second{
                 width: 50%;
             }
@@ -492,12 +496,17 @@
                 }
 
                 .buy_btn{
-                    width: 82%;
+                    width: 87%;
                     height: 22px;
+                    border-radius: 6px;
+                    padding: 12px;
                 };
 
             #third{
-                width: 16%;
+                height: 20px;
+                position: relative;
+                top: 6px;
+                width: 12%;
             }
 
      .Box_container{
@@ -768,6 +777,7 @@
 .labels{
     font-size: 13px;
     width: 83%;
+    font-weight: 100;
 }
 
 .allocation_table_container_trade{

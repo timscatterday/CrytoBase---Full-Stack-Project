@@ -499,13 +499,18 @@ function (_React$Component) {
         pieChart: this.state.data
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "FooterTrade"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://github.com/"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: ""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: ""
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "title_footer",
+        to: "/"
+      }, "Cryptobase"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "websites"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "Git",
+        href: "https://github.com/timscatterday"
+      }, "GitHub"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "LinkedIn",
+        href: "https://www.linkedin.com/in/timothy-scatterday-09283067/"
+      }, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "copyrightandnomics"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         "class": "copyright"
@@ -1022,13 +1027,18 @@ function (_React$Component) {
         className: "line2"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Footer"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://github.com/"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: ""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: ""
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "title_footer",
+        to: "/"
+      }, "Cryptobase"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "websites"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "Git",
+        href: "https://github.com/timscatterday"
+      }, "GitHub"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "LinkedIn",
+        href: "https://www.linkedin.com/in/timothy-scatterday-09283067/"
+      }, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "copyrightandnomics"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         "class": "copyright"
@@ -1432,7 +1442,9 @@ function (_Component) {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "first"
-      }, asset_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, asset_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "first_ticker"
+      }, ticker)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "second"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "exchange_btn"
@@ -1444,7 +1456,8 @@ function (_Component) {
         placeholder: "USD",
         onChange: this.handleChange,
         value: amount_usd,
-        name: "amount_usd"
+        name: "amount_usd",
+        min: "0"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "labels"
       }, "USD ($)")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1464,7 +1477,8 @@ function (_Component) {
         placeholder: "1",
         onChange: this.handleChange,
         value: amount_crypto,
-        name: "amount_crypto"
+        name: "amount_crypto",
+        min: "0"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "labels"
       }, ticker)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1877,13 +1891,18 @@ function (_React$Component) {
         transaction: transactions[transactions.length - 5]
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Footer"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://github.com/"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: ""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: ""
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "title_footer",
+        to: "/"
+      }, "Cryptobase"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "websites"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "Git",
+        href: "https://github.com/timscatterday"
+      }, "GitHub"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "LinkedIn",
+        href: "https://www.linkedin.com/in/timothy-scatterday-09283067/"
+      }, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "copyrightandnomics"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         "class": "copyright"

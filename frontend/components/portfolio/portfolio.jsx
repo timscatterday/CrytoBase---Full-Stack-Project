@@ -166,10 +166,10 @@ class Portfolio extends React.Component {
         </div>
 
         <div className='Footer'>
-            <div>
-                <a href="https://github.com/"></a>
-                <a href=""></a>
-                <a href=""></a>
+            <div className='title_footer' to='/'>Cryptobase</div>
+            <div className='websites'>
+                <a className='Git' href="https://github.com/timscatterday">GitHub</a>
+                <a className='LinkedIn' href="https://www.linkedin.com/in/timothy-scatterday-09283067/">LinkedIn</a>
             </div>
             <div className='copyrightandnomics'>
                 <p class="copyright"> © 2020 CryptoBase </p>

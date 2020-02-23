@@ -64,7 +64,12 @@ class BuyWidget extends Component {
                 <form className='inputs' onSubmit={this.handleSubmit}>
 
                     <div id='first'>
-                        {asset_name}
+                        <div>
+                            {asset_name}
+                        </div>
+                        <div className='first_ticker'>
+                            {ticker}
+                        </div>
                     </div>
 
                     <div id='second'>
@@ -79,6 +84,7 @@ class BuyWidget extends Component {
                                             onChange={this.handleChange}
                                             value={amount_usd}
                                             name="amount_usd"
+                                            min="0"
                                         />
                                         <div className='labels'>USD ($)</div>
                                     </div>
@@ -104,6 +110,7 @@ class BuyWidget extends Component {
                                             onChange={this.handleChange}
                                             value={amount_crypto}
                                             name="amount_crypto"
+                                            min="0"
                                         />
                                         <div className='labels'>{ticker}</div>
                                     </div>

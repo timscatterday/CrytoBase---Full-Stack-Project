@@ -160,10 +160,10 @@ class Trade extends React.Component {
                     </div>
                 </div>
                 <div className='FooterTrade'>
-                    <div>
-                        <a href="https://github.com/"></a>
-                        <a href=""></a>
-                        <a href=""></a>
+                    <div className='title_footer' to='/'>Cryptobase</div>
+                    <div className='websites'>
+                        <a className='Git' href="https://github.com/timscatterday">GitHub</a>
+                        <a className='LinkedIn' href="https://www.linkedin.com/in/timothy-scatterday-09283067/">LinkedIn</a>
                     </div>
                     <div className='copyrightandnomics'>
                         <p class="copyright"> © 2020 CryptoBase by Tim Scatterday</p>
