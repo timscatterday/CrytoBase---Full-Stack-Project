@@ -82,7 +82,7 @@ class BuyWidget extends Component {
                                         />
                                         <div className='labels'>USD ($)</div>
                                     </div>
-                                    <div className='input2'>
+                                    <div className='input1'>
                                         <input
                                             className='buy_btn'
                                             id='crypto_exc'
@@ -107,7 +107,7 @@ class BuyWidget extends Component {
                                         />
                                         <div className='labels'>{ticker}</div>
                                     </div>
-                                    <div className='input=2'>
+                                    <div className='input1'>
                                         <input
                                             className='buy_btn'
                                             id='crypto_exc'

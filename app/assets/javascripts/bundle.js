@@ -312,7 +312,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _portfolio_BuyWidget__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../portfolio/BuyWidget */ "./frontend/components/portfolio/BuyWidget.jsx");
-/* harmony import */ var _util_transactions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/transactions */ "./frontend/util/transactions.js");
+/* harmony import */ var _portfolio_Allocation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../portfolio/Allocation */ "./frontend/components/portfolio/Allocation.jsx");
+/* harmony import */ var _util_transactions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/transactions */ "./frontend/util/transactions.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -330,6 +331,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -353,6 +355,12 @@ function (_React$Component) {
   }
 
   _createClass(Trade, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.getAssets();
+      this.props.fetchTransactions();
+    }
+  }, {
     key: "BuyorSellCrypto",
     value: function BuyorSellCrypto(ticker, amount_usd, exc_rate, ticker_quantity, type) {
       var transaction = {
@@ -374,6 +382,8 @@ function (_React$Component) {
       var mode = this.state.mode;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "buy_and_sell_container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "buy_and_recent_container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "buy_widget_container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -398,50 +408,112 @@ function (_React$Component) {
         className: "crypto_list"
       }, assets['BTC'] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
         mode: mode,
-        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_usd_amount"])(transactions),
-        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_ticker_quantity"])("BTC", transactions),
+        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_usd_amount"])(transactions),
+        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"])("BTC", transactions),
         BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
         ticker: "BTC",
         conversion_rate: parseFloat(assets['BTC']['conversion']).toFixed(6),
         asset_name: "Bitcoin",
-        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["fromStringtoDollar"])(assets['BTC']['USD']['PRICE'])
+        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["fromStringtoDollar"])(assets['BTC']['USD']['PRICE'])
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
         mode: mode,
-        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_usd_amount"])(transactions),
-        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_ticker_quantity"])("ETH", transactions),
+        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_usd_amount"])(transactions),
+        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"])("ETH", transactions),
         BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
         ticker: "ETH",
         conversion_rate: parseFloat(assets['ETH']['conversion']).toFixed(6),
         asset_name: "Ethereum",
-        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["fromStringtoDollar"])(assets['ETH']['USD']['PRICE'])
+        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["fromStringtoDollar"])(assets['ETH']['USD']['PRICE'])
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
         mode: mode,
-        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_usd_amount"])(transactions),
-        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_ticker_quantity"])("BCH", transactions),
+        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_usd_amount"])(transactions),
+        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"])("BCH", transactions),
         BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
         ticker: "BCH",
         conversion_rate: parseFloat(assets['BCH']['conversion']).toFixed(6),
         asset_name: "Bitcoin Cash",
-        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["fromStringtoDollar"])(assets['BCH']['USD']['PRICE'])
+        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["fromStringtoDollar"])(assets['BCH']['USD']['PRICE'])
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
         mode: mode,
         BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
-        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_usd_amount"])(transactions),
-        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_ticker_quantity"])("LTC", transactions),
+        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_usd_amount"])(transactions),
+        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"])("LTC", transactions),
         ticker: "LTC",
         conversion_rate: parseFloat(assets['LTC']['conversion']).toFixed(6),
         asset_name: "Litecoin",
-        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["fromStringtoDollar"])(assets['LTC']['USD']['PRICE'])
+        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["fromStringtoDollar"])(assets['LTC']['USD']['PRICE'])
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_BuyWidget__WEBPACK_IMPORTED_MODULE_1__["default"], {
         mode: mode,
         BuyorSellCrypto: this.BuyorSellCrypto.bind(this),
-        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_usd_amount"])(transactions),
-        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["user_ticker_quantity"])("EOS", transactions),
+        available_usd: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_usd_amount"])(transactions),
+        ticker_amount: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["user_ticker_quantity"])("EOS", transactions),
         ticker: "EOS",
         conversion_rate: parseFloat(assets['EOS']['conversion']).toFixed(6),
         asset_name: "EOS",
-        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_2__["fromStringtoDollar"])(assets['EOS']['USD']['PRICE'])
-      }))))));
+        ticker_value: Object(_util_transactions__WEBPACK_IMPORTED_MODULE_3__["fromStringtoDollar"])(assets['EOS']['USD']['PRICE'])
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "allocation_table_container_trade"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        className: "allocation_table_trade"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        className: "table_header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Your Assets")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        assets: assets,
+        transactions: transactions,
+        assetname: "Bitcoin",
+        ticker: "BTC",
+        lower_ticker: "btc",
+        img: "http://www.thecoinface.com/assets/btc-8022fd53c251f18cb39cefede445f1c78a3b265989232f0bb46b9c4622e55a9e.png",
+        pieChart: this.state.data
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        assets: assets,
+        transactions: transactions,
+        assetname: "Ethereum",
+        ticker: "ETH",
+        lower_ticker: "btc",
+        img: "http://www.thecoinface.com/assets/eth-99bf2102cc13a51bb226f931b8d0fa4c5b3ca9dc4179167e89d7ee3f677c3fdb.png",
+        pieChart: this.state.data
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        assets: assets,
+        transactions: transactions,
+        assetname: "BitcoinCash",
+        ticker: "BCH",
+        lower_ticker: "bch",
+        img: "http://www.thecoinface.com/assets/bch-03a53cc37436a99ba854e42df693fa52d92d88cbbce362fa217efd0e85be5e1f.png",
+        pieChart: this.state.data
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        assets: assets,
+        transactions: transactions,
+        assetname: "Litecoin",
+        ticker: "LTC",
+        lower_ticker: "ltc",
+        img: "http://www.thecoinface.com/assets/ltc-7160750bcbc115ac8a3229bc1120fb59e96a737d607a57b42fa8e2b092a14159.png",
+        pieChart: this.state.data
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_portfolio_Allocation__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        assets: assets,
+        transactions: transactions,
+        assetname: "EOS",
+        ticker: "EOS",
+        lower_ticker: "eos",
+        img: "https://dynamic-assets.coinbase.com/deaca3d47b10ed4a91a872e9618706eec34081127762d88f2476ac8e99ada4b48525a9565cf2206d18c04053f278f693434af4d4629ca084a9d01b7a286a7e26/asset_icons/1f8489bb280fb0a0fd643c1161312ba49655040e9aaaced5f9ad3eeaf868eadc.png",
+        pieChart: this.state.data
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "FooterTrade"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://github.com/"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "copyrightandnomics"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        "class": "copyright"
+      }, " \xA9 2020 CryptoBase by Tim Scatterday"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nomics"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://nomics.com"
+      }, "Crypto Market Cap & Pricing Data Provided By Nomics")))));
     }
   }]);
 
@@ -482,7 +554,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return dispatch(fetchAPIAssets());
     },
     fetchTransactions: function fetchTransactions() {
-      return dispatch(fetchAPITransactions());
+      return dispatch(Object(_actions_transactions_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAPITransactions"])());
     },
     createTransaction: function createTransaction(transaction) {
       return dispatch(Object(_actions_transactions_actions__WEBPACK_IMPORTED_MODULE_2__["createTransaction"])(transaction));
@@ -1376,7 +1448,7 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "labels"
       }, "USD ($)")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "input2"
+        className: "input1"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "buy_btn",
         id: "crypto_exc",
@@ -1396,7 +1468,7 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "labels"
       }, ticker)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "input=2"
+        className: "input1"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "buy_btn",
         id: "crypto_exc",
