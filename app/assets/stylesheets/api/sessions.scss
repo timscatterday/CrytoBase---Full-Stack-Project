@@ -332,7 +332,7 @@
             width: 33%;
             text-align: center;
             height: 410px;
-            width: 62%;
+            width: 21%;
             z-index: 1;
         }
 
@@ -701,6 +701,10 @@
         #third{
             height: 20px;
         };
+
+        th{
+            font-family: Graphik, "Avenir Next", -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        }
 
 .assets_recenttransactions_container{
     display: flex;
