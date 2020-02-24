@@ -38,12 +38,12 @@ https://cryptobase-1.herokuapp.com/#/
 <img width="1900" alt="Screen Shot 2020-02-24 at 8 38 19 AM" src="https://user-images.githubusercontent.com/46978514/75171825-1c42ed80-56e1-11ea-8669-2dbd648ee22b.png">
 <img width="1888" alt="Screen Shot 2020-02-24 at 8 39 22 AM" src="https://user-images.githubusercontent.com/46978514/75171857-2b29a000-56e1-11ea-9e9d-599282b0f0e8.png">
 
-* Users are able to buy and sell cryptocurrency assets at real-time exchange rates
-* Created RESTful Transaction API endpoint to persist user's buy and sell transactions to database, creating historical record of all users transactions
-* Created functions that calculate user's current total portfolio value upon login. Functions calculate how much of each cryptocurrency asset has been bought from historical transacactions database. Once amount of each cryptocurrency asset in portfolio has been calculated multiply each cryptocurrency holding by the exchange rate to calculate USD ($) value per cryptocurrency in portfolio. Sum each of these individual values up to determine total portfolio value in USD ($)
+* Portfolio page accuratley displays the real time value of the User's portfolio based upon their current cryptocurrency allocation
+* User's can view their current asset allocation on the 'Your Assets' chart and see their most recent transactions with their corresponding trade value on the Recent Transactions chart
 
 ### Trade Page
 
 <img width="1436" alt="Screen Shot 2020-02-23 at 9 52 18 PM" src="https://user-images.githubusercontent.com/46978514/75172025-72179580-56e1-11ea-83c2-2f1f9090135a.png">
 
-* Allocation Chart displays how much of each cryptocurrency asset is in portfolio, as well as percent of each cryptocurrency asset holding relative to total amount of cryptocurrency in user portfolio 
+* Trade page integrates exchange rates from external APIs and allows users to buy and sell Bitcoin, Ethereum, Bitcoin Cash, Litecoin, and EOS at real time prices
+* Created RESTful Transaction API endpoint to persist user's buy and sell transactions to database, creating historical record of all users transactions
