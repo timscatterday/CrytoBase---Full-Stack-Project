@@ -38,7 +38,7 @@ https://cryptobase-1.herokuapp.com/#/
 <img width="1900" alt="Screen Shot 2020-02-24 at 8 38 19 AM" src="https://user-images.githubusercontent.com/46978514/75171825-1c42ed80-56e1-11ea-8669-2dbd648ee22b.png">
 <img width="1888" alt="Screen Shot 2020-02-24 at 8 39 22 AM" src="https://user-images.githubusercontent.com/46978514/75171857-2b29a000-56e1-11ea-9e9d-599282b0f0e8.png">
 
-* Portfolio page accuratley displays the real time value of the User's portfolio based upon their current cryptocurrency allocation
+* Portfolio page accurately displays the real time value of the User's portfolio based upon their current cryptocurrency allocation
 * User's can view their current asset allocation on the 'Your Assets' chart and see their most recent transactions with their corresponding trade value on the Recent Transactions chart
 
 ### Trade Page
