@@ -35,11 +35,8 @@ https://cryptobase-1.herokuapp.com/#/
 
 ### Portfolio Page and Allocation Chart
 
-<img width="1723" alt="Screen Shot 2020-02-19 at 10 04 03 AM" src="https://user-images.githubusercontent.com/46978514/74861432-3060a680-52ff-11ea-9fe5-6a3d42a6e5f3.png">
-
-<img width="849" alt="Screen Shot 2020-02-19 at 9 53 00 AM" src="https://user-images.githubusercontent.com/46978514/74860579-c1368280-52fd-11ea-8eb0-425ccc26eaf2.png">
-
-<img width="849" alt="Screen Shot 2020-02-19 at 9 53 45 AM" src="https://user-images.githubusercontent.com/46978514/74860583-c267af80-52fd-11ea-8703-5691ae78bf73.png">
+<img width="1900" alt="Screen Shot 2020-02-24 at 8 38 19 AM" src="https://user-images.githubusercontent.com/46978514/75171825-1c42ed80-56e1-11ea-8669-2dbd648ee22b.png">
+<img width="1888" alt="Screen Shot 2020-02-24 at 8 39 22 AM" src="https://user-images.githubusercontent.com/46978514/75171857-2b29a000-56e1-11ea-9e9d-599282b0f0e8.png">
 
 * Users are able to buy and sell cryptocurrency assets at real-time exchange rates
 * Created RESTful Transaction API endpoint to persist user's buy and sell transactions to database, creating historical record of all users transactions
